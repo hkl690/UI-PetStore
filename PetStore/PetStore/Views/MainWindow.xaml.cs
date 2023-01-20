@@ -24,5 +24,30 @@ namespace PetStore
         {
             InitializeComponent();
         }
+
+        private void DogButton_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Dog Clicked");
+        }
+        private void CatButton_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Cat Clicked");
+        }
+
+        private void FishButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SmallAnimalButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ReptileButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

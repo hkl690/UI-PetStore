@@ -7,15 +7,44 @@
         mc:Ignorable="d"
         Title="Pet Store" Height="450" Width="800">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="352,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="400,44,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="295" Height="18"/>
         <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="10,10,0,0" VerticalAlignment="Top" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" />
-        <TextBlock HorizontalAlignment="Left" Margin="387,87,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="550,77,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Image x:Name="Dog" HorizontalAlignment="Left" Margin="67,170,0,0" VerticalAlignment="Top" Source="/Images/Dog/Dog.jfif" Height="73" Width="98"/>
-        <Image x:Name="Cat" HorizontalAlignment="Left" Margin="216,154,0,0" VerticalAlignment="Top" Source="/Images/Cat/Cat.png" Height="104" Width="70"/>
-        <Image x:Name="Fish" HorizontalAlignment="Left" Height="104" Margin="504,168,0,0" VerticalAlignment="Top" Width="120" Source="/Images/Fish/Fish.jfif"/>
-        <Image x:Name="Small_Animals" HorizontalAlignment="Left" Margin="325,160,0,0" VerticalAlignment="Top" Source="/Images/Small Animal/Small Animals.jfif" Height="109" Width="147"/>
-        <Image x:Name="Reptile" HorizontalAlignment="Left" Margin="629,170,0,0" VerticalAlignment="Top" Source="/Images/Reptiles/Reptile.png" Height="88" Width="161"/>
+        <Image x:Name="Dog" HorizontalAlignment="Left" Margin="67,102,0,0" VerticalAlignment="Top" Source="/Images/Dog/Dog.jfif" Height="73" Width="98"/>
+        <Image x:Name="Cat" HorizontalAlignment="Left" Margin="216,102,0,0" VerticalAlignment="Top" Source="/Images/Cat/Cat.png" Height="104" Width="70"/>
+        <Image x:Name="Fish" HorizontalAlignment="Left" Height="104" Margin="504,102,0,0" VerticalAlignment="Top" Width="120" Source="/Images/Fish/Fish.jfif"/>
+        <Image x:Name="Small_Animals" HorizontalAlignment="Center" Margin="0,102,0,0" VerticalAlignment="Top" Source="/Images/Small Animal/Small Animals.jfif" Height="109" Width="148"/>
+        <Image x:Name="Reptile" HorizontalAlignment="Left" Margin="629,102,0,0" VerticalAlignment="Top" Source="/Images/Reptiles/Reptile.png" Height="88" Width="161"/>
+        <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="721,42,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="DogButton" HorizontalAlignment="Left" Margin="68,235,0,0" Width="96" IsCancel="True" Click="DogButton_Click" VerticalAlignment="Top" Height="189" ToolTip="">
+            <Button.Background>
+                <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Views/Dog.jfif"/>
+            </Button.Background>
+            <Label x:Name="DogLabel" Content="Dog" Padding="5,0,5,5" Margin="0,160,0,0" />
+        </Button>
+        <Button x:Name="CatButton" HorizontalAlignment="Left" Margin="202,235,0,0" Width="97" IsCancel="True" Click="CatButton_Click" VerticalAlignment="Top" Height="189">
+            <Button.Background>
+                <ImageBrush ImageSource="/Views/Cat.png" Stretch="Uniform" TileMode="Tile"/>
+            </Button.Background>
+            <Label x:Name="CatLabel" Content="Cat"  HorizontalAlignment="Left" Margin="0,160,0,0" VerticalAlignment="Top"/>
+        </Button>
+        <Button x:Name="SmallAnimalButton" HorizontalAlignment="Center" Margin="0,235,0,0" Width="96" IsCancel="True" Click="SmallAnimalButton_Click" VerticalAlignment="Top" Height="189" ToolTip="">
+            <Button.Background>
+                <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Views/Small Animals.jfif"/>
+            </Button.Background>
+            <Label x:Name="SmallAnimalsLabel" Content="Small Animals" Padding="5,0,5,5" Margin="0,160,0,0" />
+        </Button>
+        <Button x:Name="FishButton" HorizontalAlignment="Left" Margin="500,235,0,0" Width="96" IsCancel="True" Click="FishButton_Click" VerticalAlignment="Top" Height="189" ToolTip="">
+            <Button.Background>
+                <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Views/Fish.jfif"/>
+            </Button.Background>
+            <Label x:Name="FishLabel" Content="Fish" Padding="5,0,5,5" Margin="0,160,0,0" />
+        </Button>
+        <Button x:Name="ReptileButton" HorizontalAlignment="Left" Margin="647,235,0,0" Width="96" IsCancel="True" Click="ReptileButton_Click" VerticalAlignment="Top" Height="189" ToolTip="">
+            <Button.Background>
+                <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Views/Reptile.png"/>
+            </Button.Background>
+            <Label x:Name="ReptilesLabel" Content="Reptiles" Padding="5,0,5,5" Margin="0,160,0,0" />
+        </Button>
 
     </Grid>
 </Window>
