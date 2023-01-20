@@ -18,20 +18,42 @@
     <None Remove="Images\Cat\Supplies\Cat Litter.png" />
     <None Remove="Images\Cat\Supplies\Cat Water Fountain.png" />
     <None Remove="Images\Dog\Dog.jfif" />
+    <None Remove="Images\Dog\Food\Dog Treat.png" />
     <None Remove="Images\Dog\Food\Purina Dog Food.png" />
     <None Remove="Images\Dog\Food\Purina Wet Dog Food.png" />
+    <None Remove="Images\Dog\Supplies\Dog Brush.jfif" />
+    <None Remove="Images\Dog\Supplies\Dog Car Seat.png" />
+    <None Remove="Images\Dog\Supplies\Dog Carrier.png" />
     <None Remove="Images\Dog\Supplies\Dog Collar.png" />
     <None Remove="Images\Dog\Supplies\Dog Flea Med.jpeg" />
     <None Remove="Images\Dog\Supplies\Dog Harness.jpeg" />
     <None Remove="Images\Dog\Supplies\Dog House.jpeg" />
+    <None Remove="Images\Dog\Supplies\Dog Leash.png" />
+    <None Remove="Images\Dog\Supplies\Dog Stroller.png" />
+    <None Remove="Images\Dog\Supplies\Dog Training Pad.png" />
     <None Remove="Images\Dog\Supplies\Dog Water Fountain.png" />
+    <None Remove="Images\Dog\Supplies\Pet Stain Remover.png" />
     <None Remove="Images\Fish\Fish.jfif" />
     <None Remove="Images\Fish\Food\Fish Food.png" />
     <None Remove="Images\Fish\Food\Pond Fish Food.png" />
     <None Remove="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif" />
     <None Remove="Images\PetStore Logo.png" />
+    <None Remove="Images\Reptiles\Food\Reptile Food Crickets.jpeg" />
+    <None Remove="Images\Reptiles\Food\Reptile Food Dried Insects.jfif" />
+    <None Remove="Images\Reptiles\Food\Reptile Food Frozen Mice.jfif" />
+    <None Remove="Images\Reptiles\Food\Reptile Food Omnivore.jfif" />
+    <None Remove="Images\Reptiles\Food\Turtle Food.png" />
+    <None Remove="Images\Reptiles\Reptile.png" />
+    <None Remove="Images\Small Animal\Food\Bird Food Crickets.png" />
+    <None Remove="Images\Small Animal\Food\Bird Food Crickets.webp" />
+    <None Remove="Images\Small Animal\Food\Bird Food.png" />
+    <None Remove="Images\Small Animal\Food\Guinea Pig Food.png" />
+    <None Remove="Images\Small Animal\Food\Hamster and Gerbil Food.png" />
+    <None Remove="Images\Small Animal\Food\Hedgehog Food.jpeg" />
+    <None Remove="Images\Small Animal\Food\Mouse and Rat Food.png" />
+    <None Remove="Images\Small Animal\Food\Rabbit Food.png" />
+    <None Remove="Images\Small Animal\Small Animals.jfif" />
     <None Remove="Images\Small Animal\Supplies\Small Mammal Habitat.png" />
-    <None Remove="Views\Fish.jfif" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,20 +67,41 @@
     <Resource Include="Images\Cat\Supplies\Cat Litter.png" />
     <Resource Include="Images\Cat\Supplies\Cat Water Fountain.png" />
     <Resource Include="Images\Dog\Dog.jfif" />
+    <Resource Include="Images\Dog\Food\Dog Treat.png" />
     <Resource Include="Images\Dog\Food\Purina Dog Food.png" />
     <Resource Include="Images\Dog\Food\Purina Wet Dog Food.png" />
+    <Resource Include="Images\Dog\Supplies\Dog Brush.jfif" />
+    <Resource Include="Images\Dog\Supplies\Dog Car Seat.png" />
+    <Resource Include="Images\Dog\Supplies\Dog Carrier.png" />
     <Resource Include="Images\Dog\Supplies\Dog Collar.png" />
     <Resource Include="Images\Dog\Supplies\Dog Flea Med.jpeg" />
     <Resource Include="Images\Dog\Supplies\Dog Harness.jpeg" />
     <Resource Include="Images\Dog\Supplies\Dog House.jpeg" />
+    <Resource Include="Images\Dog\Supplies\Dog Leash.png" />
+    <Resource Include="Images\Dog\Supplies\Dog Stroller.png" />
+    <Resource Include="Images\Dog\Supplies\Dog Training Pad.png" />
     <Resource Include="Images\Dog\Supplies\Dog Water Fountain.png" />
+    <Resource Include="Images\Dog\Supplies\Pet Stain Remover.png" />
     <Resource Include="Images\Fish\Fish.jfif" />
     <Resource Include="Images\Fish\Food\Fish Food.png" />
     <Resource Include="Images\Fish\Food\Pond Fish Food.png" />
     <Resource Include="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif" />
     <Resource Include="Images\PetStore Logo.png" />
+    <Resource Include="Images\Reptiles\Food\Reptile Food Crickets.jpeg" />
+    <Resource Include="Images\Reptiles\Food\Reptile Food Dried Insects.jfif" />
+    <Resource Include="Images\Reptiles\Food\Reptile Food Frozen Mice.jfif" />
+    <Resource Include="Images\Reptiles\Food\Reptile Food Omnivore.jfif" />
+    <Resource Include="Images\Reptiles\Food\Turtle Food.png" />
+    <Resource Include="Images\Reptiles\Reptile.png" />
+    <Resource Include="Images\Small Animal\Food\Bird Food Crickets.png" />
+    <Resource Include="Images\Small Animal\Food\Bird Food.png" />
+    <Resource Include="Images\Small Animal\Food\Guinea Pig Food.png" />
+    <Resource Include="Images\Small Animal\Food\Hamster and Gerbil Food.png" />
+    <Resource Include="Images\Small Animal\Food\Hedgehog Food.jpeg" />
+    <Resource Include="Images\Small Animal\Food\Mouse and Rat Food.png" />
+    <Resource Include="Images\Small Animal\Food\Rabbit Food.png" />
+    <Resource Include="Images\Small Animal\Small Animals.jfif" />
     <Resource Include="Images\Small Animal\Supplies\Small Mammal Habitat.png" />
-    <Resource Include="Views\Fish.jfif" />
   </ItemGroup>
 
 </Project>
