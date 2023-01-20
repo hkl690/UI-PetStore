@@ -13,6 +13,7 @@
         <TextBox HorizontalAlignment="Left" Margin="550,77,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Image x:Name="Dog" HorizontalAlignment="Left" Margin="67,170,0,0" VerticalAlignment="Top" Source="/Images/Dog/Dog.jfif" Height="73" Width="98"/>
         <Image x:Name="Cat" HorizontalAlignment="Left" Margin="216,154,0,0" VerticalAlignment="Top" Source="/Images/Cat/Cat.png" Height="104" Width="70"/>
+        <Image x:Name="Fish" HorizontalAlignment="Left" Height="88" Margin="352,170,0,0" VerticalAlignment="Top" Width="76" Source="/Views/Fish.jfif"/>
 
     </Grid>
 </Window>
