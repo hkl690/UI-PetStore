@@ -9,13 +9,19 @@
 
   <ItemGroup>
     <None Remove="Images\Cat\Cat.png" />
+    <None Remove="Images\Cat\Food\Cat Treat.jfif" />
     <None Remove="Images\Cat\Food\Purina Cat Food.png" />
     <None Remove="Images\Cat\Food\Sheba Wet Cat Food.png" />
+    <None Remove="Images\Cat\Supplies\Bird Food Crickets.png" />
+    <None Remove="Images\Cat\Supplies\Cat Brush.jfif" />
+    <None Remove="Images\Cat\Supplies\Cat Carrier.png" />
     <None Remove="Images\Cat\Supplies\Cat Collar.png" />
     <None Remove="Images\Cat\Supplies\Cat Flea Med.png" />
     <None Remove="Images\Cat\Supplies\Cat Harness.png" />
     <None Remove="Images\Cat\Supplies\Cat Litter Box.png" />
     <None Remove="Images\Cat\Supplies\Cat Litter.png" />
+    <None Remove="Images\Cat\Supplies\Cat Scratcher.png" />
+    <None Remove="Images\Cat\Supplies\Cat Tree.png" />
     <None Remove="Images\Cat\Supplies\Cat Water Fountain.png" />
     <None Remove="Images\Dog\Dog.jfif" />
     <None Remove="Images\Dog\Food\Dog Treat.png" />
@@ -36,6 +42,7 @@
     <None Remove="Images\Fish\Fish.jfif" />
     <None Remove="Images\Fish\Food\Fish Food.png" />
     <None Remove="Images\Fish\Food\Pond Fish Food.png" />
+    <None Remove="Images\Fish\Supplies\Fish Aquarium Filter.jfif" />
     <None Remove="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif" />
     <None Remove="Images\PetStore Logo.png" />
     <None Remove="Images\Reptiles\Food\Reptile Food Crickets.jpeg" />
@@ -44,6 +51,12 @@
     <None Remove="Images\Reptiles\Food\Reptile Food Omnivore.jfif" />
     <None Remove="Images\Reptiles\Food\Turtle Food.png" />
     <None Remove="Images\Reptiles\Reptile.png" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Bedding.jfif" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Habitat Filter.jfif" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Habitat Sand.jfif" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Habitat Soil.jfif" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Habitat.jfif" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Heat Light.jfif" />
     <None Remove="Images\Small Animal\Food\Bird Food Crickets.png" />
     <None Remove="Images\Small Animal\Food\Bird Food Crickets.webp" />
     <None Remove="Images\Small Animal\Food\Bird Food.png" />
@@ -53,18 +66,33 @@
     <None Remove="Images\Small Animal\Food\Mouse and Rat Food.png" />
     <None Remove="Images\Small Animal\Food\Rabbit Food.png" />
     <None Remove="Images\Small Animal\Small Animals.jfif" />
-    <None Remove="Images\Small Animal\Supplies\Small Mammal Habitat.png" />
+    <None Remove="Images\Small Animal\Supplies\Bed.jfif" />
+    <None Remove="Images\Small Animal\Supplies\Bedding.png" />
+    <None Remove="Images\Small Animal\Supplies\Bird Habitat.png" />
+    <None Remove="Images\Small Animal\Supplies\Heating Pad.jfif" />
+    <None Remove="Images\Small Animal\Supplies\Water Bottle.jfif" />
+    <None Remove="Views\Cat.png" />
+    <None Remove="Views\Dog.jfif" />
+    <None Remove="Views\Fish.jfif" />
+    <None Remove="Views\Reptile.png" />
+    <None Remove="Views\Small Animals.jfif" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\Cat\Cat.png" />
+    <Resource Include="Images\Cat\Food\Cat Treat.jfif" />
     <Resource Include="Images\Cat\Food\Purina Cat Food.png" />
     <Resource Include="Images\Cat\Food\Sheba Wet Cat Food.png" />
+    <Resource Include="Images\Cat\Supplies\Bird Food Crickets.png" />
+    <Resource Include="Images\Cat\Supplies\Cat Brush.jfif" />
+    <Resource Include="Images\Cat\Supplies\Cat Carrier.png" />
     <Resource Include="Images\Cat\Supplies\Cat Collar.png" />
     <Resource Include="Images\Cat\Supplies\Cat Flea Med.png" />
     <Resource Include="Images\Cat\Supplies\Cat Harness.png" />
     <Resource Include="Images\Cat\Supplies\Cat Litter Box.png" />
     <Resource Include="Images\Cat\Supplies\Cat Litter.png" />
+    <Resource Include="Images\Cat\Supplies\Cat Scratcher.png" />
+    <Resource Include="Images\Cat\Supplies\Cat Tree.png" />
     <Resource Include="Images\Cat\Supplies\Cat Water Fountain.png" />
     <Resource Include="Images\Dog\Dog.jfif" />
     <Resource Include="Images\Dog\Food\Dog Treat.png" />
@@ -85,6 +113,7 @@
     <Resource Include="Images\Fish\Fish.jfif" />
     <Resource Include="Images\Fish\Food\Fish Food.png" />
     <Resource Include="Images\Fish\Food\Pond Fish Food.png" />
+    <Resource Include="Images\Fish\Supplies\Fish Aquarium Filter.jfif" />
     <Resource Include="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif" />
     <Resource Include="Images\PetStore Logo.png" />
     <Resource Include="Images\Reptiles\Food\Reptile Food Crickets.jpeg" />
@@ -93,6 +122,12 @@
     <Resource Include="Images\Reptiles\Food\Reptile Food Omnivore.jfif" />
     <Resource Include="Images\Reptiles\Food\Turtle Food.png" />
     <Resource Include="Images\Reptiles\Reptile.png" />
+    <Resource Include="Images\Reptiles\Supplies\Reptile Bedding.jfif" />
+    <Resource Include="Images\Reptiles\Supplies\Reptile Habitat Filter.jfif" />
+    <Resource Include="Images\Reptiles\Supplies\Reptile Habitat Sand.jfif" />
+    <Resource Include="Images\Reptiles\Supplies\Reptile Habitat Soil.jfif" />
+    <Resource Include="Images\Reptiles\Supplies\Reptile Habitat.jfif" />
+    <Resource Include="Images\Reptiles\Supplies\Reptile Heat Light.jfif" />
     <Resource Include="Images\Small Animal\Food\Bird Food Crickets.png" />
     <Resource Include="Images\Small Animal\Food\Bird Food.png" />
     <Resource Include="Images\Small Animal\Food\Guinea Pig Food.png" />
@@ -101,7 +136,16 @@
     <Resource Include="Images\Small Animal\Food\Mouse and Rat Food.png" />
     <Resource Include="Images\Small Animal\Food\Rabbit Food.png" />
     <Resource Include="Images\Small Animal\Small Animals.jfif" />
-    <Resource Include="Images\Small Animal\Supplies\Small Mammal Habitat.png" />
+    <Resource Include="Images\Small Animal\Supplies\Bed.jfif" />
+    <Resource Include="Images\Small Animal\Supplies\Bedding.png" />
+    <Resource Include="Images\Small Animal\Supplies\Bird Habitat.png" />
+    <Resource Include="Images\Small Animal\Supplies\Heating Pad.jfif" />
+    <Resource Include="Images\Small Animal\Supplies\Water Bottle.jfif" />
+    <Resource Include="Views\Cat.png" />
+    <Resource Include="Views\Dog.jfif" />
+    <Resource Include="Views\Fish.jfif" />
+    <Resource Include="Views\Reptile.png" />
+    <Resource Include="Views\Small Animals.jfif" />
   </ItemGroup>
 
 </Project>

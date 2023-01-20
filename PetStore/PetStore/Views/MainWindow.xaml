@@ -10,7 +10,7 @@
         <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="400,44,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="295" Height="18"/>
         <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="10,10,0,0" VerticalAlignment="Top" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" />
         <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="721,42,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="DogButton" HorizontalAlignment="Left" Margin="68,119,0,0" Width="96" IsCancel="True" Click="DogButton_Click" VerticalAlignment="Top" Height="189" ToolTip="">
+        <Button x:Name="DogButton" HorizontalAlignment="Left" Margin="68,119,0,0" Width="96" IsCancel="True" Click="DogButton_Click" VerticalAlignment="Top" Height="189">
             <Button.Background>
                 <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Views/Dog.jfif"/>
             </Button.Background>
@@ -40,6 +40,5 @@
             </Button.Background>
             <Label x:Name="ReptilesLabel" Content="Reptiles" Padding="5,0,5,5" Margin="0,160,0,0" />
         </Button>
-
     </Grid>
 </Window>
