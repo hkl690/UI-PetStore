@@ -8,11 +8,11 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBox HorizontalAlignment="Left" Margin="352,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="10,10,0,0" VerticalAlignment="Top" Width="309" Source="/Pictures/PetStore Logo.png" AutomationProperties.Name="Pet Store" />
+        <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="10,10,0,0" VerticalAlignment="Top" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" />
         <TextBlock HorizontalAlignment="Left" Margin="387,87,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="550,77,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Image x:Name="Dog" HorizontalAlignment="Left" Margin="67,170,0,0" VerticalAlignment="Top" Source="/Pictures/Dog.jfif" Height="73" Width="98"/>
-        <Image x:Name="Cat" HorizontalAlignment="Left" Margin="216,154,0,0" VerticalAlignment="Top" Source="/Pictures/Cat.png" Height="104" Width="70"/>
+        <Image x:Name="Dog" HorizontalAlignment="Left" Margin="67,170,0,0" VerticalAlignment="Top" Source="/Images/Dog/Dog.jfif" Height="73" Width="98"/>
+        <Image x:Name="Cat" HorizontalAlignment="Left" Margin="216,154,0,0" VerticalAlignment="Top" Source="/Images/Cat/Cat.png" Height="104" Width="70"/>
 
     </Grid>
 </Window>

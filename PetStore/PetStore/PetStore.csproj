@@ -8,7 +8,59 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Cat\Cat.png" />
+    <None Remove="Images\Cat\Food\Purina Cat Food.png" />
+    <None Remove="Images\Cat\Food\Sheba Wet Cat Food.png" />
+    <None Remove="Images\Cat\Supplies\Cat Collar.png" />
+    <None Remove="Images\Cat\Supplies\Cat Flea Med.png" />
+    <None Remove="Images\Cat\Supplies\Cat Harness.png" />
+    <None Remove="Images\Cat\Supplies\Cat Litter Box.png" />
+    <None Remove="Images\Cat\Supplies\Cat Litter.png" />
+    <None Remove="Images\Cat\Supplies\Cat Water Fountain.png" />
+    <None Remove="Images\Dog\Dog.jfif" />
+    <None Remove="Images\Dog\Food\Purina Dog Food.png" />
+    <None Remove="Images\Dog\Food\Purina Wet Dog Food.png" />
+    <None Remove="Images\Dog\Supplies\Dog Collar.png" />
+    <None Remove="Images\Dog\Supplies\Dog Flea Med.jpeg" />
+    <None Remove="Images\Dog\Supplies\Dog Harness.jpeg" />
+    <None Remove="Images\Dog\Supplies\Dog House.jpeg" />
+    <None Remove="Images\Dog\Supplies\Dog Water Fountain.png" />
+    <None Remove="Images\Fish\Fish.jfif" />
+    <None Remove="Images\Fish\Food\Fish Food.png" />
+    <None Remove="Images\Fish\Food\Pond Fish Food.png" />
+    <None Remove="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif" />
+    <None Remove="Images\PetStore Logo.png" />
+    <None Remove="Images\Small Animal\Supplies\Small Mammal Habitat.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Cat\Cat.png" />
+    <Resource Include="Images\Cat\Food\Purina Cat Food.png" />
+    <Resource Include="Images\Cat\Food\Sheba Wet Cat Food.png" />
+    <Resource Include="Images\Cat\Supplies\Cat Collar.png" />
+    <Resource Include="Images\Cat\Supplies\Cat Flea Med.png" />
+    <Resource Include="Images\Cat\Supplies\Cat Harness.png" />
+    <Resource Include="Images\Cat\Supplies\Cat Litter Box.png" />
+    <Resource Include="Images\Cat\Supplies\Cat Litter.png" />
+    <Resource Include="Images\Cat\Supplies\Cat Water Fountain.png" />
+    <Resource Include="Images\Dog\Dog.jfif" />
+    <Resource Include="Images\Dog\Food\Purina Dog Food.png" />
+    <Resource Include="Images\Dog\Food\Purina Wet Dog Food.png" />
+    <Resource Include="Images\Dog\Supplies\Dog Collar.png" />
+    <Resource Include="Images\Dog\Supplies\Dog Flea Med.jpeg" />
+    <Resource Include="Images\Dog\Supplies\Dog Harness.jpeg" />
+    <Resource Include="Images\Dog\Supplies\Dog House.jpeg" />
+    <Resource Include="Images\Dog\Supplies\Dog Water Fountain.png" />
+    <Resource Include="Images\Fish\Fish.jfif" />
+    <Resource Include="Images\Fish\Food\Fish Food.png" />
+    <Resource Include="Images\Fish\Food\Pond Fish Food.png" />
+    <Resource Include="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif" />
+    <Resource Include="Images\PetStore Logo.png" />
+    <Resource Include="Images\Small Animal\Supplies\Small Mammal Habitat.png" />
   </ItemGroup>
 
 </Project>
