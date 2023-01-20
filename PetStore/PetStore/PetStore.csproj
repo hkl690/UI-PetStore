@@ -31,10 +31,7 @@
     <None Remove="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif" />
     <None Remove="Images\PetStore Logo.png" />
     <None Remove="Images\Small Animal\Supplies\Small Mammal Habitat.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <None Remove="Views\Fish.jfif" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,6 +58,7 @@
     <Resource Include="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif" />
     <Resource Include="Images\PetStore Logo.png" />
     <Resource Include="Images\Small Animal\Supplies\Small Mammal Habitat.png" />
+    <Resource Include="Views\Fish.jfif" />
   </ItemGroup>
 
 </Project>
