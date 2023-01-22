@@ -13,7 +13,7 @@
                     <ColumnDefinition Width="43*"/>
                     <ColumnDefinition Width="752*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="358,44,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="295" Height="18" Grid.Column="1"/>
+                <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="358,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="18" Grid.Column="1" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler"/>
                 <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="10,10,0,0" VerticalAlignment="Top" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" Grid.ColumnSpan="2" />
                 <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="678,42,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                 <Button x:Name="DogButton" HorizontalAlignment="Left" Margin="26,119,0,0" Width="96" IsCancel="True" Click="DogButton_Click" VerticalAlignment="Top" Height="189" Grid.Column="1">
@@ -51,11 +51,11 @@
 
         </TabItem>
         <TabItem Header="Product Page" TabIndex="1">
-            <StackPanel>
+            <!--StackPanel>
                 <GroupBox Header="Manually Add Items">
                     <DataGrid Name="Product_Grid"/>
                 </GroupBox>
-            </StackPanel>
+            </StackPanel-->
             <!--GroupBox Header="Binding">
                     <DataGrid ItemsSource="{Binding Items}"/>
                 </GroupBox-->
@@ -70,6 +70,27 @@
 
 
                 </GroupBox-->
+            <ListView>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Species" DisplayMemberBinding="{Binding Path=items.Species}"/>
+                        <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Path=items.Price}"/>
+                        <GridViewColumn Header="ItemName" DisplayMemberBinding="{Binding Path=items.ItemName}"/>
+                        <GridViewColumn Header="Category" DisplayMemberBinding="{Binding Path=items.Category}"/>
+                                    <GridViewColumn Header="Picture">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                    <Image Source="{Binding Path=items.Picture}"></Image></DataTemplate></GridViewColumn.CellTemplate></GridViewColumn>
+                </GridView>
+                <!--Label Content="{Binding Species}"/>
+                <Label Content="{Binding Price}"/>
+                <Label Content="{Binding ItemName}"/>
+                <Label Content="{Binding Category}"/>
+                <Image Source="{Binding Image}"/-->
+                </ListView.View>
+            </ListView>
         </TabItem>
+        <Image Height="100" Width="100"/>
+        <ScrollViewer/>
     </TabControl>
 </Window>
