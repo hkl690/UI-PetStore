@@ -83,6 +83,15 @@ namespace PetStore
         }
         private void CatButton_Click(object sender, RoutedEventArgs e)
         {
+            Page_Control.SelectedIndex = 1;
+            SearchResults.Text = string.Empty;
+            foreach (Item item in items)
+            {
+                if (!(item.Species.ToLower().Contains("Cat".ToLower()))) continue;
+                // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
+                SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
+            }
+
         }
 
         private void FishButton_Click(object sender, RoutedEventArgs e)
