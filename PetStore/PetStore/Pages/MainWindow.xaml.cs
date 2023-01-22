@@ -16,6 +16,7 @@ using System.Drawing;
 using System.IO;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.DirectoryServices;
 
 namespace PetStore
 {
@@ -34,10 +35,10 @@ namespace PetStore
 
         public MainWindow()
         {
-            items.Add(new Item("Test1", 0.99, "Tes2", "Test3", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Dog.jfif")));
-            items.Add(new Item("Test1", 0.99, "Test2", "Test3", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Dog.jfif")));
-            items.Add(new Item("Test4", 1.99, "Test", "Test6", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Dog.jfif")));
-            items.Add(new Item("Test4", 1.99, "Test5", "Test6", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Dog.jfif")));
+            items.Add(new Item("Cat", 3.99, "Cat Brush", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Dog.jfif")));
+            items.Add(new Item("Cat", 29.99, "Cat Carrier", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Dog.jfif")));
+            items.Add(new Item("Cat", 4.99, "Cat Collar", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Dog.jfif")));
+            items.Add(new Item("Cat", 8.99, "Cat Flea Medication", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Dog.jfif")));
           
                 InitializeComponent();
             SearchBox.Text = "Search";/*
@@ -49,13 +50,13 @@ namespace PetStore
 
         private void DogButton_Click(object sender, RoutedEventArgs e)
         {
-            Page_Control.SelectedIndex = 1;
+            Page_Control.SelectedIndex = 2;
             foreach (var item in items)
             {
                 if (!item.ItemName.Contains(SearchBox.Text)) continue;
                 System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
             }
-            ;
+            
             /* Product_Grid.Items.Add(new Item("Test1", 0.99, "Test2", "Test3", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory()+"\\Images\\Dog\\Dog.jfif")));
              Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Species", Binding = new Binding("Species") });
              Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Price", Binding = new Binding("Price") });
@@ -113,8 +114,16 @@ namespace PetStore
         {
             if (e.Key == Key.Return)
             {
-                SearchBox.Text = "You entered: " + SearchBox.Text;
+                // SearchBox.Text = "You entered: " + SearchBox.Text;
                 // Next need to go to the search results page...
+                Page_Control.SelectedIndex = 1;
+                SearchResults.Text = string.Empty;
+                foreach (Item item in items)
+                {
+                    if (!(item.Species.ToLower().Contains(SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) || (item.Category.ToLower().Contains(SearchBox.Text.ToLower())))) continue;
+                    // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
+                    SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
+                }
             }
         }
     }

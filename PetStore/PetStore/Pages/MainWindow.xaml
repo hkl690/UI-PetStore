@@ -50,7 +50,10 @@
             </Grid>
 
         </TabItem>
-        <TabItem Header="Product Page" TabIndex="1">
+        <TabItem TabIndex="1">
+            <TextBox Name="SearchResults"></TextBox>
+        </TabItem>
+        <TabItem Header="Product Page" TabIndex="2">
             <!--StackPanel>
                 <GroupBox Header="Manually Add Items">
                     <DataGrid Name="Product_Grid"/>
@@ -71,18 +74,21 @@
 
                 </GroupBox-->
             <ListView>
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Species" DisplayMemberBinding="{Binding Path=items.Species}"/>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Species" DisplayMemberBinding="{Binding Path=items.Species}"/>
                         <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Path=items.Price}"/>
                         <GridViewColumn Header="ItemName" DisplayMemberBinding="{Binding Path=items.ItemName}"/>
                         <GridViewColumn Header="Category" DisplayMemberBinding="{Binding Path=items.Category}"/>
-                                    <GridViewColumn Header="Picture">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                    <Image Source="{Binding Path=items.Picture}"></Image></DataTemplate></GridViewColumn.CellTemplate></GridViewColumn>
-                </GridView>
-                <!--Label Content="{Binding Species}"/>
+                        <GridViewColumn Header="Picture">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Path=items.Picture}"></Image>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                    <!--Label Content="{Binding Species}"/>
                 <Label Content="{Binding Price}"/>
                 <Label Content="{Binding ItemName}"/>
                 <Label Content="{Binding Category}"/>
@@ -90,7 +96,5 @@
                 </ListView.View>
             </ListView>
         </TabItem>
-        <Image Height="100" Width="100"/>
-        <ScrollViewer/>
     </TabControl>
 </Window>
