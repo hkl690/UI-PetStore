@@ -9,58 +9,277 @@
 
   <ItemGroup>
     <None Remove="Images\Cat\Cat.png" />
+    <None Remove="Images\Cat\Food\Cat Treat.jfif" />
     <None Remove="Images\Cat\Food\Purina Cat Food.png" />
     <None Remove="Images\Cat\Food\Sheba Wet Cat Food.png" />
+    <None Remove="Images\Cat\Supplies\Cat Brush.jfif" />
+    <None Remove="Images\Cat\Supplies\Cat Carrier.png" />
     <None Remove="Images\Cat\Supplies\Cat Collar.png" />
     <None Remove="Images\Cat\Supplies\Cat Flea Med.png" />
     <None Remove="Images\Cat\Supplies\Cat Harness.png" />
     <None Remove="Images\Cat\Supplies\Cat Litter Box.png" />
     <None Remove="Images\Cat\Supplies\Cat Litter.png" />
+    <None Remove="Images\Cat\Supplies\Cat Scratcher.png" />
+    <None Remove="Images\Cat\Supplies\Cat Tree.png" />
     <None Remove="Images\Cat\Supplies\Cat Water Fountain.png" />
     <None Remove="Images\Dog\Dog.jfif" />
+    <None Remove="Images\Dog\Food\Dog Treat.png" />
     <None Remove="Images\Dog\Food\Purina Dog Food.png" />
     <None Remove="Images\Dog\Food\Purina Wet Dog Food.png" />
+    <None Remove="Images\Dog\Supplies\Dog Brush.jfif" />
+    <None Remove="Images\Dog\Supplies\Dog Car Seat.png" />
+    <None Remove="Images\Dog\Supplies\Dog Carrier.png" />
     <None Remove="Images\Dog\Supplies\Dog Collar.png" />
     <None Remove="Images\Dog\Supplies\Dog Flea Med.jpeg" />
     <None Remove="Images\Dog\Supplies\Dog Harness.jpeg" />
     <None Remove="Images\Dog\Supplies\Dog House.jpeg" />
+    <None Remove="Images\Dog\Supplies\Dog Leash.png" />
+    <None Remove="Images\Dog\Supplies\Dog Stroller.png" />
+    <None Remove="Images\Dog\Supplies\Dog Training Pad.png" />
     <None Remove="Images\Dog\Supplies\Dog Water Fountain.png" />
+    <None Remove="Images\Dog\Supplies\Pet Stain Remover.png" />
     <None Remove="Images\Fish\Fish.jfif" />
     <None Remove="Images\Fish\Food\Fish Food.png" />
     <None Remove="Images\Fish\Food\Pond Fish Food.png" />
+    <None Remove="Images\Fish\Supplies\Fish Aquarium Filter.jfif" />
     <None Remove="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif" />
     <None Remove="Images\PetStore Logo.png" />
-    <None Remove="Images\Small Animal\Supplies\Small Mammal Habitat.png" />
+    <None Remove="Images\Reptiles\Food\Reptile Food Crickets.jpeg" />
+    <None Remove="Images\Reptiles\Food\Reptile Food Dried Insects.jfif" />
+    <None Remove="Images\Reptiles\Food\Reptile Food Frozen Mice.jfif" />
+    <None Remove="Images\Reptiles\Food\Reptile Food Omnivore.jfif" />
+    <None Remove="Images\Reptiles\Food\Turtle Food.png" />
+    <None Remove="Images\Reptiles\Reptile.png" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Bedding.jfif" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Habitat Filter.jfif" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Habitat Sand.jfif" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Habitat Soil.jfif" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Habitat.jfif" />
+    <None Remove="Images\Reptiles\Supplies\Reptile Heat Light.jfif" />
+    <None Remove="Images\Small Animal\Food\Bird Food Crickets.png" />
+    <None Remove="Images\Small Animal\Food\Bird Food Crickets.webp" />
+    <None Remove="Images\Small Animal\Food\Bird Food.png" />
+    <None Remove="Images\Small Animal\Food\Guinea Pig Food.png" />
+    <None Remove="Images\Small Animal\Food\Hamster and Gerbil Food.png" />
+    <None Remove="Images\Small Animal\Food\Hedgehog Food.jpeg" />
+    <None Remove="Images\Small Animal\Food\Mouse and Rat Food.png" />
+    <None Remove="Images\Small Animal\Food\Rabbit Food.png" />
+    <None Remove="Images\Small Animal\Small Animals.jfif" />
+    <None Remove="Images\Small Animal\Supplies\Bed.jfif" />
+    <None Remove="Images\Small Animal\Supplies\Bedding.png" />
+    <None Remove="Images\Small Animal\Supplies\Bird Habitat.png" />
+    <None Remove="Images\Small Animal\Supplies\Heating Pad.jfif" />
+    <None Remove="Images\Small Animal\Supplies\Water Bottle.jfif" />
+    <None Remove="Pages\Cat.png" />
+    <None Remove="Pages\Dog.jfif" />
+    <None Remove="Pages\Fish.jfif" />
+    <None Remove="Pages\Reptile.png" />
+    <None Remove="Pages\Small Animals.jfif" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\Cat\Cat.png" />
-    <Resource Include="Images\Cat\Food\Purina Cat Food.png" />
-    <Resource Include="Images\Cat\Food\Sheba Wet Cat Food.png" />
-    <Resource Include="Images\Cat\Supplies\Cat Collar.png" />
-    <Resource Include="Images\Cat\Supplies\Cat Flea Med.png" />
-    <Resource Include="Images\Cat\Supplies\Cat Harness.png" />
-    <Resource Include="Images\Cat\Supplies\Cat Litter Box.png" />
-    <Resource Include="Images\Cat\Supplies\Cat Litter.png" />
-    <Resource Include="Images\Cat\Supplies\Cat Water Fountain.png" />
-    <Resource Include="Images\Dog\Dog.jfif" />
-    <Resource Include="Images\Dog\Food\Purina Dog Food.png" />
-    <Resource Include="Images\Dog\Food\Purina Wet Dog Food.png" />
-    <Resource Include="Images\Dog\Supplies\Dog Collar.png" />
-    <Resource Include="Images\Dog\Supplies\Dog Flea Med.jpeg" />
-    <Resource Include="Images\Dog\Supplies\Dog Harness.jpeg" />
-    <Resource Include="Images\Dog\Supplies\Dog House.jpeg" />
-    <Resource Include="Images\Dog\Supplies\Dog Water Fountain.png" />
-    <Resource Include="Images\Fish\Fish.jfif" />
-    <Resource Include="Images\Fish\Food\Fish Food.png" />
-    <Resource Include="Images\Fish\Food\Pond Fish Food.png" />
-    <Resource Include="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif" />
-    <Resource Include="Images\PetStore Logo.png" />
-    <Resource Include="Images\Small Animal\Supplies\Small Mammal Habitat.png" />
+    <Content Include="Images\Cat\Cat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Food\Cat Treat.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Food\Purina Cat Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Food\Sheba Wet Cat Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Supplies\Cat Brush.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Supplies\Cat Carrier.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Supplies\Cat Collar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Supplies\Cat Flea Med.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Supplies\Cat Harness.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Supplies\Cat Litter Box.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Supplies\Cat Litter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Supplies\Cat Scratcher.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Supplies\Cat Tree.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cat\Supplies\Cat Water Fountain.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Dog.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Food\Dog Treat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Food\Purina Dog Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Food\Purina Wet Dog Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog Brush.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog Car Seat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog Carrier.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog Collar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog Flea Med.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog Harness.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog House.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog Leash.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog Stroller.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog Training Pad.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Dog Water Fountain.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dog\Supplies\Pet Stain Remover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Fish\Fish.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Fish\Food\Fish Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Fish\Food\Pond Fish Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Fish\Supplies\Fish Aquarium Filter.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Fish\Supplies\Fish Aquarium Starter Kit.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\PetStore Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Food\Reptile Food Crickets.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Food\Reptile Food Dried Insects.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Food\Reptile Food Frozen Mice.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Food\Reptile Food Omnivore.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Food\Turtle Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Reptile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Supplies\Reptile Bedding.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Supplies\Reptile Habitat Filter.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Supplies\Reptile Habitat Sand.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Supplies\Reptile Habitat Soil.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Supplies\Reptile Habitat.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Reptiles\Supplies\Reptile Heat Light.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Food\Bird Food Crickets.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Food\Bird Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Food\Guinea Pig Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Food\Hamster and Gerbil Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Food\Hedgehog Food.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Food\Mouse and Rat Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Food\Rabbit Food.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Small Animals.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Supplies\Bed.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Supplies\Bedding.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Supplies\Bird Habitat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Supplies\Heating Pad.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Small Animal\Supplies\Water Bottle.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pages\Cat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pages\Dog.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pages\Fish.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pages\Reptile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pages\Small Animals.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
