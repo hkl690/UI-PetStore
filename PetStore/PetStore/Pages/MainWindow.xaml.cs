@@ -260,8 +260,40 @@ namespace PetStore
         {
 
         }
+
+        /// <summary>
+        /// The View All Items button will display all of the store's items.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ViewAll_Click(object sender, RoutedEventArgs e)
+        {
+            Page_Control.SelectedIndex = 1;
+            SearchResults.Text = string.Empty;
+            foreach (Item item in items)
+            {
+                SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
+            }
+        }
+        /// <summary>
+        /// When the Pet Store logo is clicked on by the mouse, it goes to the home page.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PetStoreLogo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Page_Control.SelectedIndex = 0;
+        }
+
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }
-}
+    }
+
 /* Using this reference website:
  https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern
 */
