@@ -13,7 +13,7 @@
                     <ColumnDefinition Width="43*"/>
                     <ColumnDefinition Width="752*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="358,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="18" Grid.Column="1" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler"/>
+                <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="358,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="18" Grid.Column="1" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler" AutomationProperties.HelpText="Type your search here:" TextChanged="SearchBox_TextChanged"/>
                 <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="10,10,0,0" VerticalAlignment="Top" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" Grid.ColumnSpan="2" />
                 <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="678,42,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                 <Button x:Name="DogButton" HorizontalAlignment="Left" Margin="16,119,0,0" Width="96" IsCancel="True" Click="DogButton_Click" VerticalAlignment="Top" Height="189" Grid.Column="1">
@@ -53,7 +53,9 @@
         <TabItem TabIndex="1" IsTabStop="False">
             <TextBox Name="SearchResults"></TextBox>
         </TabItem>
-        <TabItem Header="Product Page" TabIndex="2" IsTabStop="False">
+        
+        <TabItem Header="Product Page" TabIndex="2" IsTabStop="False">            
+            
             <!--StackPanel>
                 <GroupBox Header="Manually Add Items">
                     <DataGrid Name="Product_Grid"/>
@@ -70,10 +72,9 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-
-
                 </GroupBox-->
-            <ListView>
+            
+            <ListView Margin="0,60,0,0" SelectionChanged="ListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Species" DisplayMemberBinding="{Binding Path=items.Species}"/>
