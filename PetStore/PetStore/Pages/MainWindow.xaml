@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Pet Store" Height="418" Width="800">
     <TabControl x:Name="Page_Control" TabStripPlacement="Bottom" Margin="0,0,0,-47">
-        <TabItem Header="Home Page" TabIndex="0">
+        <TabItem Header="Home Page" TabIndex="0" IsTabStop="False">
             <Grid Margin="0,0,0,6">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="43*"/>
