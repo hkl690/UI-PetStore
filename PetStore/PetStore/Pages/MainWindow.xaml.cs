@@ -255,6 +255,11 @@ namespace PetStore
         {
 
         }
+
+        private void SearchResults_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }
 /* Using this reference website:
