@@ -16,7 +16,7 @@
                 <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="358,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="18" Grid.Column="1" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler"/>
                 <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="10,10,0,0" VerticalAlignment="Top" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" Grid.ColumnSpan="2" />
                 <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="678,42,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                <Button x:Name="DogButton" HorizontalAlignment="Left" Margin="26,119,0,0" Width="96" IsCancel="True" Click="DogButton_Click" VerticalAlignment="Top" Height="189" Grid.Column="1">
+                <Button x:Name="DogButton" HorizontalAlignment="Left" Margin="16,119,0,0" Width="96" IsCancel="True" Click="DogButton_Click" VerticalAlignment="Top" Height="189" Grid.Column="1">
                     <Button.Background>
                         <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Dog.jfif"/>
                     </Button.Background>
