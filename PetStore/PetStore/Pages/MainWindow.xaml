@@ -62,7 +62,8 @@
 
                 </TabItem>
                 <TabItem Header="SearchResults" TabIndex="1" IsTabStop="False">
-                    <TextBox Name="SearchResults" TextChanged="SearchResults_TextChanged"></TextBox>
+                    <!--TextBox Name="SearchResults" TextChanged="SearchResults_TextChanged"></TextBox-->
+                    <DataGrid Name="ResultGrid" IsTabStop="True" IsTextSearchEnabled="True" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" Margin="0,0,0,120" IsReadOnly="True"/>
                 </TabItem>
 
                 <TabItem Header="Product Page" TabIndex="2" IsTabStop="False">
