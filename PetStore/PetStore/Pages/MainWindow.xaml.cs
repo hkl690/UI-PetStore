@@ -100,6 +100,7 @@ namespace PetStore
 
         /// <summary>
         /// Clicking on the Dog image will bring up all the Dog items
+        /// and clear any earlier results
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -107,7 +108,7 @@ namespace PetStore
         {
             Page_Control.SelectedIndex = 1;
             ResultGrid.ItemsSource = null;
-
+            ItemResults.Clear();
 
             //SearchResults.Text = string.Empty;
             foreach (Item item in items)
@@ -149,6 +150,7 @@ namespace PetStore
 
         /// <summary>
         /// Clicking on the Cat image will bring up all of the Cat items
+        /// and clear any earlier results
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -156,6 +158,7 @@ namespace PetStore
         {
             Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
+            ItemResults.Clear();
             foreach (Item item in items)
             {
                 if (!(item.Species.ToLower().Contains("Cat".ToLower()))) continue;
@@ -171,6 +174,7 @@ namespace PetStore
 
         /// <summary>
         /// Clicking on the Fish image will bring up all the Fish items
+        /// and clear any earlier results
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -178,6 +182,7 @@ namespace PetStore
         {
             Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
+            ItemResults.Clear();
             foreach (Item item in items)
             {
                 if (!(item.Species.ToLower().Contains("Fish".ToLower()))) continue;
@@ -191,6 +196,7 @@ namespace PetStore
 
         /// <summary>
         /// Clicking on the Small Animals image will bring up all the Small Animals items
+        /// and clear any earlier results
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -198,6 +204,7 @@ namespace PetStore
         {
             Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
+            ItemResults.Clear();
             foreach (Item item in items)
             {
                 if (!(item.Species.ToLower().Contains("Small Animal".ToLower()))) continue;
@@ -207,12 +214,18 @@ namespace PetStore
 
             ResultGrid.ItemsSource = ItemResults;
         }
-    
 
+        /// <summary>
+        /// Clicking on the Reptile image will bring up all the Reptile items
+        /// and clear any earlier results
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ReptileButton_Click(object sender, RoutedEventArgs e)
         {
             Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
+            ItemResults.Clear();
             foreach (Item item in items)
             {
                 if (!(item.Species.ToLower().Contains("Reptile".ToLower()))) continue;
@@ -248,6 +261,7 @@ namespace PetStore
         /// This method will use the "Enter" key after entering words in the
         /// Search box to retrieve the search results. 
         /// All characters will be compared in lowercase.
+        /// Earlier results will be cleared.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -259,6 +273,7 @@ namespace PetStore
                 // Next need to go to the search results page...
                 Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
+                ItemResults.Clear();
                 foreach (Item item in items)
                 {
                     if (!((item.Species.ToLower().StartsWith(SearchBox.Text.ToLower())) || (item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower())) || (item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower())) || (item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower())) || (item.ItemName.ToLower().Contains(SearchBox.Text.ToLower() + " ")) || (item.Category.ToLower().Contains(SearchBox.Text.ToLower())))) continue;
@@ -289,6 +304,7 @@ namespace PetStore
 
         /// <summary>
         /// The View All Items button will display all of the store's items.
+        /// Earlier results will be cleared.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -296,6 +312,7 @@ namespace PetStore
         {
             Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
+            ItemResults.Clear();
             foreach (Item item in items)
             {
                 //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
@@ -306,7 +323,7 @@ namespace PetStore
         
     }
         /// <summary>
-        /// When the Pet Store logo is clicked on by the mouse, it goes to the home page.
+        /// When the Pet Store logo is clicked on by the mouse, it goes to the Home page.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
