@@ -11,13 +11,16 @@
 
         public System.Drawing.Image Picture { get; set; }
 
-        public Item(string species, double price, string itemName, string category, System.Drawing.Image picture)
+        public string Description { get; set; }
+
+        public Item(string species, double price, string itemName, string category, System.Drawing.Image picture, string description)
         {
             Species = species;
             Price = price;
             ItemName = itemName;
             Category = category;
             Picture = picture;
+            Description = description;
         }
 
     }
