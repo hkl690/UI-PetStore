@@ -15,7 +15,7 @@
             </Grid>
             <Separator Height="5"/>
 
-            <TabControl x:Name="Page_Control" TabStripPlacement="Bottom" Margin="0,0,0,-47" Height="500">
+            <TabControl x:Name="Page_Control" TabStripPlacement="Bottom" Margin="0,0,0,-47" Height="3000" Focusable="False">
                 <TabItem Header="Home Page" TabIndex="0" IsTabStop="False">
                     <Grid Margin="0,0,0,-168" HorizontalAlignment="Left" Width="792">
                         <Grid.RowDefinitions>
@@ -28,7 +28,7 @@
                         </Grid.ColumnDefinitions>
                         <Button x:Name="DogButton" HorizontalAlignment="Left" Margin="1,0,0,0" Width="96" IsCancel="True" Click="DogButton_Click" VerticalAlignment="Top" Height="189" Grid.Column="1">
                             <Button.Background>
-                                <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Dog.jfif"/>
+                                <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Dog.png"/>
                             </Button.Background>
                             <Label x:Name="DogLabel" Content="Dog" Padding="5,0,5,5" Margin="0,160,0,0" />
                         </Button>
@@ -93,12 +93,9 @@
                                 <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Path=items.Price}"/>
                                 <GridViewColumn Header="ItemName" DisplayMemberBinding="{Binding Path=items.ItemName}"/>
                                 <GridViewColumn Header="Category" DisplayMemberBinding="{Binding Path=items.Category}"/>
-                                <GridViewColumn Header="Picture">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Image Source="{Binding Path=items.Picture}"></Image>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
+                                <GridViewColumn Header="Picture" DisplayMemberBinding="{Binding Path=items.Picture}"/>
+                                <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Path=items.Description}">
+                               
                                 </GridViewColumn>
                             </GridView>
                             <!--Label Content="{Binding Species}"/>
