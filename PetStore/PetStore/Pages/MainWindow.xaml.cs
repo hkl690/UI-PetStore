@@ -16,6 +16,7 @@ namespace PetStore
         public ObservableCollection<Item> Items
         {
             get { return items; }
+            set { items = value; }
         }
 
         public ObservableCollection<Item> ItemResults = new ObservableCollection<Item>();
@@ -26,6 +27,7 @@ namespace PetStore
         public MainWindow()
         {
             // Dog items
+            // Images aren't working
             // Descriptions are empty strings for now, still need to write those
             items.Add(new Item("Dog", 6.99, "Dog Treat", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Food\\Dog Treat.png"), ""));
             items.Add(new Item("Dog", 14.99, "Dry Dog Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Food\\Dry Dog Food.png"), ""));
@@ -44,7 +46,8 @@ namespace PetStore
             items.Add(new Item("Dog", 14.99, "Pet Stain Remover", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Pet Stain Remover.png"), ""));
 
             // Cat items
-            // Still need to write out Descriptions, they are empty strings for now
+            // Images aren't working
+            // Descriptions are empty strings for now, still need to write those
             items.Add(new Item("Cat", 3.99, "Cat Treat", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Food\\Cat Treat.png"), ""));
             items.Add(new Item("Cat", 9.99, "Cat Dry Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Food\\Dry Cat Food.png"), ""));
             items.Add(new Item("Cat", 14.99, "Cat Wet Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Food\\Wet Cat Food.png"), ""));
@@ -60,6 +63,8 @@ namespace PetStore
             items.Add(new Item("Cat", 14.99, "Cat Water Fountain", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Water Fountain.png"), ""));
 
             // Small Animal items
+            // Images aren't working
+            // Descriptions are empty strings for now, still need to write those
             items.Add(new Item("Small Animal", 5.99, "Bird Food Crickets", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Bird Food Crickets.png"), ""));
             items.Add(new Item("Small Animal", 4.99, "Bird Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Bird Food.png"), ""));
             items.Add(new Item("Small Animal", 5.99, "Guinea Pig Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Guinea Pig Food.png"), ""));
@@ -74,12 +79,16 @@ namespace PetStore
             items.Add(new Item("Small Animal", 6.99, "Water Bottle", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Water Bottle.png"), ""));
 
             // Fish items
+            // Images aren't working
+            // Descriptions are empty strings for now, still need to write those
             items.Add(new Item("Fish", 7.99, "Fish Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Food\\Fish Food.png"), ""));
             items.Add(new Item("Fish", 9.99, "Pond Fish Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Food\\Pond Fish Food.png"), ""));
             items.Add(new Item("Fish", 9.99, "Fish Aquarium Filter", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Supplies\\Fish Aquarium Filter.png"), ""));
             items.Add(new Item("Fish", 9.99, "Fish Aquarium Starter Kit", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Supplies\\Fish Aquarium Starter Kit.png"), ""));
 
             // Reptile items
+            // Images aren't working
+            // Descriptions are empty strings for now, still need to write those
             items.Add(new Item("Reptile", 9.99, "Reptile Food Crickets", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Crickets.png"), ""));
             items.Add(new Item("Reptile", 8.99, "Reptile Food Dried Insects", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Dried Insects.png"), ""));
             items.Add(new Item("Reptile", 19.99, "Reptile Food Frozen Mice", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Frozen Mice.png"), ""));
@@ -91,6 +100,7 @@ namespace PetStore
             items.Add(new Item("Reptile", 9.99, "Reptile Habitat Soil", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Habitat Soil.png"), ""));
             items.Add(new Item("Reptile", 99.99, "Reptile Habitat", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Habitat.png"), ""));
             items.Add(new Item("Reptile", 8.99, "Reptile Heat Light", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Heat Light.png"), ""));
+
 
             InitializeComponent();
             SearchBox.Text = "Search";/*

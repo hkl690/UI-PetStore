@@ -30,7 +30,7 @@
     <None Remove="Images\Cat\Supplies\Cat Scratcher.png" />
     <None Remove="Images\Cat\Supplies\Cat Tree.png" />
     <None Remove="Images\Cat\Supplies\Cat Water Fountain.png" />
-    <None Remove="Images\Dog\Dog.jfif" />
+    <None Remove="Images\Dog\Dog.png" />
     <None Remove="Images\Dog\Food\Dog Treat.jpeg" />
     <None Remove="Images\Dog\Food\Dog Treat.jpg" />
     <None Remove="Images\Dog\Food\Dog Treat.png" />
@@ -83,7 +83,7 @@
     <None Remove="Images\Small Animal\Supplies\Heating Pad.png" />
     <None Remove="Images\Small Animal\Supplies\Water Bottle.png" />
     <None Remove="Pages\Cat.png" />
-    <None Remove="Pages\Dog.jfif" />
+    <None Remove="Pages\Dog.png" />
     <None Remove="Pages\Fish.jfif" />
     <None Remove="Pages\Reptile.png" />
     <None Remove="Pages\Small Animals.jfif" />
@@ -136,7 +136,7 @@
     <Content Include="Images\Cat\Supplies\Cat Water Fountain.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Dog\Dog.jfif">
+    <Content Include="Images\Dog\Dog.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Dog\Food\Dry Dog Food.png">
@@ -277,7 +277,7 @@
     <Content Include="Pages\Cat.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Pages\Dog.jfif">
+    <Content Include="Pages\Dog.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Pages\Fish.jfif">
