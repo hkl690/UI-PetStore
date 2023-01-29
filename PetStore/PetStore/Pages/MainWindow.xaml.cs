@@ -349,7 +349,12 @@ namespace PetStore
 
         }
 
-        
+        private void SelectButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Page_Control.SelectedIndex = 2;
+        }
+
+
     }
     }
 
