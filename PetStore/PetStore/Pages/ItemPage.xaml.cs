@@ -13,15 +13,19 @@ namespace PetStore.Pages
         /// </summary>
         /// <param name="homePage"></param>
         /// <param name="searchResultsPage"></param>
-        public ItemPage(HomePage homePage, SearchResultsPage searchResultsPage)
+        public ItemPage(HomePage homePage, SearchResultsPage searchResultsPage, SignInPage signInPage)
         {
             InitializeComponent();
             home = homePage;
             search = searchResultsPage;
+            this.signInPage = signInPage;
         }
+
         private HomePage home;
 
         private SearchResultsPage search;
+
+        private SignInPage signInPage;
 
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.

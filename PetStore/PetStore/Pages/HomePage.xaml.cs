@@ -16,6 +16,7 @@ namespace PetStore
         public ObservableCollection<Item> ItemResults = new();
         private readonly ItemPage itemPage;
         private readonly SearchResultsPage searchResultsPage;
+        private readonly SignInPage signInPage;
 
         /// <summary>
         /// Adding all items to the Item Collection and then initializing
@@ -100,7 +101,8 @@ namespace PetStore
 
             InitializeComponent();
             searchResultsPage = new SearchResultsPage(this);
-            itemPage = new ItemPage(this, searchResultsPage);
+            signInPage = new SignInPage();
+            itemPage = new ItemPage(this, searchResultsPage, signInPage);
             searchResultsPage.InitializeItemPage(itemPage);
             itemPage.Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Hidden;
