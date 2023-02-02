@@ -28,7 +28,7 @@ namespace PetStore.Pages
 
         private SearchResultsPage search;
 
-        private SignInPage signInPage;
+        private SignInPage signIn;
 
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
@@ -118,7 +118,7 @@ namespace PetStore.Pages
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
             home.Visibility = Visibility.Hidden;
-            Visibility = Visibility.Visible;
+            signIn.Visibility = Visibility.Visible;
         }
     }
 }

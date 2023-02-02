@@ -27,6 +27,8 @@ namespace PetStore.Pages
 
         private ItemPage itemProduct;
 
+        private SignInPage signIn;
+
         /// <summary>
         /// Press the Select button from the Search Results page to select a product
         /// </summary>
@@ -60,7 +62,7 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-
+            signIn.Visibility = Visibility.Visible;
         }  
         
         /// <summary>

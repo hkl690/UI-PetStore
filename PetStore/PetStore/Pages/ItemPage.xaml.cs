@@ -18,14 +18,14 @@ namespace PetStore.Pages
             InitializeComponent();
             home = homePage;
             search = searchResultsPage;
-            this.signInPage = signInPage;
+            this.signIn = signInPage;
         }
 
         private HomePage home;
 
         private SearchResultsPage search;
 
-        private SignInPage signInPage;
+        private SignInPage signIn;
 
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
@@ -114,7 +114,7 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-
+            signIn.Visibility = Visibility.Visible;
         }
     }
 }
