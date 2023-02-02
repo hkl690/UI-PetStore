@@ -4,16 +4,16 @@ using System.Windows.Input;
 namespace PetStore.Pages
 {
     /// <summary>
-    /// Interaction logic for ProductPage.xaml
+    /// Interaction logic for ItemPage.xaml
     /// </summary>
-    public partial class ProductPage : Window
+    public partial class ItemPage : Window
     {
         /// <summary>
-        /// Initialize and display the Product that was
+        /// Initialize and display the Item that was
         /// </summary>
         /// <param name="homePage"></param>
         /// <param name="searchResultsPage"></param>
-        public ProductPage(HomePage homePage, SearchResultsPage searchResultsPage)
+        public ItemPage(HomePage homePage, SearchResultsPage searchResultsPage)
         {
             InitializeComponent();
             home = homePage;
@@ -112,10 +112,5 @@ namespace PetStore.Pages
         {
 
         }
-
-
     }
-
-
-
 }

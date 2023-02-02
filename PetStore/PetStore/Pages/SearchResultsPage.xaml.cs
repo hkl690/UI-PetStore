@@ -18,13 +18,14 @@ namespace PetStore.Pages
             home = homePage;
         }
 
-        public void InitializeProductPage(ProductPage productPage)
+        public void InitializeItemPage(ItemPage itemPage)
         {
-            product = productPage;
+            itemProduct = itemPage;
         }
+
         private readonly HomePage home;
 
-        private ProductPage product;
+        private ItemPage itemProduct;
 
         /// <summary>
         /// Press the Select button from the Search Results page to select a product
@@ -34,7 +35,7 @@ namespace PetStore.Pages
         private void SelectButtonClicked(object sender, RoutedEventArgs e)
         {
             //Page_Control.SelectedIndex = 2;
-            product.Visibility = Visibility.Visible;
+            itemProduct.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Hidden;
 
         }
@@ -87,6 +88,7 @@ namespace PetStore.Pages
                 SearchBox.Text = "Search";
             }
         }
+
         /// <summary>
         /// This method will use the "Enter" key after entering words in the
         /// Search box to retrieve the search results. 

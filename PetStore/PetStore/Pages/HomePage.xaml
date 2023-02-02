@@ -5,63 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetStore"
         mc:Ignorable="d"
-        Title="Pet Store" Height="486" Width="800">
+        Title="Pet Store Home Page" Height="600" Width="800">
     <Border Visibility="Visible" BorderThickness="2" CornerRadius="8" Margin="0,0,0,0">
         <StackPanel Margin="3">
-            <Grid x:Name="grid">
+            <!-- this HeaderGrid displays the header-->
+            <Grid x:Name="HeaderGrid">
                 <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="364,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="18" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler" AutomationProperties.HelpText="Type your search here:" TextChanged="SearchBox_TextChanged"/>
                 <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="26,0,0,0" VerticalAlignment="Center" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" MouseLeftButtonDown="PetStoreLogo_MouseLeftButtonDown"/>
                 <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White"/>
             </Grid>
+            
             <Separator Height="5"/>
 
-                   <Grid Margin="0,0,0,-168" HorizontalAlignment="Left" Width="792">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="12*"/>
-                            <RowDefinition Height="5*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="43*"/>
-                            <ColumnDefinition Width="752*"/>
-                        </Grid.ColumnDefinitions>
-                        <Button x:Name="DogButton" HorizontalAlignment="Left" Margin="1,0,0,0" Width="96" IsCancel="True" Click="DogButton_Click" VerticalAlignment="Top" Height="189" Grid.Column="1">
-                            <Button.Background>
-                                <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Dog.png"/>
-                            </Button.Background>
-                            <Label x:Name="DogLabel" Content="Dog" Padding="5,0,5,5" Margin="0,160,0,0" />
-                        </Button>
-                        <Button x:Name="CatButton" HorizontalAlignment="Left" Margin="149,0,0,0" Width="97" IsCancel="True" Click="CatButton_Click" VerticalAlignment="Top" Height="189" Grid.Column="1">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/Pages/Cat.png" Stretch="Uniform" TileMode="Tile"/>
-                            </Button.Background>
-                            <Label x:Name="CatLabel" Content="Cat"  HorizontalAlignment="Left" Margin="0,160,0,0" VerticalAlignment="Top"/>
-                        </Button>
-                        <Button x:Name="SmallAnimalButton" HorizontalAlignment="Left" Width="96" IsCancel="True" Click="SmallAnimalButton_Click" VerticalAlignment="Top" Height="189" ToolTip="" Grid.Column="1" Margin="299,0,0,0">
-                            <Button.Background>
-                                <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Small Animals.jfif"/>
-                            </Button.Background>
-                            <Label x:Name="SmallAnimalsLabel" Content="Small Animals" Padding="5,0,5,5" Margin="0,160,0,0" />
-                        </Button>
-                        <Button x:Name="FishButton" HorizontalAlignment="Left" Margin="449,0,0,0" Width="96" IsCancel="True" Click="FishButton_Click" VerticalAlignment="Top" Height="189" ToolTip="" Grid.Column="1">
-                            <Button.Background>
-                                <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Fish.jfif"/>
-                            </Button.Background>
-                            <Label x:Name="FishLabel" Content="Fish" Padding="5,0,5,5" Margin="0,160,0,0" />
-                        </Button>
-                        <Button x:Name="ReptileButton" HorizontalAlignment="Left" Margin="601,0,0,0" Width="96" IsCancel="True" Click="ReptileButton_Click" VerticalAlignment="Top" Height="189" ToolTip="" Grid.Column="1">
-                            <Button.Background>
-                                <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Reptile.png"/>
-                            </Button.Background>
-                            <Label x:Name="ReptilesLabel" Content="Reptiles" Padding="5,0,5,5" Margin="0,160,0,0" />
-                        </Button>
-                        <Button x:Name="ViewAll" Grid.Column="1"  Content="View All Items" Margin="10,250,0,0" Height="21" Width="687" Click="ViewAll_Click" Background="#FF1F95EF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <!-- this grid displays the buttons-->
+            <Grid Margin="0,0,0,-168" HorizontalAlignment="Left" Width="792">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="12*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="43*"/>
+                    <ColumnDefinition Width="246*"/>
+                    <ColumnDefinition Width="503*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="DogButton" HorizontalAlignment="Left" Margin="1,0,0,0" Width="96" IsCancel="True" Click="DogButton_Click" VerticalAlignment="Top" Height="189" Grid.Column="1">
+                    <Button.Background>
+                        <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Dog.png"/>
+                    </Button.Background>
+                    <Label x:Name="DogLabel" Content="Dog" Padding="5,0,5,5" Margin="0,160,0,0" />
+                </Button>
+                <Button x:Name="CatButton" HorizontalAlignment="Left" Margin="149,0,0,0" Width="97" IsCancel="True" Click="CatButton_Click" VerticalAlignment="Top" Height="189" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Pages/Cat.png" Stretch="Uniform" TileMode="Tile"/>
+                    </Button.Background>
+                    <Label x:Name="CatLabel" Content="Cat"  HorizontalAlignment="Left" Margin="0,160,0,0" VerticalAlignment="Top"/>
+                </Button>
+                <Button x:Name="SmallAnimalButton" HorizontalAlignment="Left" Width="96" IsCancel="True" Click="SmallAnimalButton_Click" VerticalAlignment="Top" Height="189" ToolTip="" Grid.Column="2" Margin="53,0,0,0">
+                    <Button.Background>
+                        <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Small Animals.jfif"/>
+                    </Button.Background>
+                    <Label x:Name="SmallAnimalsLabel" Content="Small Animals" Padding="5,0,5,5" Margin="0,160,0,0" />
+                </Button>
+                <Button x:Name="FishButton" HorizontalAlignment="Center" Width="96" IsCancel="True" Click="FishButton_Click" VerticalAlignment="Top" Height="189" ToolTip="" Grid.Column="2">
+                    <Button.Background>
+                        <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Fish.jfif"/>
+                    </Button.Background>
+                    <Label x:Name="FishLabel" Content="Fish" Padding="5,0,5,5" Margin="0,160,0,0" />
+                </Button>
+                <Button x:Name="ReptileButton" HorizontalAlignment="Left" Margin="355,0,0,0" Width="96" IsCancel="True" Click="ReptileButton_Click" VerticalAlignment="Top" Height="189" ToolTip="" Grid.Column="2">
+                    <Button.Background>
+                        <ImageBrush AlignmentY="Center" Stretch="Uniform" TileMode="Tile" ImageSource="/Pages/Reptile.png"/>
+                    </Button.Background>
+                    <Label x:Name="ReptilesLabel" Content="Reptiles" Padding="5,0,5,5" Margin="0,160,0,0" />
+                </Button>
+                <Button x:Name="ViewAll" Grid.Column="1"  Content="View All Items" Margin="10,250,0,0" Height="21" Width="687" Click="ViewAll_Click" Background="#FF1F95EF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            </Grid>
 
-                    </Grid>
-
-              
-          
-
-               
         </StackPanel>
     </Border>
 

@@ -14,7 +14,7 @@ namespace PetStore
         public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
 
         public ObservableCollection<Item> ItemResults = new();
-        private readonly ProductPage productPage;
+        private readonly ItemPage itemPage;
         private readonly SearchResultsPage searchResultsPage;
 
         /// <summary>
@@ -100,70 +100,35 @@ namespace PetStore
 
             InitializeComponent();
             searchResultsPage = new SearchResultsPage(this);
-            productPage = new ProductPage(this, searchResultsPage);
-            searchResultsPage.InitializeProductPage(productPage);
-            productPage.Visibility = Visibility.Hidden;
+            itemPage = new ItemPage(this, searchResultsPage);
+            searchResultsPage.InitializeItemPage(itemPage);
+            itemPage.Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
-            SearchBox.Text = "Search";/*
-             DataContext = new List<Item>
-             {
-             //    new Item("Test1", 0.98, "Test2", "Test3")
-             };*/
+            SearchBox.Text = "Search";
         }
 
         /// <summary>
-        /// Clicking on the Dog image will bring up all the Dog items
+        /// Clicking on the Dog image will bring up all of the Dog items
         /// and clear any earlier results
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void DogButton_Click(object sender, RoutedEventArgs e)
         {
-            // Page_Control.SelectedIndex = 1;
-            searchResultsPage.ResultGrid.ItemsSource = null;
             ItemResults.Clear();
             searchResultsPage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
-            //SearchResults.Text = string.Empty;
+
             foreach (Item item in Items)
             {
                 if (!item.Species.ToLower().Contains("Dog".ToLower()))
                 {
                     continue;
                 }
-                // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
-                //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
             }
-
             searchResultsPage.ResultGrid.ItemsSource = ItemResults;
-
-            /* Product_Grid.Items.Add(new Item("Test1", 0.99, "Test2", "Test3", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory()+"\\Images\\Dog\\Dog.jfif")));
-             Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Species", Binding = new Binding("Species") });
-             Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Price", Binding = new Binding("Price") });
-             Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Item Name", Binding = new Binding("ItemName") });
-             Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Category", Binding = new Binding("Category") });
-            */ /*
-                     Page_Control.SelectedIndex = 1;
-
-                     Product_Grid.Items.Add(new Item("Test1", 0.99, "Test2", "Test3", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory()+"\\Images\\Dog\\Dog.jfif")));
-                     Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Species", Binding = new Binding("Species") });
-                     Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Price", Binding = new Binding("Price") });
-                     Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Item Name", Binding = new Binding("ItemName") });
-                     Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Category", Binding = new Binding("Category") });
-                     Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Picture", Binding = new Binding("Picture") });
-
-                     /*
-                     DataGridTextColumn textColumn1 = new DataGridTextColumn();
-                     textColumn1.Header = "Picture";
-                     textColumn1.Binding = new Binding("Picture");
-                     DataTemplate.Add(textColumn1);  */
-
-            // ?????   List<Item> Items = new List<Item>();
-
-
-            //ItemsSource.Columns.Add(new Item("Test1", 0.99, "Test2", "Test3", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Dog.jfif"))); */
         }
 
         /// <summary>
@@ -173,9 +138,7 @@ namespace PetStore
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CatButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Page_Control.SelectedIndex = 1;
-            // SearchResults.Text = string.Empty;
+        {            
             ItemResults.Clear();
             searchResultsPage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
@@ -186,14 +149,9 @@ namespace PetStore
                 {
                     continue;
                 }
-                // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
-                // SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
             }
-
             searchResultsPage.ResultGrid.ItemsSource = ItemResults;
-
-
         }
 
         /// <summary>
@@ -203,9 +161,7 @@ namespace PetStore
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void FishButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Page_Control.SelectedIndex = 1;
-            //SearchResults.Text = string.Empty;
+        {            
             ItemResults.Clear();
             searchResultsPage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
@@ -216,12 +172,9 @@ namespace PetStore
                 {
                     continue;
                 }
-                //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
             }
-
             searchResultsPage.ResultGrid.ItemsSource = ItemResults;
-
         }
 
         /// <summary>
@@ -247,7 +200,6 @@ namespace PetStore
                 //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
             }
-
             searchResultsPage.ResultGrid.ItemsSource = ItemResults;
         }
 
@@ -274,9 +226,7 @@ namespace PetStore
                 //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
             }
-
             searchResultsPage.ResultGrid.ItemsSource = ItemResults;
-
         }
 
         /// <summary>
@@ -335,9 +285,7 @@ namespace PetStore
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                     ItemResults.Add(item);
                 }
-
                 searchResultsPage.ResultGrid.ItemsSource = ItemResults;
-
             }
         }
 
@@ -375,10 +323,9 @@ namespace PetStore
                 //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
             }
-
             searchResultsPage.ResultGrid.ItemsSource = ItemResults;
-
         }
+
         /// <summary>
         /// When the Pet Store logo is clicked on by the mouse, it goes to the Home page.
         /// </summary>
@@ -388,8 +335,8 @@ namespace PetStore
         {
             // Page_Control.SelectedIndex = 0;
 
-            searchResultsPage.Visibility = Visibility.Visible;
-            Visibility = Visibility.Hidden;
+            searchResultsPage.Visibility = Visibility.Hidden;
+            Visibility = Visibility.Visible;
         }
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
