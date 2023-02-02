@@ -99,8 +99,9 @@ namespace PetStore
 
 
             InitializeComponent();
-            productPage = new ProductPage(this);
             searchResultsPage = new SearchResultsPage(this);
+            productPage = new ProductPage(this, searchResultsPage);
+            searchResultsPage.InitializeProductPage(productPage);
             productPage.Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
@@ -122,8 +123,8 @@ namespace PetStore
             // Page_Control.SelectedIndex = 1;
             searchResultsPage.ResultGrid.ItemsSource = null;
             ItemResults.Clear();
-            Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
             //SearchResults.Text = string.Empty;
             foreach (Item item in Items)
             {
@@ -176,8 +177,8 @@ namespace PetStore
             // Page_Control.SelectedIndex = 1;
             // SearchResults.Text = string.Empty;
             ItemResults.Clear();
-            Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
 
             foreach (Item item in Items)
             {
@@ -206,8 +207,8 @@ namespace PetStore
             // Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
             ItemResults.Clear();
-            Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
 
             foreach (Item item in Items)
             {
@@ -234,8 +235,8 @@ namespace PetStore
             // Page_Control.SelectedIndex = 1;
             // SearchResults.Text = string.Empty;
             ItemResults.Clear();
-            Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
 
             foreach (Item item in Items)
             {
@@ -261,8 +262,8 @@ namespace PetStore
             // Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
             ItemResults.Clear();
-            Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
 
             foreach (Item item in Items)
             {
@@ -321,12 +322,12 @@ namespace PetStore
                 // Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
                 ItemResults.Clear();
-                Visibility = Visibility.Hidden;
                 searchResultsPage.Visibility = Visibility.Visible;
+                Visibility = Visibility.Hidden;
 
                 foreach (Item item in Items)
                 {
-                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower() + " ") || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
+                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
                     {
                         continue;
                     }
@@ -366,8 +367,8 @@ namespace PetStore
             // Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
             ItemResults.Clear();
-            Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
 
             foreach (Item item in Items)
             {
@@ -387,8 +388,8 @@ namespace PetStore
         {
             // Page_Control.SelectedIndex = 0;
 
-            searchResultsPage.Visibility = Visibility.Hidden;
-            Visibility = Visibility.Visible;
+            searchResultsPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
         }
 
         private void SignIn_Click(object sender, RoutedEventArgs e)

@@ -8,32 +8,65 @@ namespace PetStore.Pages
     /// </summary>
     public partial class SearchResultsPage : Window
     {
+        /// <summary>
+        /// The homePage is being passed in to the Search Results page
+        /// </summary>
+        /// <param name="homePage"></param>
         public SearchResultsPage(HomePage homePage)
         {
             InitializeComponent();
             home = homePage;
         }
+
+        public void InitializeProductPage(ProductPage productPage)
+        {
+            product = productPage;
+        }
         private readonly HomePage home;
+
+        private ProductPage product;
+
+        /// <summary>
+        /// Press the Select button from the Search Results page to select a product
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectButtonClicked(object sender, RoutedEventArgs e)
         {
             //Page_Control.SelectedIndex = 2;
+            product.Visibility = Visibility.Visible;
+            this.Visibility = Visibility.Hidden;
+
         }
+
+        /// <summary>
+        /// Click on the PetStore logo to go back to the homePage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PetStoreLogo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             // Page_Control.SelectedIndex = 0;
 
-            Visibility = Visibility.Hidden;
             home.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Press the Sign in button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
 
-        }        /// <summary>
-                 /// This method takes out the word "Search" from the Search box as needed.
-                 /// </summary>
-                 /// <param name="sender"></param>
-                 /// <param name="e"></param>
+        }  
+        
+        /// <summary>
+        /// This method takes out the word "Search" from the Search box as needed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemoveSearchFromBox(object sender, RoutedEventArgs e)
         {
             if (SearchBox.Text.Equals("Search"))
@@ -71,12 +104,12 @@ namespace PetStore.Pages
                 // Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
                 home.ItemResults.Clear();
-                home.Visibility = Visibility.Hidden;
                 Visibility = Visibility.Visible;
+                home.Visibility = Visibility.Hidden;
 
                 foreach (Item item in home.Items)
                 {
-                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower() + " ") || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
+                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
                     {
                         continue;
                     }

@@ -8,4 +8,15 @@
         mc:Ignorable="d"
         Title="ProductPage" Height="450" Width="800">
 
+    <StackPanel Margin="3">
+        <Grid x:Name="grid">
+            <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="364,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="18" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler" AutomationProperties.HelpText="Type your search here:" TextChanged="SearchBox_TextChanged"/>
+            <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="26,0,0,0" VerticalAlignment="Center" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" MouseLeftButtonDown="PetStoreLogo_MouseLeftButtonDown"/>
+            <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White"/>
+        </Grid>
+        <Separator Height="5"/>
+        <Grid Height="314">
+           
+        </Grid>
+    </StackPanel>
 </Window>
