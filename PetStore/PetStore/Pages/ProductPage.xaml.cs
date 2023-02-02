@@ -7,12 +7,12 @@ namespace PetStore.Pages
     /// </summary>
     public partial class ProductPage : Window
     {
-        public ProductPage(MainWindow mainWindow)
+        public ProductPage(HomePage mainWindow)
         {
             InitializeComponent();
             main = mainWindow;
         }
-        private MainWindow main;
+        private readonly HomePage main;
     }
 
 }

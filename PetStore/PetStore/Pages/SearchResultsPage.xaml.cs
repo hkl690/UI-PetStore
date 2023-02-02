@@ -8,12 +8,12 @@ namespace PetStore.Pages
     /// </summary>
     public partial class SearchResultsPage : Window
     {
-        public SearchResultsPage(MainWindow mainWindow)
+        public SearchResultsPage(HomePage homePage)
         {
             InitializeComponent();
-            main = mainWindow;
+            home = homePage;
         }
-        private MainWindow main;
+        private readonly HomePage home;
         private void SelectButtonClicked(object sender, RoutedEventArgs e)
         {
             //Page_Control.SelectedIndex = 2;
@@ -23,7 +23,7 @@ namespace PetStore.Pages
             // Page_Control.SelectedIndex = 0;
 
             Visibility = Visibility.Hidden;
-            main.HideHomePageWindow();
+            home.Visibility = Visibility.Visible;
         }
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
@@ -36,7 +36,10 @@ namespace PetStore.Pages
                  /// <param name="e"></param>
         private void RemoveSearchFromBox(object sender, RoutedEventArgs e)
         {
-            if (SearchBox.Text.Equals("Search")) SearchBox.Text = "";
+            if (SearchBox.Text.Equals("Search"))
+            {
+                SearchBox.Text = "";
+            }
         }
 
         /// <summary>
@@ -46,7 +49,10 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void AddSearchToBox(object sender, RoutedEventArgs e)
         {
-            if (SearchBox.Text.Equals("")) SearchBox.Text = "Search";
+            if (SearchBox.Text.Equals(""))
+            {
+                SearchBox.Text = "Search";
+            }
         }
         /// <summary>
         /// This method will use the "Enter" key after entering words in the
@@ -64,19 +70,22 @@ namespace PetStore.Pages
                 // Next need to go to the search results page...
                 // Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
-                main.ItemResults.Clear();
-                main.Visibility = Visibility.Hidden;
-                this.Visibility = Visibility.Visible;
+                home.ItemResults.Clear();
+                home.Visibility = Visibility.Hidden;
+                Visibility = Visibility.Visible;
 
-                foreach (Item item in main.Items)
+                foreach (Item item in home.Items)
                 {
-                    if (!((item.Species.ToLower().StartsWith(SearchBox.Text.ToLower())) || (item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower())) || (item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower())) || (item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower())) || (item.ItemName.ToLower().Contains(SearchBox.Text.ToLower() + " ")) || (item.Category.ToLower().Contains(SearchBox.Text.ToLower())))) continue;
+                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower() + " ") || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
+                    {
+                        continue;
+                    }
                     // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
-                    main.ItemResults.Add(item);
+                    home.ItemResults.Add(item);
                 }
 
-                this.ResultGrid.ItemsSource = main.ItemResults;
+                ResultGrid.ItemsSource = home.ItemResults;
 
             }
         }

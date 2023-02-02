@@ -7,101 +7,95 @@ using System.Windows.Input;
 namespace PetStore
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class HomePage : Window
     {
-        private ObservableCollection<Item> items = new ObservableCollection<Item>();
-        public ObservableCollection<Item> Items
-        {
-            get { return items; }
-            set { items = value; }
-        }
+        public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
 
-        public ObservableCollection<Item> ItemResults = new ObservableCollection<Item>();
-
-        ProductPage productPage;
-        SearchResultsPage searchResultsPage;
+        public ObservableCollection<Item> ItemResults = new();
+        private readonly ProductPage productPage;
+        private readonly SearchResultsPage searchResultsPage;
 
         /// <summary>
         /// Adding all items to the Item Collection and then initializing
         /// </summary>
-        public MainWindow()
+        public HomePage()
         {
             // Dog items
             // Images aren't working
             // Descriptions are empty strings for now, still need to write those
-            items.Add(new Item("Dog", 6.99, "Dog Treat", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Food\\Dog Treat.png"), ""));
-            items.Add(new Item("Dog", 14.99, "Dry Dog Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Food\\Dry Dog Food.png"), ""));
-            items.Add(new Item("Dog", 2.99, "Wet Dog Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Food\\Wet Dog Food.png"), ""));
-            items.Add(new Item("Dog", 8.99, "Dog Brush", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Brush.png"), ""));
-            items.Add(new Item("Dog", 8.99, "Dog Car Seat", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Car Seat.png"), ""));
-            items.Add(new Item("Dog", 29.99, "Dog Carrier", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Carrier.png"), ""));
-            items.Add(new Item("Dog", 4.99, "Dog Collar", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Collar.png"), ""));
-            items.Add(new Item("Dog", 8.99, "Dog Flea Medication", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Flea Med.jpg"), ""));
-            items.Add(new Item("Dog", 9.99, "Dog Harness", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Harness.jpg"), ""));
-            items.Add(new Item("Dog", 49.99, "Dog House", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog House.jpg"), ""));
-            items.Add(new Item("Dog", 6.99, "Dog Leash", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Leash.png"), ""));
-            items.Add(new Item("Dog", 59.99, "Dog Stroller", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Stroller.png"), ""));
-            items.Add(new Item("Dog", 5.99, "Dog Training Pads", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Training Pad.png"), ""));
-            items.Add(new Item("Dog", 14.99, "Dog Water Fountain", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Water Fountain.png"), ""));
-            items.Add(new Item("Dog", 14.99, "Pet Stain Remover", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Pet Stain Remover.png"), ""));
+            Items.Add(new Item("Dog", 6.99, "Dog Treat", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Food\\Dog Treat.png"), ""));
+            Items.Add(new Item("Dog", 14.99, "Dry Dog Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Food\\Dry Dog Food.png"), ""));
+            Items.Add(new Item("Dog", 2.99, "Wet Dog Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Food\\Wet Dog Food.png"), ""));
+            Items.Add(new Item("Dog", 8.99, "Dog Brush", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Brush.png"), ""));
+            Items.Add(new Item("Dog", 8.99, "Dog Car Seat", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Car Seat.png"), ""));
+            Items.Add(new Item("Dog", 29.99, "Dog Carrier", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Carrier.png"), ""));
+            Items.Add(new Item("Dog", 4.99, "Dog Collar", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Collar.png"), ""));
+            Items.Add(new Item("Dog", 8.99, "Dog Flea Medication", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Flea Med.jpg"), ""));
+            Items.Add(new Item("Dog", 9.99, "Dog Harness", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Harness.jpg"), ""));
+            Items.Add(new Item("Dog", 49.99, "Dog House", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog House.jpg"), ""));
+            Items.Add(new Item("Dog", 6.99, "Dog Leash", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Leash.png"), ""));
+            Items.Add(new Item("Dog", 59.99, "Dog Stroller", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Stroller.png"), ""));
+            Items.Add(new Item("Dog", 5.99, "Dog Training Pads", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Training Pad.png"), ""));
+            Items.Add(new Item("Dog", 14.99, "Dog Water Fountain", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Dog Water Fountain.png"), ""));
+            Items.Add(new Item("Dog", 14.99, "Pet Stain Remover", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Dog\\Supplies\\Pet Stain Remover.png"), ""));
 
             // Cat items
             // Images aren't working
             // Descriptions are empty strings for now, still need to write those
-            items.Add(new Item("Cat", 3.99, "Cat Treat", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Food\\Cat Treat.png"), ""));
-            items.Add(new Item("Cat", 9.99, "Cat Dry Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Food\\Dry Cat Food.png"), ""));
-            items.Add(new Item("Cat", 14.99, "Cat Wet Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Food\\Wet Cat Food.png"), ""));
-            items.Add(new Item("Cat", 3.99, "Cat Brush", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Brush.png"), ""));
-            items.Add(new Item("Cat", 29.99, "Cat Carrier", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Carrier.png"), ""));
-            items.Add(new Item("Cat", 4.99, "Cat Collar", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Collar.png"), ""));
-            items.Add(new Item("Cat", 8.99, "Cat Flea Medication", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Flea Med.png"), ""));
-            items.Add(new Item("Cat", 9.99, "Cat Flea Harness", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Harness.png"), ""));
-            items.Add(new Item("Cat", 14.99, "Cat Litter Box", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Litter Box.png"), ""));
-            items.Add(new Item("Cat", 8.99, "Cat Litter", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Litter.png"), ""));
-            items.Add(new Item("Cat", 24.99, "Cat Scratcher", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Scratcher.png"), ""));
-            items.Add(new Item("Cat", 49.99, "Cat Tree", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Tree.png"), ""));
-            items.Add(new Item("Cat", 14.99, "Cat Water Fountain", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Water Fountain.png"), ""));
+            Items.Add(new Item("Cat", 3.99, "Cat Treat", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Food\\Cat Treat.png"), ""));
+            Items.Add(new Item("Cat", 9.99, "Cat Dry Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Food\\Dry Cat Food.png"), ""));
+            Items.Add(new Item("Cat", 14.99, "Cat Wet Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Food\\Wet Cat Food.png"), ""));
+            Items.Add(new Item("Cat", 3.99, "Cat Brush", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Brush.png"), ""));
+            Items.Add(new Item("Cat", 29.99, "Cat Carrier", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Carrier.png"), ""));
+            Items.Add(new Item("Cat", 4.99, "Cat Collar", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Collar.png"), ""));
+            Items.Add(new Item("Cat", 8.99, "Cat Flea Medication", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Flea Med.png"), ""));
+            Items.Add(new Item("Cat", 9.99, "Cat Flea Harness", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Harness.png"), ""));
+            Items.Add(new Item("Cat", 14.99, "Cat Litter Box", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Litter Box.png"), ""));
+            Items.Add(new Item("Cat", 8.99, "Cat Litter", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Litter.png"), ""));
+            Items.Add(new Item("Cat", 24.99, "Cat Scratcher", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Scratcher.png"), ""));
+            Items.Add(new Item("Cat", 49.99, "Cat Tree", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Tree.png"), ""));
+            Items.Add(new Item("Cat", 14.99, "Cat Water Fountain", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Cat\\Supplies\\Cat Water Fountain.png"), ""));
 
             // Small Animal items
             // Images aren't working
             // Descriptions are empty strings for now, still need to write those
-            items.Add(new Item("Small Animal", 5.99, "Bird Food Crickets", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Bird Food Crickets.png"), ""));
-            items.Add(new Item("Small Animal", 4.99, "Bird Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Bird Food.png"), ""));
-            items.Add(new Item("Small Animal", 5.99, "Guinea Pig Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Guinea Pig Food.png"), ""));
-            items.Add(new Item("Small Animal", 6.99, "Hamster and Gerbil Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Hamster and Gerbil Food.png"), ""));
-            items.Add(new Item("Small Animal", 7.99, "Hedgehog Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Hedgehog Food.png"), ""));
-            items.Add(new Item("Small Animal", 4.99, "Mouse and Rat Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Mouse and Rat Food.png"), ""));
-            items.Add(new Item("Small Animal", 7.99, "Rabbit Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Rabbit Food.png"), ""));
-            items.Add(new Item("Small Animal", 9.99, "Bed", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Bed.png"), ""));
-            items.Add(new Item("Small Animal", 5.99, "Bedding", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Bedding.png"), ""));
-            items.Add(new Item("Small Animal", 99.99, "Bird Habitat", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Bird Habitat.png"), ""));
-            items.Add(new Item("Small Animal", 19.99, "Heating Pad", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Heating Pad.png"), ""));
-            items.Add(new Item("Small Animal", 6.99, "Water Bottle", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Water Bottle.png"), ""));
+            Items.Add(new Item("Small Animal", 5.99, "Bird Food Crickets", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Bird Food Crickets.png"), ""));
+            Items.Add(new Item("Small Animal", 4.99, "Bird Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Bird Food.png"), ""));
+            Items.Add(new Item("Small Animal", 5.99, "Guinea Pig Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Guinea Pig Food.png"), ""));
+            Items.Add(new Item("Small Animal", 6.99, "Hamster and Gerbil Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Hamster and Gerbil Food.png"), ""));
+            Items.Add(new Item("Small Animal", 7.99, "Hedgehog Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Hedgehog Food.png"), ""));
+            Items.Add(new Item("Small Animal", 4.99, "Mouse and Rat Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Mouse and Rat Food.png"), ""));
+            Items.Add(new Item("Small Animal", 7.99, "Rabbit Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Food\\Rabbit Food.png"), ""));
+            Items.Add(new Item("Small Animal", 9.99, "Bed", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Bed.png"), ""));
+            Items.Add(new Item("Small Animal", 5.99, "Bedding", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Bedding.png"), ""));
+            Items.Add(new Item("Small Animal", 99.99, "Bird Habitat", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Bird Habitat.png"), ""));
+            Items.Add(new Item("Small Animal", 19.99, "Heating Pad", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Heating Pad.png"), ""));
+            Items.Add(new Item("Small Animal", 6.99, "Water Bottle", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Small Animal\\Supplies\\Water Bottle.png"), ""));
 
             // Fish items
             // Images aren't working
             // Descriptions are empty strings for now, still need to write those
-            items.Add(new Item("Fish", 7.99, "Fish Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Food\\Fish Food.png"), ""));
-            items.Add(new Item("Fish", 9.99, "Pond Fish Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Food\\Pond Fish Food.png"), ""));
-            items.Add(new Item("Fish", 9.99, "Fish Aquarium Filter", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Supplies\\Fish Aquarium Filter.png"), ""));
-            items.Add(new Item("Fish", 9.99, "Fish Aquarium Starter Kit", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Supplies\\Fish Aquarium Starter Kit.png"), ""));
+            Items.Add(new Item("Fish", 7.99, "Fish Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Food\\Fish Food.png"), ""));
+            Items.Add(new Item("Fish", 9.99, "Pond Fish Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Food\\Pond Fish Food.png"), ""));
+            Items.Add(new Item("Fish", 9.99, "Fish Aquarium Filter", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Supplies\\Fish Aquarium Filter.png"), ""));
+            Items.Add(new Item("Fish", 9.99, "Fish Aquarium Starter Kit", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Fish\\Supplies\\Fish Aquarium Starter Kit.png"), ""));
 
             // Reptile items
             // Images aren't working
             // Descriptions are empty strings for now, still need to write those
-            items.Add(new Item("Reptile", 9.99, "Reptile Food Crickets", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Crickets.png"), ""));
-            items.Add(new Item("Reptile", 8.99, "Reptile Food Dried Insects", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Dried Insects.png"), ""));
-            items.Add(new Item("Reptile", 19.99, "Reptile Food Frozen Mice", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Frozen Mice.png"), ""));
-            items.Add(new Item("Reptile", 8.99, "Reptile Food Omnivore", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Omnivore.png"), ""));
-            items.Add(new Item("Reptile", 8.99, "Turtle Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Turtle Food.png"), ""));
-            items.Add(new Item("Reptile", 9.99, "Reptile Bedding", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Bedding.png"), ""));
-            items.Add(new Item("Reptile", 9.99, "Reptile Habitat Filter", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Habitat Filter.png"), ""));
-            items.Add(new Item("Reptile", 14.95, "Reptile Habitat Sand", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Habitat Sand.png"), ""));
-            items.Add(new Item("Reptile", 9.99, "Reptile Habitat Soil", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Habitat Soil.png"), ""));
-            items.Add(new Item("Reptile", 99.99, "Reptile Habitat", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Habitat.png"), ""));
-            items.Add(new Item("Reptile", 8.99, "Reptile Heat Light", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Heat Light.png"), ""));
+            Items.Add(new Item("Reptile", 9.99, "Reptile Food Crickets", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Crickets.png"), ""));
+            Items.Add(new Item("Reptile", 8.99, "Reptile Food Dried Insects", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Dried Insects.png"), ""));
+            Items.Add(new Item("Reptile", 19.99, "Reptile Food Frozen Mice", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Frozen Mice.png"), ""));
+            Items.Add(new Item("Reptile", 8.99, "Reptile Food Omnivore", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Reptile Food Omnivore.png"), ""));
+            Items.Add(new Item("Reptile", 8.99, "Turtle Food", "Food", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Food\\Turtle Food.png"), ""));
+            Items.Add(new Item("Reptile", 9.99, "Reptile Bedding", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Bedding.png"), ""));
+            Items.Add(new Item("Reptile", 9.99, "Reptile Habitat Filter", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Habitat Filter.png"), ""));
+            Items.Add(new Item("Reptile", 14.95, "Reptile Habitat Sand", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Habitat Sand.png"), ""));
+            Items.Add(new Item("Reptile", 9.99, "Reptile Habitat Soil", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Habitat Soil.png"), ""));
+            Items.Add(new Item("Reptile", 99.99, "Reptile Habitat", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Habitat.png"), ""));
+            Items.Add(new Item("Reptile", 8.99, "Reptile Heat Light", "Supplies", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\Reptile\\Supplies\\Reptile Heat Light.png"), ""));
 
 
             InitializeComponent();
@@ -109,7 +103,7 @@ namespace PetStore
             searchResultsPage = new SearchResultsPage(this);
             productPage.Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Hidden;
-            this.Visibility = Visibility.Visible;
+            Visibility = Visibility.Visible;
             SearchBox.Text = "Search";/*
              DataContext = new List<Item>
              {
@@ -128,12 +122,15 @@ namespace PetStore
             // Page_Control.SelectedIndex = 1;
             searchResultsPage.ResultGrid.ItemsSource = null;
             ItemResults.Clear();
-            this.Visibility = Visibility.Hidden;
+            Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
             //SearchResults.Text = string.Empty;
-            foreach (Item item in items)
+            foreach (Item item in Items)
             {
-                if (!(item.Species.ToLower().Contains("Dog".ToLower()))) continue;
+                if (!item.Species.ToLower().Contains("Dog".ToLower()))
+                {
+                    continue;
+                }
                 // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
                 //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
@@ -182,9 +179,12 @@ namespace PetStore
             Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
 
-            foreach (Item item in items)
+            foreach (Item item in Items)
             {
-                if (!(item.Species.ToLower().Contains("Cat".ToLower()))) continue;
+                if (!item.Species.ToLower().Contains("Cat".ToLower()))
+                {
+                    continue;
+                }
                 // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
                 // SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
@@ -209,9 +209,12 @@ namespace PetStore
             Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
 
-            foreach (Item item in items)
+            foreach (Item item in Items)
             {
-                if (!(item.Species.ToLower().Contains("Fish".ToLower()))) continue;
+                if (!item.Species.ToLower().Contains("Fish".ToLower()))
+                {
+                    continue;
+                }
                 //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
             }
@@ -234,9 +237,12 @@ namespace PetStore
             Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
 
-            foreach (Item item in items)
+            foreach (Item item in Items)
             {
-                if (!(item.Species.ToLower().Contains("Small Animal".ToLower()))) continue;
+                if (!item.Species.ToLower().Contains("Small Animal".ToLower()))
+                {
+                    continue;
+                }
                 //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
             }
@@ -258,9 +264,12 @@ namespace PetStore
             Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
 
-            foreach (Item item in items)
+            foreach (Item item in Items)
             {
-                if (!(item.Species.ToLower().Contains("Reptile".ToLower()))) continue;
+                if (!item.Species.ToLower().Contains("Reptile".ToLower()))
+                {
+                    continue;
+                }
                 //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
             }
@@ -276,7 +285,10 @@ namespace PetStore
         /// <param name="e"></param>
         private void RemoveSearchFromBox(object sender, RoutedEventArgs e)
         {
-            if (SearchBox.Text.Equals("Search")) SearchBox.Text = "";
+            if (SearchBox.Text.Equals("Search"))
+            {
+                SearchBox.Text = "";
+            }
         }
 
         /// <summary>
@@ -286,7 +298,10 @@ namespace PetStore
         /// <param name="e"></param>
         private void AddSearchToBox(object sender, RoutedEventArgs e)
         {
-            if (SearchBox.Text.Equals("")) SearchBox.Text = "Search";
+            if (SearchBox.Text.Equals(""))
+            {
+                SearchBox.Text = "Search";
+            }
         }
 
         /// <summary>
@@ -309,9 +324,12 @@ namespace PetStore
                 Visibility = Visibility.Hidden;
                 searchResultsPage.Visibility = Visibility.Visible;
 
-                foreach (Item item in items)
+                foreach (Item item in Items)
                 {
-                    if (!((item.Species.ToLower().StartsWith(SearchBox.Text.ToLower())) || (item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower())) || (item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower())) || (item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower())) || (item.ItemName.ToLower().Contains(SearchBox.Text.ToLower() + " ")) || (item.Category.ToLower().Contains(SearchBox.Text.ToLower())))) continue;
+                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower() + " ") || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
+                    {
+                        continue;
+                    }
                     // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                     ItemResults.Add(item);
@@ -351,7 +369,7 @@ namespace PetStore
             Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Visible;
 
-            foreach (Item item in items)
+            foreach (Item item in Items)
             {
                 //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
