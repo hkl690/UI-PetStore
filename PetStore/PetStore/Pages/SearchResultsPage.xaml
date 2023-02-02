@@ -19,7 +19,7 @@
 
         <!-- this ResultGrid displays all the SearchResult items-->
         <Grid Height="450"> 
-            <DataGrid x:Name="ResultGrid" ItemsSource="{Binding Path=items}" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True" Height="{Binding ElementName=window, Mode=OneWay}" Width="{Binding ElementName=window, Mode=OneWay}" VerticalAlignment="Top">
+            <DataGrid x:Name="ResultGrid" ItemsSource="{Binding Path=items}" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True" VerticalAlignment="Top">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
