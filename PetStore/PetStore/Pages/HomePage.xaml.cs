@@ -342,8 +342,8 @@ namespace PetStore
         }
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
-        {
-
+        {            
+            signInPage.Visibility = Visibility.Visible;
         }
 
         public void HideHomePageWindow()
