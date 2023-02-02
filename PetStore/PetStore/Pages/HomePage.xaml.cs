@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PetStore.Pages;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
@@ -20,6 +19,9 @@ namespace PetStore
         }
 
         public ObservableCollection<Item> ItemResults = new ObservableCollection<Item>();
+
+        ProductPage productPage;
+        SearchResultsPage searchResultsPage;
 
         /// <summary>
         /// Adding all items to the Item Collection and then initializing
@@ -103,6 +105,11 @@ namespace PetStore
 
 
             InitializeComponent();
+            productPage = new ProductPage(this);
+            searchResultsPage = new SearchResultsPage(this);
+            productPage.Visibility = Visibility.Hidden;
+            searchResultsPage.Visibility = Visibility.Hidden;
+            this.Visibility = Visibility.Visible;
             SearchBox.Text = "Search";/*
              DataContext = new List<Item>
              {
@@ -118,10 +125,11 @@ namespace PetStore
         /// <param name="e"></param>
         private void DogButton_Click(object sender, RoutedEventArgs e)
         {
-            Page_Control.SelectedIndex = 1;
-            ResultGrid.ItemsSource = null;
+            // Page_Control.SelectedIndex = 1;
+            searchResultsPage.ResultGrid.ItemsSource = null;
             ItemResults.Clear();
-
+            this.Visibility = Visibility.Hidden;
+            searchResultsPage.Visibility = Visibility.Visible;
             //SearchResults.Text = string.Empty;
             foreach (Item item in items)
             {
@@ -131,7 +139,7 @@ namespace PetStore
                 ItemResults.Add(item);
             }
 
-            ResultGrid.ItemsSource = ItemResults;
+            searchResultsPage.ResultGrid.ItemsSource = ItemResults;
 
             /* Product_Grid.Items.Add(new Item("Test1", 0.99, "Test2", "Test3", System.Drawing.Image.FromFile(Directory.GetCurrentDirectory()+"\\Images\\Dog\\Dog.jfif")));
              Product_Grid.Columns.Add(new DataGridTextColumn { Header = "Species", Binding = new Binding("Species") });
@@ -168,9 +176,12 @@ namespace PetStore
         /// <param name="e"></param>
         private void CatButton_Click(object sender, RoutedEventArgs e)
         {
-            Page_Control.SelectedIndex = 1;
-            //SearchResults.Text = string.Empty;
+            // Page_Control.SelectedIndex = 1;
+            // SearchResults.Text = string.Empty;
             ItemResults.Clear();
+            Visibility = Visibility.Hidden;
+            searchResultsPage.Visibility = Visibility.Visible;
+
             foreach (Item item in items)
             {
                 if (!(item.Species.ToLower().Contains("Cat".ToLower()))) continue;
@@ -179,8 +190,8 @@ namespace PetStore
                 ItemResults.Add(item);
             }
 
-            ResultGrid.ItemsSource = ItemResults;
-        
+            searchResultsPage.ResultGrid.ItemsSource = ItemResults;
+
 
         }
 
@@ -192,9 +203,12 @@ namespace PetStore
         /// <param name="e"></param>
         private void FishButton_Click(object sender, RoutedEventArgs e)
         {
-            Page_Control.SelectedIndex = 1;
+            // Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
             ItemResults.Clear();
+            Visibility = Visibility.Hidden;
+            searchResultsPage.Visibility = Visibility.Visible;
+
             foreach (Item item in items)
             {
                 if (!(item.Species.ToLower().Contains("Fish".ToLower()))) continue;
@@ -202,8 +216,8 @@ namespace PetStore
                 ItemResults.Add(item);
             }
 
-            ResultGrid.ItemsSource = ItemResults;
-        
+            searchResultsPage.ResultGrid.ItemsSource = ItemResults;
+
         }
 
         /// <summary>
@@ -214,9 +228,12 @@ namespace PetStore
         /// <param name="e"></param>
         private void SmallAnimalButton_Click(object sender, RoutedEventArgs e)
         {
-            Page_Control.SelectedIndex = 1;
-            //SearchResults.Text = string.Empty;
+            // Page_Control.SelectedIndex = 1;
+            // SearchResults.Text = string.Empty;
             ItemResults.Clear();
+            Visibility = Visibility.Hidden;
+            searchResultsPage.Visibility = Visibility.Visible;
+
             foreach (Item item in items)
             {
                 if (!(item.Species.ToLower().Contains("Small Animal".ToLower()))) continue;
@@ -224,7 +241,7 @@ namespace PetStore
                 ItemResults.Add(item);
             }
 
-            ResultGrid.ItemsSource = ItemResults;
+            searchResultsPage.ResultGrid.ItemsSource = ItemResults;
         }
 
         /// <summary>
@@ -235,9 +252,12 @@ namespace PetStore
         /// <param name="e"></param>
         private void ReptileButton_Click(object sender, RoutedEventArgs e)
         {
-            Page_Control.SelectedIndex = 1;
+            // Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
             ItemResults.Clear();
+            Visibility = Visibility.Hidden;
+            searchResultsPage.Visibility = Visibility.Visible;
+
             foreach (Item item in items)
             {
                 if (!(item.Species.ToLower().Contains("Reptile".ToLower()))) continue;
@@ -245,9 +265,9 @@ namespace PetStore
                 ItemResults.Add(item);
             }
 
-            ResultGrid.ItemsSource = ItemResults;
-        
-    }
+            searchResultsPage.ResultGrid.ItemsSource = ItemResults;
+
+        }
 
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
@@ -283,9 +303,12 @@ namespace PetStore
             {
                 // SearchBox.Text = "You entered: " + SearchBox.Text;
                 // Next need to go to the search results page...
-                Page_Control.SelectedIndex = 1;
+                // Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
                 ItemResults.Clear();
+                Visibility = Visibility.Hidden;
+                searchResultsPage.Visibility = Visibility.Visible;
+
                 foreach (Item item in items)
                 {
                     if (!((item.Species.ToLower().StartsWith(SearchBox.Text.ToLower())) || (item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower())) || (item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower())) || (item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower())) || (item.ItemName.ToLower().Contains(SearchBox.Text.ToLower() + " ")) || (item.Category.ToLower().Contains(SearchBox.Text.ToLower())))) continue;
@@ -294,9 +317,9 @@ namespace PetStore
                     ItemResults.Add(item);
                 }
 
-                ResultGrid.ItemsSource = ItemResults;
-            
-        }
+                searchResultsPage.ResultGrid.ItemsSource = ItemResults;
+
+            }
         }
 
         private void SearchBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
@@ -322,18 +345,21 @@ namespace PetStore
         /// <param name="e"></param>
         private void ViewAll_Click(object sender, RoutedEventArgs e)
         {
-            Page_Control.SelectedIndex = 1;
+            // Page_Control.SelectedIndex = 1;
             //SearchResults.Text = string.Empty;
             ItemResults.Clear();
+            Visibility = Visibility.Hidden;
+            searchResultsPage.Visibility = Visibility.Visible;
+
             foreach (Item item in items)
             {
                 //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                 ItemResults.Add(item);
             }
 
-            ResultGrid.ItemsSource = ItemResults;
-        
-    }
+            searchResultsPage.ResultGrid.ItemsSource = ItemResults;
+
+        }
         /// <summary>
         /// When the Pet Store logo is clicked on by the mouse, it goes to the Home page.
         /// </summary>
@@ -341,7 +367,10 @@ namespace PetStore
         /// <param name="e"></param>
         private void PetStoreLogo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Page_Control.SelectedIndex = 0;
+            // Page_Control.SelectedIndex = 0;
+
+            searchResultsPage.Visibility = Visibility.Hidden;
+            Visibility = Visibility.Visible;
         }
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
@@ -349,14 +378,15 @@ namespace PetStore
 
         }
 
-        private void SelectButtonClicked(object sender, RoutedEventArgs e)
+        public void HideHomePageWindow()
         {
-            Page_Control.SelectedIndex = 2;
+            Visibility = Visibility.Hidden;
         }
 
 
+
     }
-    }
+}
 
 /* Using this reference website:
  https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern
