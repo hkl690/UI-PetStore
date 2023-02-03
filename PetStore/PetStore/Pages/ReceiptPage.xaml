@@ -1,11 +1,11 @@
-﻿<Window x:Class="PetStore.Pages.BuyNowPage"
+﻿<Window x:Class="PetStore.Pages.ReceiptPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetStore.Pages"
         mc:Ignorable="d"
-        Title="Buy Now Page" Height="600" Width="800">
+        Title="Receipt Page" Height="600" Width="800">
 
     <StackPanel Margin="3">
         <!-- this HeaderGrid displays the header-->
@@ -17,7 +17,7 @@
 
         <Separator Height="5"/>
         <Grid Height="500">
-            <!-- this grid displays the payment form for Buy Now -->
+            <!-- this grid displays the thank you reciept -->
 
         </Grid>
     </StackPanel>
