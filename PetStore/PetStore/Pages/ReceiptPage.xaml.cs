@@ -19,7 +19,7 @@ namespace PetStore.Pages
     /// </summary>
     public partial class ReceiptPage : Window
     {
-        public ReceiptPage((HomePage homePage)
+        public ReceiptPage(HomePage homePage)
         {
             InitializeComponent();
             this.homePage = homePage;

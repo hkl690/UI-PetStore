@@ -114,15 +114,23 @@ namespace PetStore
             itemPage.InitializeSignInPage(signInPage);
             itemPage.InitializeSearchResultsPage(searchResultsPage);
             itemPage.InitializeBuyNowPage(buyNowPage);
+            itemPage.InitializeReceiptPage(receiptPage);
             buyNowPage.InitializeSignInPage(signInPage);
             buyNowPage.InitializeSearchResultsPage(searchResultsPage);
             buyNowPage.InitializeItemPage(itemPage);
+            buyNowPage.InitializeReceiptPage(receiptPage);
             signInPage.InitializeSearchResultsPage(searchResultsPage);
             signInPage.InitializeItemPage(itemPage);
             signInPage.InitializeBuyNowPage(buyNowPage);
+            signInPage.InitializeReceiptPage(receiptPage);
+            receiptPage.InitializeSearchResultsPage(searchResultsPage);
+            receiptPage.InitializeItemPage(itemPage);
+            receiptPage.InitializeBuyNowPage(buyNowPage);
+            receiptPage.InitializeSignInPage(signInPage);
             itemPage.Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Hidden;
             buyNowPage.Visibility = Visibility.Hidden;
+            receiptPage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
             SearchBox.Text = "Search";
         }
