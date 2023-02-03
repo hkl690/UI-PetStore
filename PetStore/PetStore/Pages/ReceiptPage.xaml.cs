@@ -52,15 +52,10 @@ namespace PetStore.Pages
         }
 
         private HomePage homePage;
-
         private SearchResultsPage searchPage;
-
         private SignInPage signInPage;
-
         private ItemPage itemPage;
-
         private BuyNowPage buyNowPage;
-
         private ReceiptPage receiptPage;
 
         #region SearchBox

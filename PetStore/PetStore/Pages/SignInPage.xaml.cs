@@ -138,6 +138,66 @@ namespace PetStore.Pages
             homePage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void firstName_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void firstName_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lastName_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lastName_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void email_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void email_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void password_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void password_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void confirmPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void confirmPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 

@@ -19,8 +19,13 @@
         <Separator Height="5"/>
 
         <!-- this grid displays the Sign In form -->
-        <Grid x:Name="SignInGrid" Height="450">
+        <Grid x:Name="SignInGrid" Height="500">
+            <TextBox x:Name="firstName" HorizontalAlignment="Left" Margin="66,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200" IsManipulationEnabled="True" GotFocus="firstName_GotFocus" LostFocus="firstName_LostFocus" KeyDown="OnKeyDownHandler"/>
+            <TextBox x:Name="lastName" HorizontalAlignment="Left" Margin="304,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200" IsManipulationEnabled="True" GotFocus="lastName_GotFocus" LostFocus="lastName_LostFocus" KeyDown="OnKeyDownHandler"/>
+            <TextBox x:Name="email" HorizontalAlignment="Left" Margin="66,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="438" IsManipulationEnabled="True" GotFocus="email_GotFocus" LostFocus="email_LostFocus" KeyDown="OnKeyDownHandler"/>
+            <TextBox x:Name="password" HorizontalAlignment="Left" Margin="66,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="438" IsManipulationEnabled="True" GotFocus="password_GotFocus" LostFocus="password_LostFocus" KeyDown="OnKeyDownHandler"/>
+            <TextBox x:Name="confirmPassword" HorizontalAlignment="Left" Margin="66,186,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="438" IsManipulationEnabled="True" GotFocus="confirmPassword_GotFocus" LostFocus="confirmPassword_LostFocus" KeyDown="OnKeyDownHandler"/>
         </Grid>
-        
+
     </StackPanel>
 </Window>
