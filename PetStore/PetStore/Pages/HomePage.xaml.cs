@@ -100,10 +100,15 @@ namespace PetStore
 
 
             InitializeComponent();
+            signInPage = new SignInPage(this);
             searchResultsPage = new SearchResultsPage(this);
-            signInPage = new SignInPage();
-            itemPage = new ItemPage(this, searchResultsPage, signInPage);
+            itemPage = new ItemPage(this);
             searchResultsPage.InitializeItemPage(itemPage);
+            searchResultsPage.InitializeSignInPage(signInPage);
+            itemPage.InitializeSignInPage(signInPage);
+            itemPage.InitializeSearchResultsPage(searchResultsPage);
+            signInPage.InitializeSearchResultsPage(searchResultsPage);
+            signInPage.InitializeItemPage(itemPage);
             itemPage.Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
@@ -259,7 +264,7 @@ namespace PetStore
 
         /// <summary>
         /// This method will use the "Enter" key after entering words in the
-        /// Search box to retrieve the search results. 
+        /// Search box to retrieve the searchPage results. 
         /// All characters will be compared in lowercase.
         /// Earlier results will be cleared.
         /// </summary>
@@ -270,7 +275,7 @@ namespace PetStore
             if (e.Key == Key.Return)
             {
                 // SearchBox.Text = "You entered: " + SearchBox.Text;
-                // Next need to go to the search results page...
+                // Next need to go to the searchPage results page...
                 // Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
                 ItemResults.Clear();
@@ -344,6 +349,7 @@ namespace PetStore
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {            
             signInPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
         }
 
         public void HideHomePageWindow()

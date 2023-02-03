@@ -19,16 +19,24 @@ namespace PetStore.Pages
     /// </summary>
     public partial class SignInPage : Window
     {
-        public SignInPage()
+        public SignInPage(HomePage home)
         {
             InitializeComponent();
+            homePage = home;
         }
+        public void InitializeSearchResultsPage(SearchResultsPage search)
+        {
+            searchPage = search;
+        }
+        public void InitializeItemPage(ItemPage item)
+        {
+            itemProduct = item;
+        }
+        private HomePage homePage;
 
-        private HomePage home;
+        private SearchResultsPage searchPage;
 
-        private SearchResultsPage search;
-
-        private SignInPage signIn;
+        private ItemPage itemProduct;
 
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
@@ -58,7 +66,7 @@ namespace PetStore.Pages
 
         /// <summary>
         /// This method will use the "Enter" key after entering words in the
-        /// Search box to retrieve the search results. 
+        /// Search box to retrieve the searchPage results. 
         /// All characters will be compared in lowercase.
         /// Earlier results will be cleared.
         /// </summary>
@@ -69,14 +77,14 @@ namespace PetStore.Pages
             if (e.Key == Key.Return)
             {
                 // SearchBox.Text = "You entered: " + SearchBox.Text;
-                // Next need to go to the search results page...
+                // Next need to go to the searchPage results page...
                 // Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
-                home.ItemResults.Clear();
-                search.Visibility = Visibility.Visible;
+                homePage.ItemResults.Clear();
+                searchPage.Visibility = Visibility.Visible;
                 Visibility = Visibility.Hidden;
 
-                foreach (Item item in home.Items)
+                foreach (Item item in homePage.Items)
                 {
                     if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
                     {
@@ -84,10 +92,10 @@ namespace PetStore.Pages
                     }
                     // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
-                    home.ItemResults.Add(item);
+                    homePage.ItemResults.Add(item);
                 }
 
-                search.ResultGrid.ItemsSource = home.ItemResults;
+                searchPage.ResultGrid.ItemsSource = homePage.ItemResults;
 
             }
         }
@@ -106,7 +114,7 @@ namespace PetStore.Pages
         {
             // Page_Control.SelectedIndex = 0;
 
-            home.Visibility = Visibility.Visible;
+            homePage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
 
@@ -117,8 +125,8 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            home.Visibility = Visibility.Hidden;
-            signIn.Visibility = Visibility.Visible;
+            homePage.Visibility = Visibility.Hidden;
+            Visibility = Visibility.Visible;
         }
     }
 }
