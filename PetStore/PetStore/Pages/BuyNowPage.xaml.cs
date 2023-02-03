@@ -1,26 +1,33 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace PetStore.Pages
 {
     /// <summary>
-    /// Interaction logic for SearchResultsPage.xaml
+    /// Interaction logic for BuyNowPage.xaml
     /// </summary>
-    public partial class SearchResultsPage : Window
+    public partial class BuyNowPage : Window
     {
-        /// <summary>
-        /// The HomePage is being passed in to the Search Results page
-        /// </summary>
-        /// <param name="homePage"></param>
-        public SearchResultsPage(HomePage home)
+        public BuyNowPage()
         {
             InitializeComponent();
-            homePage = home;
         }
 
-        public void InitializeItemPage(ItemPage item)
+
+        public void InitializeSearchResultsPage(SearchResultsPage search)
         {
-            itemProduct = item;
+            searchPage = search;
         }
 
         public void InitializeSignInPage(SignInPage signIn)
@@ -28,52 +35,20 @@ namespace PetStore.Pages
             signInPage = signIn;
         }
 
-        private readonly HomePage homePage;
+        public void InitializeItemPage(ItemPage item)
+        {
+            itemPage = item;
+        }
 
-        private ItemPage itemProduct;
+        private HomePage homePage;
+
+        private SearchResultsPage searchPage;
 
         private SignInPage signInPage;
 
-        /// <summary>
-        /// Press the Select button from the Search Results page to select an item
-        /// and then the SearchResultsPage will be hidden
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SelectButtonClicked(object sender, RoutedEventArgs e)
-        {
-            itemProduct.Visibility = Visibility.Visible;
-            this.Visibility = Visibility.Hidden;
-        }
+        private ItemPage itemPage;
 
-        #region PetStore logo
-        /// <summary>
-        /// Click on the PetStore logo to go back to the homePage,
-        /// and then the SearchResultsPage will be hidden
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void PetStoreLogo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            homePage.Visibility = Visibility.Visible;
-            Visibility = Visibility.Hidden;
-        }
-        #endregion
-
-        #region Sign In button
-        /// <summary>
-        /// Press the Sign In button, then the Home Page will be hidden
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SignIn_Click(object sender, RoutedEventArgs e)
-        {
-            signInPage.Visibility = Visibility.Visible;
-            Visibility=Visibility.Hidden;
-        }
-        #endregion
-
-        #region Search box logic
+        #region SearchBox
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
         /// </summary>
@@ -112,9 +87,13 @@ namespace PetStore.Pages
         {
             if (e.Key == Key.Return)
             {
+                // SearchBox.Text = "You entered: " + SearchBox.Text;
+                // Next need to go to the searchPage results page...
+                // Page_Control.SelectedIndex = 1;
+                //SearchResults.Text = string.Empty;
                 homePage.ItemResults.Clear();
-                Visibility = Visibility.Visible;
-                homePage.Visibility = Visibility.Hidden;
+                searchPage.Visibility = Visibility.Visible;
+                Visibility = Visibility.Hidden;
 
                 foreach (Item item in homePage.Items)
                 {
@@ -126,13 +105,43 @@ namespace PetStore.Pages
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                     homePage.ItemResults.Add(item);
                 }
-                ResultGrid.ItemsSource = homePage.ItemResults;
+
+                searchPage.ResultGrid.ItemsSource = homePage.ItemResults;
+
             }
         }
 
         private void SearchBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
 
+        }
+        #endregion SearchBox
+
+        #region PetStoreLogo
+        /// <summary>
+        /// Click on the PetStore logo to go back to the homePage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PetStoreLogo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            // Page_Control.SelectedIndex = 0;
+
+            homePage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
+        }
+        #endregion
+
+        #region SignIn button
+        /// <summary>
+        /// Press the Sign in button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            signInPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
         }
         #endregion
     }

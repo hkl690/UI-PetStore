@@ -9,7 +9,7 @@ namespace PetStore.Pages
     public partial class ItemPage : Window
     {
         /// <summary>
-        /// Initialize and display the Item that was
+        /// Initialize and display the Item that was selected
         /// </summary>
         /// <param name="homePage"></param>
         /// <param name="searchResultsPage"></param>
@@ -19,6 +19,7 @@ namespace PetStore.Pages
             this.homePage = homePage;
         }
 
+        
         public void InitializeSearchResultsPage(SearchResultsPage search)
         {
             searchPage = search;
@@ -29,12 +30,20 @@ namespace PetStore.Pages
             signInPage = signIn;
         }
 
+        public void InitializeItemPage(ItemPage item)
+        {
+            itemPage = item;
+        }
+
         private HomePage homePage;
 
         private SearchResultsPage searchPage;
 
         private SignInPage signInPage;
 
+        private ItemPage itemPage;
+
+        #region SearchBox
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
         /// </summary>
@@ -101,7 +110,9 @@ namespace PetStore.Pages
         {
 
         }
+#endregion SearchBox
 
+        #region PetStoreLogo
         /// <summary>
         /// Click on the PetStore logo to go back to the homePage
         /// </summary>
@@ -114,7 +125,9 @@ namespace PetStore.Pages
             homePage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
+        #endregion
 
+        #region SignIn button
         /// <summary>
         /// Press the Sign in button
         /// </summary>
@@ -125,5 +138,34 @@ namespace PetStore.Pages
             signInPage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
+        #endregion
+
+        #region Buy Now button
+        /// <summary>
+        /// Press the Buy Now button from the ItemPage to switch to the BuyNowPage
+        /// and then the ItemPage will be hidden
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            homePage.ItemResults.Clear();
+            this.Visibility = Visibility.Visible;
+            itemPage.Visibility = Visibility.Hidden;
+
+            foreach (Item item in homePage.Items)
+            {
+                if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
+                {
+                    continue;
+                }                    
+                homePage.ItemResults.Add(item);
+            }
+            ItemGrid.ItemsSource = homePage.ItemResults;
+            
+        }
+        #endregion
+
+
     }
 }
