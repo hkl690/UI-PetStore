@@ -32,16 +32,17 @@ namespace PetStore.Pages
         {
             buyNowPage = buyNow;
         }
+        public void InitializeReceiptPage(ReceiptPage receipt)
+        {
+            receiptPage = receipt;
+        }
 
         private readonly HomePage homePage;
-
         private SearchResultsPage searchPage;
-
         private ItemPage itemProduct;
-
         private SignInPage signInPage;
-
         private BuyNowPage buyNowPage;
+        private ReceiptPage receiptPage;
 
 
         /// <summary>

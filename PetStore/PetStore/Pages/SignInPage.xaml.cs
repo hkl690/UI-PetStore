@@ -36,16 +36,17 @@ namespace PetStore.Pages
         {
             buyNowPage = buyNow;
         }
+        public void InitializeReceiptPage(ReceiptPage receipt)
+        {
+            receiptPage = receipt;
+        }
 
         private HomePage homePage;
-
         private SearchResultsPage searchPage;
-
         private SignInPage signInPage;
-
         private ItemPage itemProduct;
-
         private BuyNowPage buyNowPage;
+        private ReceiptPage receiptPage;
 
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.

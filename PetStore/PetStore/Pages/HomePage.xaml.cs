@@ -18,6 +18,7 @@ namespace PetStore
         private readonly SearchResultsPage searchResultsPage;
         private readonly SignInPage signInPage;
         private readonly BuyNowPage buyNowPage;
+        private readonly ReceiptPage receiptPage;
 
         /// <summary>
         /// Adding all items to the Item Collection and then initializing
@@ -105,9 +106,11 @@ namespace PetStore
             searchResultsPage = new SearchResultsPage(this);
             itemPage = new ItemPage(this);
             buyNowPage = new BuyNowPage(this);
+            receiptPage = new ReceiptPage(this);
             searchResultsPage.InitializeItemPage(itemPage);
             searchResultsPage.InitializeSignInPage(signInPage);
             searchResultsPage.InitializeBuyNowPage(buyNowPage);
+            searchResultsPage.InitializeReceiptPage(receiptPage);
             itemPage.InitializeSignInPage(signInPage);
             itemPage.InitializeSearchResultsPage(searchResultsPage);
             itemPage.InitializeBuyNowPage(buyNowPage);
