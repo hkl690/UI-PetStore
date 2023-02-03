@@ -9,7 +9,7 @@ namespace PetStore.Pages
     public partial class SearchResultsPage : Window
     {
         /// <summary>
-        /// The homePage is being passed in to the Search Results page
+        /// The HomePage is being passed in to the Search Results page
         /// </summary>
         /// <param name="homePage"></param>
         public SearchResultsPage(HomePage home)
@@ -35,33 +35,31 @@ namespace PetStore.Pages
         private SignInPage signInPage;
 
         /// <summary>
-        /// Press the Select button from the Search Results page to select a product
+        /// Press the Select button from the Search Results page to select an item
+        /// and then the SearchResultsPage will be hidden
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void SelectButtonClicked(object sender, RoutedEventArgs e)
         {
-            //Page_Control.SelectedIndex = 2;
             itemProduct.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Hidden;
-
         }
 
         /// <summary>
-        /// Click on the PetStore logo to go back to the homePage
+        /// Click on the PetStore logo to go back to the homePage,
+        /// and then the SearchResultsPage will be hidden
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void PetStoreLogo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            // Page_Control.SelectedIndex = 0;
-
             homePage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
 
         /// <summary>
-        /// Press the Sign in button
+        /// Press the Sign In button, then the Home Page will be hidden
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -109,10 +107,6 @@ namespace PetStore.Pages
         {
             if (e.Key == Key.Return)
             {
-                // SearchBox.Text = "You entered: " + SearchBox.Text;
-                // Next need to go to the searchPage results page...
-                // Page_Control.SelectedIndex = 1;
-                //SearchResults.Text = string.Empty;
                 homePage.ItemResults.Clear();
                 Visibility = Visibility.Visible;
                 homePage.Visibility = Visibility.Hidden;
@@ -127,9 +121,7 @@ namespace PetStore.Pages
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                     homePage.ItemResults.Add(item);
                 }
-
                 ResultGrid.ItemsSource = homePage.ItemResults;
-
             }
         }
 
