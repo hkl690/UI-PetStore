@@ -19,9 +19,10 @@ namespace PetStore.Pages
     /// </summary>
     public partial class BuyNowPage : Window
     {
-        public BuyNowPage()
+        public BuyNowPage(HomePage homePage)
         {
             InitializeComponent();
+            this.homePage = homePage;
         }
 
 
@@ -40,6 +41,11 @@ namespace PetStore.Pages
             itemPage = item;
         }
 
+        public void InitializeBuyNowPage(BuyNowPage buyNow)
+        {
+            buyNowPage = buyNow;
+        }
+
         private HomePage homePage;
 
         private SearchResultsPage searchPage;
@@ -47,6 +53,8 @@ namespace PetStore.Pages
         private SignInPage signInPage;
 
         private ItemPage itemPage;
+
+        private BuyNowPage buyNowPage;
 
         #region SearchBox
         /// <summary>
@@ -144,5 +152,6 @@ namespace PetStore.Pages
             Visibility = Visibility.Hidden;
         }
         #endregion
+
     }
 }

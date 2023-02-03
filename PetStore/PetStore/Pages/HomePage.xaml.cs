@@ -17,6 +17,7 @@ namespace PetStore
         private readonly ItemPage itemPage;
         private readonly SearchResultsPage searchResultsPage;
         private readonly SignInPage signInPage;
+        private readonly BuyNowPage buyNowPage;
 
         /// <summary>
         /// Adding all items to the Item Collection and then initializing
@@ -103,14 +104,22 @@ namespace PetStore
             signInPage = new SignInPage(this);
             searchResultsPage = new SearchResultsPage(this);
             itemPage = new ItemPage(this);
+            buyNowPage = new BuyNowPage(this);
             searchResultsPage.InitializeItemPage(itemPage);
             searchResultsPage.InitializeSignInPage(signInPage);
+            searchResultsPage.InitializeBuyNowPage(buyNowPage);
             itemPage.InitializeSignInPage(signInPage);
             itemPage.InitializeSearchResultsPage(searchResultsPage);
+            itemPage.InitializeBuyNowPage(buyNowPage);
+            buyNowPage.InitializeSignInPage(signInPage);
+            buyNowPage.InitializeSearchResultsPage(searchResultsPage);
+            buyNowPage.InitializeItemPage(itemPage);
             signInPage.InitializeSearchResultsPage(searchResultsPage);
             signInPage.InitializeItemPage(itemPage);
+            signInPage.InitializeBuyNowPage(buyNowPage);
             itemPage.Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Hidden;
+            buyNowPage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
             SearchBox.Text = "Search";
         }

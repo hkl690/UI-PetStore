@@ -28,11 +28,21 @@ namespace PetStore.Pages
             signInPage = signIn;
         }
 
+        public void InitializeBuyNowPage(BuyNowPage buyNow)
+        {
+            buyNowPage = buyNow;
+        }
+
         private readonly HomePage homePage;
+
+        private SearchResultsPage searchPage;
 
         private ItemPage itemProduct;
 
         private SignInPage signInPage;
+
+        private BuyNowPage buyNowPage;
+
 
         /// <summary>
         /// Press the Select button from the Search Results page to select an item

@@ -34,6 +34,10 @@ namespace PetStore.Pages
         {
             itemPage = item;
         }
+        public void InitializeBuyNowPage(BuyNowPage buyNow)
+        {
+            buyNowPage = buyNow;
+        }
 
         private HomePage homePage;
 
@@ -42,6 +46,8 @@ namespace PetStore.Pages
         private SignInPage signInPage;
 
         private ItemPage itemPage;
+
+        private BuyNowPage buyNowPage;
 
         #region SearchBox
         /// <summary>

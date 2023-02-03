@@ -32,11 +32,20 @@ namespace PetStore.Pages
         {
             itemProduct = item;
         }
+        public void InitializeBuyNowPage(BuyNowPage buyNow)
+        {
+            buyNowPage = buyNow;
+        }
+
         private HomePage homePage;
 
         private SearchResultsPage searchPage;
 
+        private SignInPage signInPage;
+
         private ItemPage itemProduct;
+
+        private BuyNowPage buyNowPage;
 
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
