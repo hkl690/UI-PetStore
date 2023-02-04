@@ -43,11 +43,11 @@ namespace PetStore.Pages
 
         private HomePage homePage;
         private SearchResultsPage searchPage;
-        private SignInPage signInPage;
         private ItemPage itemProduct;
         private BuyNowPage buyNowPage;
         private ReceiptPage receiptPage;
-
+       
+        #region Header
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
         /// </summary>
@@ -138,66 +138,148 @@ namespace PetStore.Pages
             homePage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
         }
+        #endregion
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
+        #region Textbox Displays
+        /// <summary>
+        /// If the firstName textbox has no content, display "First Name"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void firstName_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (firstName.Text.Equals(""))
+            {
+                firstName.Text = "First Name";
+            }
         }
 
+        /// <summary>
+        /// This method takes out the words "First Name" from the textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void firstName_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (firstName.Text.Equals("First Name"))
+            {
+                firstName.Text = "";
+            }
         }
 
+        /// <summary>
+        /// This method displays "Last Name" in the textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lastName_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (lastName.Text.Equals(""))
+            {
+                lastName.Text = "Last Name";
+            }
         }
 
+        /// <summary>
+        /// This method takes out the words "Last Name" from the textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lastName_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (lastName.Text.Equals("Last Name"))
+            {
+                lastName.Text = "";
+            }
         }
 
+        /// <summary>
+        /// This method displays "Email" in the textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void email_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (email.Text.Equals(""))
+            {
+                email.Text = "Email";
+            }
         }
 
+        /// <summary>
+        /// This method takes out the word "Email" from the textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void email_GotFocus(object sender, RoutedEventArgs e)
         {
+            if (email.Text.Equals("Email"))
+            {
+                email.Text = "";
+            }
+        }        
 
-        }
-
+        /// <summary>
+        /// This method displays "Password" in the textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void password_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (password.Text.Equals(""))
+            {
+                password.Text = "Password";
+            }
         }
 
+        /// <summary>
+        /// This method takes out the word "Password" from the textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void password_GotFocus(object sender, RoutedEventArgs e)
         {
+            if (password.Text.Equals("Password"))
+            {
+                password.Text = "";
+            }
+        }
+        #endregion
 
+        /// <summary>
+        /// Press the Submit button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Submit_Click(object sender, RoutedEventArgs e)
+        {
+            homePage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
         }
 
-        private void confirmPassword_LostFocus(object sender, RoutedEventArgs e)
+        private void firstName_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void confirmPassword_GotFocus(object sender, RoutedEventArgs e)
+        private void lastName_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
+
+        private void email_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void password_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+       
+
+       
     }
 }
 

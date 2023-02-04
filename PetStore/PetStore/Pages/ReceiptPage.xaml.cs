@@ -46,17 +46,11 @@ namespace PetStore.Pages
             buyNowPage = buyNow;
         }
 
-        public void InitializeReceiptPage(ReceiptPage receipt)
-        {
-            receiptPage = receipt;
-        }
-
         private HomePage homePage;
         private SearchResultsPage searchPage;
         private SignInPage signInPage;
         private ItemPage itemPage;
         private BuyNowPage buyNowPage;
-        private ReceiptPage receiptPage;
 
         #region SearchBox
         /// <summary>

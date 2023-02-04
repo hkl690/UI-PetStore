@@ -1,4 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace PetStore.Pages
@@ -30,10 +34,6 @@ namespace PetStore.Pages
             signInPage = signIn;
         }
 
-        public void InitializeItemPage(ItemPage item)
-        {
-            itemPage = item;
-        }
         public void InitializeBuyNowPage(BuyNowPage buyNow)
         {
             buyNowPage = buyNow;
@@ -46,7 +46,6 @@ namespace PetStore.Pages
         private HomePage homePage;
         private SearchResultsPage searchPage;
         private SignInPage signInPage;
-        private ItemPage itemPage;
         private BuyNowPage buyNowPage;
         private ReceiptPage receiptPage;
 
@@ -157,8 +156,8 @@ namespace PetStore.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             homePage.ItemResults.Clear();
-            this.Visibility = Visibility.Visible;
-            itemPage.Visibility = Visibility.Hidden;
+            buyNowPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
 
             foreach (Item item in homePage.Items)
             {
@@ -170,6 +169,15 @@ namespace PetStore.Pages
             }
             ItemGrid.ItemsSource = homePage.ItemResults;
             
+        }
+
+        internal void OpenItemPage(Item? item)
+        {
+            Visibility = Visibility.Visible;
+            searchPage.Visibility = Visibility.Hidden;
+            List<Item> itemList = new List<Item>();
+            itemList.Add(item);
+            ItemGrid.ItemsSource = itemList.AsEnumerable();
         }
         #endregion
 

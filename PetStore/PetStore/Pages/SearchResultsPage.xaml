@@ -19,15 +19,15 @@
 
         <!-- this ResultGrid displays all the SearchResult items and includes a Select button -->
         <Grid Height="500"> 
-            <DataGrid x:Name="ResultGrid" ItemsSource="{Binding Path=items}" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True" VerticalAlignment="Top">
+            <DataGrid x:Name="ResultGrid" ItemsSource="{Binding Path=items}" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True" VerticalAlignment="Top" MouseDoubleClick="SelectItem">
                 <DataGrid.Columns>
-                    <DataGridTemplateColumn>
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="Select" Click="SelectButtonClicked"></Button>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                    <!--DataGridTemplateColumn-->
+                        <!--DataGridTemplateColumn.CellTemplate-->
+                            <!--DataTemplate-->
+                                <!--Button x:Name="SelectButton" Content="Select" Click="SelectButtonClicked" CommandParameter="{Binding DataContext, ElementName=ResultGrid}"></Button-->
+                            <!--/DataTemplate-->
+                        <!--/DataGridTemplateColumn.CellTemplate-->
+                    <!--/DataGridTemplateColumn-->
                 </DataGrid.Columns>
 
             </DataGrid>

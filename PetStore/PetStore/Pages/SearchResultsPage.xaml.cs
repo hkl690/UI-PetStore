@@ -55,6 +55,7 @@ namespace PetStore.Pages
         {
             itemProduct.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Hidden;
+            Item item = (Item)ResultGrid.Items.GetItemAt(0);
         }
 
         #region PetStore logo
@@ -136,8 +137,11 @@ namespace PetStore.Pages
                     // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                     homePage.ItemResults.Add(item);
+                
+
                 }
                 ResultGrid.ItemsSource = homePage.ItemResults;
+            
             }
         }
 
@@ -146,5 +150,11 @@ namespace PetStore.Pages
 
         }
         #endregion
+
+        private void SelectItem(object sender, MouseButtonEventArgs e)
+        {
+            Item item = ResultGrid.SelectedItem as Item;
+            itemProduct.OpenItemPage(item);
+        }
     }
 }
