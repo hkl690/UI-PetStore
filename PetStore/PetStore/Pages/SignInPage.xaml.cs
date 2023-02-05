@@ -85,9 +85,7 @@ namespace PetStore.Pages
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
-            {
-                // SearchBox.Text = "You entered: " + SearchBox.Text;
-                // Next need to go to the searchPage results page...
+            {                
                 // Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
                 homePage.ItemResults.Clear();
@@ -247,12 +245,21 @@ namespace PetStore.Pages
         #endregion
 
         /// <summary>
-        /// Press the Submit button
+        /// Press the Submit button, this will also clear the textboxes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
+            // ??? does it need to hold the values of textboxes before submitting?
+            firstName.Text = "";
+            lastName.Text = "";
+            email.Text = "";
+            password.Text = "";
+            firstName.Text = "First Name";
+            lastName.Text = "Last Name";
+            email.Text = "Email";
+            password.Text = "Password";
             homePage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
@@ -277,9 +284,7 @@ namespace PetStore.Pages
             
         }
 
-       
-
-       
+              
     }
 }
 

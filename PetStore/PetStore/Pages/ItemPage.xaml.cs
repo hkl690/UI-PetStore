@@ -22,8 +22,7 @@ namespace PetStore.Pages
             InitializeComponent();
             this.homePage = homePage;
         }
-
-        
+                
         public void InitializeSearchResultsPage(SearchResultsPage search)
         {
             searchPage = search;
@@ -88,8 +87,6 @@ namespace PetStore.Pages
         {
             if (e.Key == Key.Return)
             {
-                // SearchBox.Text = "You entered: " + SearchBox.Text;
-                // Next need to go to the searchPage results page...
                 // Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
                 homePage.ItemResults.Clear();
@@ -167,8 +164,7 @@ namespace PetStore.Pages
                 }                    
                 homePage.ItemResults.Add(item);
             }
-            ItemGrid.ItemsSource = homePage.ItemResults;
-            
+            ItemGrid.ItemsSource = homePage.ItemResults;            
         }
 
         internal void OpenItemPage(Item? item)
@@ -180,7 +176,5 @@ namespace PetStore.Pages
             ItemGrid.ItemsSource = itemList.AsEnumerable();
         }
         #endregion
-
-
     }
 }

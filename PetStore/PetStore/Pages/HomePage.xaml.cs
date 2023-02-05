@@ -294,8 +294,6 @@ namespace PetStore
         {
             if (e.Key == Key.Return)
             {
-                // SearchBox.Text = "You entered: " + SearchBox.Text;
-                // Next need to go to the searchPage results page...
                 // Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
                 ItemResults.Clear();
