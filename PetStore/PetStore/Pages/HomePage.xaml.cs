@@ -311,6 +311,7 @@ namespace PetStore
                     ItemResults.Add(item);
                 }
                 searchResultsPage.ResultGrid.ItemsSource = ItemResults;
+                
             }
         }
 

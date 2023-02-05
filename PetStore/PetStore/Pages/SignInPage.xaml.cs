@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PetStore.Pages
 {
@@ -19,6 +10,11 @@ namespace PetStore.Pages
     /// </summary>
     public partial class SignInPage : Window
     {
+        public string customerFirstName = String.Empty;
+        public string customerLastName = String.Empty;
+        public string customerEmail = String.Empty;
+        public string customerPassword = String.Empty;
+
         public SignInPage(HomePage home)
         {
             InitializeComponent();
@@ -46,7 +42,7 @@ namespace PetStore.Pages
         private ItemPage itemProduct;
         private BuyNowPage buyNowPage;
         private ReceiptPage receiptPage;
-       
+
         #region Header
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
@@ -85,7 +81,7 @@ namespace PetStore.Pages
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
-            {                
+            {
                 // Page_Control.SelectedIndex = 1;
                 //SearchResults.Text = string.Empty;
                 homePage.ItemResults.Clear();
@@ -104,7 +100,7 @@ namespace PetStore.Pages
                 }
 
                 searchPage.ResultGrid.ItemsSource = homePage.ItemResults;
-
+                
             }
         }
 
@@ -215,7 +211,7 @@ namespace PetStore.Pages
             {
                 email.Text = "";
             }
-        }        
+        }
 
         /// <summary>
         /// This method displays "Password" in the textbox
@@ -245,13 +241,17 @@ namespace PetStore.Pages
         #endregion
 
         /// <summary>
-        /// Press the Submit button, this will also clear the textboxes
+        /// Press the Submit button, save Customer data
+        /// this will also clear the textboxes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            // ??? does it need to hold the values of textboxes before submitting?
+            customerFirstName = firstName.Text;
+            customerLastName = lastName.Text;
+            customerEmail = email.Text;
+            customerPassword = password.Text;
             firstName.Text = "";
             lastName.Text = "";
             email.Text = "";
@@ -281,10 +281,10 @@ namespace PetStore.Pages
 
         private void password_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+
         }
 
-              
+
     }
 }
 

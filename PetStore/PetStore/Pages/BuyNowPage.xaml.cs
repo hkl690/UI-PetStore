@@ -108,7 +108,7 @@ namespace PetStore.Pages
                 }
 
                 searchPage.ResultGrid.ItemsSource = homePage.ItemResults;
-
+                
             }
         }
 

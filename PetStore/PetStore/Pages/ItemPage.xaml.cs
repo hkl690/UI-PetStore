@@ -105,7 +105,7 @@ namespace PetStore.Pages
                 }
 
                 searchPage.ResultGrid.ItemsSource = homePage.ItemResults;
-
+                
             }
         }
 
@@ -153,8 +153,18 @@ namespace PetStore.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             homePage.ItemResults.Clear();
-            buyNowPage.Visibility = Visibility.Visible;
-            Visibility = Visibility.Hidden;
+            if (signInPage.customerEmail.Equals(String.Empty))
+            {
+
+                signInPage.Visibility = Visibility.Visible;
+                Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                buyNowPage.Visibility = Visibility.Visible;
+                Visibility = Visibility.Hidden;
+            }
+
 
             foreach (Item item in homePage.Items)
             {

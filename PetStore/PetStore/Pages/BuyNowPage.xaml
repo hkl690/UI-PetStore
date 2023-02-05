@@ -16,7 +16,7 @@
         </Grid>
 
         <Separator Height="5"/>
-        <Grid Height="500">
+        <Grid x:Name="Payment" Height="500">
             <!-- this grid displays the payment form for Buy Now -->
 
         </Grid>
