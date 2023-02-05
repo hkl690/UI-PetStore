@@ -128,9 +128,9 @@ namespace PetStore.Pages
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void SignIn_Click(object sender, RoutedEventArgs e)
-        {
+        {            
             homePage.Visibility = Visibility.Hidden;
-            Visibility = Visibility.Visible;
+            Visibility = Visibility.Visible;            
         }
         #endregion
 

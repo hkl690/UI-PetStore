@@ -146,16 +146,18 @@ namespace PetStore.Pages
         #region Buy Now button
         /// <summary>
         /// Press the Buy Now button from the ItemPage to switch to the BuyNowPage
-        /// and then the ItemPage will be hidden
+        /// and then the ItemPage will be hidden.
+        /// If the customer has not signed in, they will be
+        /// redirected to that page first before the Payment page.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             homePage.ItemResults.Clear();
+
             if (signInPage.customerEmail.Equals(String.Empty))
             {
-
                 signInPage.Visibility = Visibility.Visible;
                 Visibility = Visibility.Hidden;
             }
