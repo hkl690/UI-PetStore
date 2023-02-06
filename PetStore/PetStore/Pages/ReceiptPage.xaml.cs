@@ -80,7 +80,7 @@ namespace PetStore.Pages
         }
 
         /// <summary>
-        /// This method will use the "Enter" key after entering words in the
+        /// This method will press the "Enter" key after entering words in the
         /// Search box to retrieve the searchPage results. 
         /// All characters will be compared in lowercase.
         /// Earlier results will be cleared.
@@ -99,7 +99,12 @@ namespace PetStore.Pages
 
                 foreach (Item item in homePage.Items)
                 {
-                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
+                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) 
+                        || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
+                        || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) 
+                        || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
+                        || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) 
+                        || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
                     {
                         continue;
                     }

@@ -76,7 +76,7 @@ namespace PetStore.Pages
         }
 
         /// <summary>
-        /// This method will use the "Enter" key after entering words in the
+        /// This method will press the "Enter" key after entering words in the
         /// Search box to retrieve the searchPage results. 
         /// All characters will be compared in lowercase.
         /// Earlier results will be cleared.
@@ -95,7 +95,12 @@ namespace PetStore.Pages
 
                 foreach (Item item in homePage.Items)
                 {
-                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
+                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) 
+                        || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
+                        || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) 
+                        || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
+                        || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) 
+                        || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
                     {
                         continue;
                     }
@@ -103,7 +108,6 @@ namespace PetStore.Pages
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                     homePage.ItemResults.Add(item);
                 }
-
                 searchPage.ResultGrid.ItemsSource = homePage.ItemResults;
                 
             }
@@ -123,8 +127,6 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void PetStoreLogo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            // Page_Control.SelectedIndex = 0;
-
             homePage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
@@ -147,30 +149,31 @@ namespace PetStore.Pages
         /// <summary>
         /// Press the Buy Now button from the ItemPage to switch to the BuyNowPage
         /// and then the ItemPage will be hidden.
-        /// If the customer has not signed in, they will be
-        /// redirected to that page first before the Payment page.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             homePage.ItemResults.Clear();
-
-            if (signInPage.customerEmail.Equals(String.Empty))
-            {
-                signInPage.Visibility = Visibility.Visible;
-                Visibility = Visibility.Hidden;
-            }
-            else
-            {
+//           getting complicated, might come back to it later 
+//           if (signInPage.customerEmail.Equals(String.Empty))
+//           {
+//               signInPage.Visibility = Visibility.Visible;                
+//               Visibility = Visibility.Hidden;
+//            }
+//           else
+//            {
                 buyNowPage.Visibility = Visibility.Visible;
                 Visibility = Visibility.Hidden;
-            }
-
-
+//            }
             foreach (Item item in homePage.Items)
             {
-                if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
+                if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) 
+                    || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
+                    || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) 
+                    || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
+                    || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) 
+                    || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
                 {
                     continue;
                 }                    
@@ -179,6 +182,11 @@ namespace PetStore.Pages
             ItemGrid.ItemsSource = homePage.ItemResults;            
         }
 
+        /// <summary>
+        /// This method opens the Item Page
+        /// (mainly when selected from the SearchResultsPage)
+        /// </summary>
+        /// <param name="item"></param>
         internal void OpenItemPage(Item? item)
         {
             Visibility = Visibility.Visible;

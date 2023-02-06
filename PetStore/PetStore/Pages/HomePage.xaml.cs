@@ -302,7 +302,12 @@ namespace PetStore
 
                 foreach (Item item in Items)
                 {
-                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
+                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) 
+                        || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
+                        || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) 
+                        || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
+                        || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) 
+                        || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
                     {
                         continue;
                     }
@@ -375,8 +380,6 @@ namespace PetStore
         {
             Visibility = Visibility.Hidden;
         }
-
-
 
     }
 }

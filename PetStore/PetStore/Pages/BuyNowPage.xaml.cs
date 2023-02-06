@@ -19,12 +19,15 @@ namespace PetStore.Pages
     /// </summary>
     public partial class BuyNowPage : Window
     {
+        /// <summary>
+        /// Let the HomePage know BuyNowPage is initialized
+        /// </summary>
+        /// <param name="homePage"></param>
         public BuyNowPage(HomePage homePage)
         {
             InitializeComponent();
             this.homePage = homePage;
         }
-
 
         public void InitializeSearchResultsPage(SearchResultsPage search)
         {
@@ -79,7 +82,7 @@ namespace PetStore.Pages
         }
 
         /// <summary>
-        /// This method will use the "Enter" key after entering words in the
+        /// This method will press the "Enter" key after entering words in the
         /// Search box to retrieve the searchPage results. 
         /// All characters will be compared in lowercase.
         /// Earlier results will be cleared.
@@ -90,15 +93,18 @@ namespace PetStore.Pages
         {
             if (e.Key == Key.Return)
             {
-                // Page_Control.SelectedIndex = 1;
-                //SearchResults.Text = string.Empty;
                 homePage.ItemResults.Clear();
                 searchPage.Visibility = Visibility.Visible;
                 Visibility = Visibility.Hidden;
 
                 foreach (Item item in homePage.Items)
                 {
-                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
+                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) 
+                        || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
+                        || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) 
+                        || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
+                        || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) 
+                        || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
                     {
                         continue;
                     }
@@ -106,9 +112,7 @@ namespace PetStore.Pages
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                     homePage.ItemResults.Add(item);
                 }
-
-                searchPage.ResultGrid.ItemsSource = homePage.ItemResults;
-                
+                searchPage.ResultGrid.ItemsSource = homePage.ItemResults;                
             }
         }
 
@@ -126,8 +130,6 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void PetStoreLogo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            // Page_Control.SelectedIndex = 0;
-
             homePage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
