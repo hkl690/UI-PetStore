@@ -12,24 +12,39 @@
         <Grid x:Name="HeaderGrid">
             <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="364,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="18" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler" AutomationProperties.HelpText="Type your search here:" TextChanged="SearchBox_TextChanged"/>
             <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="26,0,0,0" VerticalAlignment="Center" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" MouseLeftButtonDown="PetStoreLogo_MouseLeftButtonDown"/>
-            <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White"/>
+            <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White" Height="18" Width="68"/>
         </Grid>
 
         <Separator Height="5"/>
 
         <!-- this grid displays the payment form for Buy Now -->
         <Grid x:Name="Payment" Height="500">
-            <Label x:Name="FullNameLabel" Content="Full Name:" HorizontalAlignment="Left" Margin="66,53,0,0" VerticalAlignment="Top"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="715*"/>
+                <ColumnDefinition Width="79*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="FullNameLabel" Content="Full Name:" HorizontalAlignment="Left" Margin="66,58,0,0" VerticalAlignment="Top"/>
             <Label x:Name="PhoneNumberLabel" Content="Phone Number:" HorizontalAlignment="Left" Margin="66,110,0,0" VerticalAlignment="Top"/>
             <Label x:Name="CardNumberLabel" Content="Card Number:" HorizontalAlignment="Left" Margin="66,136,0,0" VerticalAlignment="Top"/>
             <Label x:Name="ExpirationLabel" Content="Exp MM/YY:" HorizontalAlignment="Left" Margin="66,162,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="CvvLabel" Content="CVV:" HorizontalAlignment="Left" Margin="66,188,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="CvvLabel" Content="CVV:" HorizontalAlignment="Left" Margin="384,165,0,0" VerticalAlignment="Top"/>
             <Label x:Name="EmailLabel" Content="Email:" HorizontalAlignment="Left" Margin="66,84,0,0" VerticalAlignment="Top"/>
             <Label x:Name="AddressLabel" Content="Billing Address:" HorizontalAlignment="Left" Margin="66,219,0,0" VerticalAlignment="Top"/>
             <Label x:Name="StateLabel" Content="State:" HorizontalAlignment="Left" Margin="66,271,0,0" VerticalAlignment="Top"/>
             <Label x:Name="CityLabel" Content="City:" HorizontalAlignment="Left" Margin="66,245,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="ZipcodeLabel" Content="Zipcode:" HorizontalAlignment="Left" Margin="66,297,0,0" VerticalAlignment="Top"/>
-            
+            <Label x:Name="ZipcodeLabel" Content="Zipcode:" HorizontalAlignment="Left" Margin="386,271,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="FullNameTextbox" HorizontalAlignment="Left" Margin="137,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="578" Height="18"/>
+            <TextBox x:Name="EmailTextbox" HorizontalAlignment="Left" Margin="113,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="602" Height="18"/>
+            <TextBox x:Name="PhoneNumberTextbox" HorizontalAlignment="Left" Margin="164,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="551" Height="18"/>
+            <TextBox x:Name="CardNumberTextbox" HorizontalAlignment="Left" Margin="155,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="560" Height="18"/>
+            <TextBox x:Name="ExpirationTextbox" HorizontalAlignment="Left" Margin="145,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="18"/>
+            <TextBox x:Name="CvvTextbox" HorizontalAlignment="Left" Margin="420,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="18"/>
+            <TextBox x:Name="BillingAddressTextbox" HorizontalAlignment="Left" Margin="157,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="558" Height="18"/>
+            <TextBox x:Name="CityTextbox" HorizontalAlignment="Left" Margin="99,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="616" Height="18"/>
+            <TextBox x:Name="StateTextbox" HorizontalAlignment="Left" Margin="105,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="18"/>
+            <TextBox x:Name="ZipcodeTextbox" HorizontalAlignment="Left" Margin="446,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" Height="18"/>
+            <Button x:Name="ReviewOrderButton" Content="Review Order" HorizontalAlignment="Left" Margin="236,338,0,0" VerticalAlignment="Top" Height="18" Width="322" Foreground="White" Background="#FF1F95EF" Click="ReviewOrderButton_Click"/>
+
 
         </Grid>
     </StackPanel>

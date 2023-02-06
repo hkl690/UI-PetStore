@@ -43,6 +43,11 @@ namespace PetStore.Pages
         {
             itemPage = item;
         }
+
+        public void InitializeReviewOrderPage(BuyNowPage buyNow)
+        {
+            buyNowPage = buyNow;
+        }
         public void InitializeReceiptPage(ReceiptPage receipt)
         {
             receiptPage = receipt;
@@ -52,7 +57,8 @@ namespace PetStore.Pages
         private SearchResultsPage searchPage;
         private SignInPage signInPage;
         private ItemPage itemPage;
-        private ReceiptPage receiptPage;
+        private ReviewOrderPage reviewOrder;
+        private ReceiptPage receiptPage;        
 
         #region SearchBox
         /// <summary>
@@ -148,5 +154,10 @@ namespace PetStore.Pages
         }
         #endregion
 
+        private void ReviewOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            reviewOrderPage.Visibility = Visibility.Visible;
+            Visibility=Visibility.Hidden;
+        }
     }
 }
