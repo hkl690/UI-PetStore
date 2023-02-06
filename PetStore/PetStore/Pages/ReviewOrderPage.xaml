@@ -5,19 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetStore.Pages"
         mc:Ignorable="d"
-        Title="ReviewOrderPage" Height="600" Width="800">
+        Title="Review Order Page" Height="600" Width="800">
 
     <StackPanel Margin="3">
         <!-- this HeaderGrid displays the header-->
         <Grid x:Name="HeaderGrid">
-            <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="364,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="18" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler" AutomationProperties.HelpText="Type your search here:" TextChanged="SearchBox_TextChanged"/>
+            <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="364,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="22" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler" AutomationProperties.HelpText="Type your search here:" TextChanged="SearchBox_TextChanged"/>
             <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="26,0,0,0" VerticalAlignment="Center" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" MouseLeftButtonDown="PetStoreLogo_MouseLeftButtonDown"/>
-            <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White"/>
+            <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White" Height="22" Width="68"/>
         </Grid>
 
         <Separator Height="5"/>
-        <Grid Height="500">
-            <!-- this grid displays the thank you reciept -->
+
+        <!-- this grid displays the item they will order -->
+        <Grid x:Name="ReviewOrderGrid" Height="500">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="468*"/>
+                <ColumnDefinition Width="157*"/>
+                <ColumnDefinition Width="169*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="PlaceOrderButton" Content="Place Order" HorizontalAlignment="Left" Margin="286,188,0,0" VerticalAlignment="Top" Height="22" Width="222" Background="#FF1F95EF" Foreground="White" Grid.ColumnSpan="2" Click="PlaceOrderButton_Click"/>
+            
 
         </Grid>
     </StackPanel>

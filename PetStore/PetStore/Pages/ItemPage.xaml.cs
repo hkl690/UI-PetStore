@@ -37,6 +37,11 @@ namespace PetStore.Pages
         {
             buyNowPage = buyNow;
         }
+
+        public void InitializeReviewOrderPage(ReviewOrderPage reviewOrder)
+        {
+            reviewOrderPage = reviewOrder;
+        }
         public void InitializeReceiptPage(ReceiptPage receipt)
         {
             receiptPage = receipt;
@@ -46,6 +51,7 @@ namespace PetStore.Pages
         private SearchResultsPage searchPage;
         private SignInPage signInPage;
         private BuyNowPage buyNowPage;
+        private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
 
         #region SearchBox

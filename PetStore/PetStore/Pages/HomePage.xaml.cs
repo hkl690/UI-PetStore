@@ -18,6 +18,7 @@ namespace PetStore
         private readonly SearchResultsPage searchResultsPage;
         private readonly SignInPage signInPage;
         private readonly BuyNowPage buyNowPage;
+        private readonly ReviewOrderPage reviewOrderPage;
         private readonly ReceiptPage receiptPage;
 
         /// <summary>
@@ -106,30 +107,43 @@ namespace PetStore
             searchResultsPage = new SearchResultsPage(this);
             itemPage = new ItemPage(this);
             buyNowPage = new BuyNowPage(this);
+            reviewOrderPage = new ReviewOrderPage(this);
             receiptPage = new ReceiptPage(this);
             searchResultsPage.InitializeItemPage(itemPage);
             searchResultsPage.InitializeSignInPage(signInPage);
             searchResultsPage.InitializeBuyNowPage(buyNowPage);
+            searchResultsPage.InitializeReviewOrderPage(reviewOrderPage);
             searchResultsPage.InitializeReceiptPage(receiptPage);
             itemPage.InitializeSignInPage(signInPage);
             itemPage.InitializeSearchResultsPage(searchResultsPage);
             itemPage.InitializeBuyNowPage(buyNowPage);
+            itemPage.InitializeReviewOrderPage(reviewOrderPage);
             itemPage.InitializeReceiptPage(receiptPage);
             buyNowPage.InitializeSignInPage(signInPage);
             buyNowPage.InitializeSearchResultsPage(searchResultsPage);
             buyNowPage.InitializeItemPage(itemPage);
+            buyNowPage.InitializeReviewOrderPage(reviewOrderPage);
             buyNowPage.InitializeReceiptPage(receiptPage);
             signInPage.InitializeSearchResultsPage(searchResultsPage);
             signInPage.InitializeItemPage(itemPage);
             signInPage.InitializeBuyNowPage(buyNowPage);
+            signInPage.InitializeReviewOrderPage(reviewOrderPage);
             signInPage.InitializeReceiptPage(receiptPage);
+            reviewOrderPage.InitializeSignInPage(signInPage);
+            reviewOrderPage.InitializeItemPage(itemPage);
+            reviewOrderPage.InitializeSearchResultsPage(searchResultsPage);
+            reviewOrderPage.InitializeReceiptPage(receiptPage);
+            reviewOrderPage.InitializeBuyNowPage(buyNowPage);
             receiptPage.InitializeSearchResultsPage(searchResultsPage);
             receiptPage.InitializeItemPage(itemPage);
             receiptPage.InitializeBuyNowPage(buyNowPage);
             receiptPage.InitializeSignInPage(signInPage);
+            receiptPage.InitializeReviewOrderPage(reviewOrderPage);
+
             itemPage.Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Hidden;
             buyNowPage.Visibility = Visibility.Hidden;
+            reviewOrderPage.Visibility = Visibility.Hidden;
             receiptPage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
             SearchBox.Text = "Search";
@@ -380,7 +394,6 @@ namespace PetStore
         {
             Visibility = Visibility.Hidden;
         }
-
     }
 }
 
