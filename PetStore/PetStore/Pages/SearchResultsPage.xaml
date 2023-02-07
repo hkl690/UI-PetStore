@@ -23,7 +23,8 @@
                       AreRowDetailsFrozen="True" CanUserAddRows="False" 
                       CanUserDeleteRows="False" IsReadOnly="True" 
                       ScrollViewer.CanContentScroll="True" VerticalAlignment="Top" 
-                      MouseDoubleClick="SelectItem" Margin="10,21,10,0" HorizontalAlignment="Left">
+                      MouseDoubleClick="SelectItem" Margin="10,21,10,0" HorizontalAlignment="Left" MinColumnWidth="80" RowBackground="White">
+
                 <!--DataGrid.Columns-->
                     <!--DataGridTemplateColumn-->
                         <!--DataGridTemplateColumn.CellTemplate-->

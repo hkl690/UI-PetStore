@@ -12,14 +12,14 @@
         <Grid x:Name="HeaderGrid">
             <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="364,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="22" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler" AutomationProperties.HelpText="Type your search here:" TextChanged="SearchBox_TextChanged"/>
             <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="26,0,0,0" VerticalAlignment="Center" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" MouseLeftButtonDown="PetStoreLogo_MouseLeftButtonDown"/>
-            <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White" Height="22" Width="68"/>
+            <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,19" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White" Width="68"/>
         </Grid>
 
         <Separator Height="5"/>
 
         <!-- This grid displays the thank you reciept -->
         <Grid Height="500">
-            <Label x:Name="ThankYou" Content="Thank you for your order." HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top"/>
-         </Grid>
+            <Label x:Name="ThankYou" Content="Thank you for your order." HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top" FontSize="14"/>
+        </Grid>
     </StackPanel>
 </Window>
