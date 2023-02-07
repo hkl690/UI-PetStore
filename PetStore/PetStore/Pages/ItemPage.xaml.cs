@@ -195,6 +195,7 @@ namespace PetStore.Pages
         /// <param name="item"></param>
         internal void OpenItemPage(Item? item)
         {
+            buyNowPage.setCurrentItem(item);
             Visibility = Visibility.Visible;
             searchPage.Visibility = Visibility.Hidden;
             List<Item> itemList = new List<Item>();

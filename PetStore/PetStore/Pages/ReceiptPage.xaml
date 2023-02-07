@@ -16,10 +16,10 @@
         </Grid>
 
         <Separator Height="5"/>
-        <Grid Height="500">
-            <Label x:Name="ThankYou" Content="Thank you for your order." HorizontalAlignment="Left" Margin="74,73,0,0" VerticalAlignment="Top"/>
-            <!-- this grid displays the thank you reciept -->
 
-        </Grid>
+        <!-- This grid displays the thank you reciept -->
+        <Grid Height="500">
+            <Label x:Name="ThankYou" Content="Thank you for your order." HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top"/>
+         </Grid>
     </StackPanel>
 </Window>

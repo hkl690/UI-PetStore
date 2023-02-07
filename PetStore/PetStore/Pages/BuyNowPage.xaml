@@ -14,8 +14,10 @@
             <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="26,0,0,0" VerticalAlignment="Center" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" MouseLeftButtonDown="PetStoreLogo_MouseLeftButtonDown"/>
             <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White" Height="22" Width="68"/>
         </Grid>
-
+        
         <Separator Height="5"/>
+
+        <!-- This grid displays the form for payment information -->
         <Grid x:Name="Payment" Height="500">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -43,9 +45,6 @@
             <TextBox x:Name="ZipcodeTextbox" HorizontalAlignment="Left" Margin="446,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" Height="18"/>
             <Button x:Name="ReviewOrderButton" Content="Review Order" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" Height="22" Width="322" Foreground="White" Background="#FF1F95EF" Click="ReviewOrderButton_Click"/>
 
-
-        </Grid>
-
-        <!-- this grid displays the payment form for Buy Now -->
+        </Grid>        
     </StackPanel>
 </Window>

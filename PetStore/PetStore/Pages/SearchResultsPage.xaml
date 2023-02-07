@@ -19,7 +19,11 @@
 
         <!-- this ResultGrid displays all the SearchResult items and includes a Select button -->
         <Grid Height="500"> 
-            <DataGrid x:Name="ResultGrid" ItemsSource="{Binding Path=items}" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True" VerticalAlignment="Top" MouseDoubleClick="SelectItem">
+            <DataGrid x:Name="ResultGrid" ItemsSource="{Binding Path=items}" 
+                      AreRowDetailsFrozen="True" CanUserAddRows="False" 
+                      CanUserDeleteRows="False" IsReadOnly="True" 
+                      ScrollViewer.CanContentScroll="True" VerticalAlignment="Top" 
+                      MouseDoubleClick="SelectItem">
                 <DataGrid.Columns>
                     <!--DataGridTemplateColumn-->
                         <!--DataGridTemplateColumn.CellTemplate-->
@@ -29,7 +33,6 @@
                         <!--/DataGridTemplateColumn.CellTemplate-->
                     <!--/DataGridTemplateColumn-->
                 </DataGrid.Columns>
-
             </DataGrid>
 
         </Grid>

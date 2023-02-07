@@ -18,15 +18,14 @@
         <Separator Height="5"/>
 
         <!-- this grid displays the item they will order -->
-        <Grid x:Name="ReviewOrderGrid" Height="500">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="468*"/>
-                <ColumnDefinition Width="157*"/>
-                <ColumnDefinition Width="169*"/>
-            </Grid.ColumnDefinitions>
+        <Grid Height="500">
+            <DataGrid x:Name="ReviewOrderGrid" ItemsSource="{Binding Path=items}" 
+                      AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" 
+                      IsReadOnly="True" ScrollViewer.CanContentScroll="True" 
+                      VerticalAlignment="Top">
+                <DataGrid.Columns/>
+            </DataGrid>
             <Button x:Name="PlaceOrderButton" Content="Place Order" HorizontalAlignment="Left" Margin="286,188,0,0" VerticalAlignment="Top" Height="22" Width="222" Background="#FF1F95EF" Foreground="White" Grid.ColumnSpan="2" Click="PlaceOrderButton_Click"/>
-            
-
         </Grid>
     </StackPanel>
 </Window>

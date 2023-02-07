@@ -58,7 +58,8 @@ namespace PetStore.Pages
         private SignInPage signInPage;
         private ItemPage itemPage;
         private ReviewOrderPage reviewOrderPage;
-        private ReceiptPage receiptPage;        
+        private ReceiptPage receiptPage;
+        private Item currentItem;
 
         #region SearchBox
         /// <summary>
@@ -154,8 +155,21 @@ namespace PetStore.Pages
         }
         #endregion
 
-        private void ReviewOrderButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// This method puts the current item to be purchased into a list
+        /// to display on the Review Order Page.
+        /// </summary>
+        /// <param name="itemPurchased"></param>
+        public void setCurrentItem(Item itemPurchased)
         {
+            currentItem = itemPurchased;
+            List<Item> itemList = new List<Item>();
+            itemList.Add(currentItem);
+            reviewOrderPage.ReviewOrderGrid.ItemsSource = itemList.AsEnumerable();
+        }
+
+        private void ReviewOrderButton_Click(object sender, RoutedEventArgs e)
+        {           
             reviewOrderPage.Visibility = Visibility.Visible;
             Visibility=Visibility.Hidden;
         }

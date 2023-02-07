@@ -50,19 +50,19 @@ namespace PetStore.Pages
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
 
-
+//      this method is not being used anymore, will keep for now
         /// <summary>
         /// Press the Select button from the Search Results page to select an item
         /// and then the SearchResultsPage will be hidden
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SelectButtonClicked(object sender, RoutedEventArgs e)
-        {
-            itemProduct.Visibility = Visibility.Visible;
-            this.Visibility = Visibility.Hidden;
-            Item item = (Item)ResultGrid.Items.GetItemAt(0);
-        }
+//        private void SelectButtonClicked(object sender, RoutedEventArgs e)
+//        {
+//            itemProduct.Visibility = Visibility.Visible;
+//            this.Visibility = Visibility.Hidden;
+//            Item item = (Item)ResultGrid.Items.GetItemAt(0);
+//        }
 
         #region PetStore logo
         /// <summary>
@@ -160,6 +160,12 @@ namespace PetStore.Pages
         }
         #endregion
 
+        /// <summary>
+        /// When the item is double-clicked by the mouse, it will
+        /// go to the item page.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectItem(object sender, MouseButtonEventArgs e)
         {
             Item item = ResultGrid.SelectedItem as Item;
