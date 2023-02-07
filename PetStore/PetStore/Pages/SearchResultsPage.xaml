@@ -24,7 +24,7 @@
                       CanUserDeleteRows="False" IsReadOnly="True" 
                       ScrollViewer.CanContentScroll="True" VerticalAlignment="Top" 
                       MouseDoubleClick="SelectItem">
-                <DataGrid.Columns>
+                <!--DataGrid.Columns-->
                     <!--DataGridTemplateColumn-->
                         <!--DataGridTemplateColumn.CellTemplate-->
                             <!--DataTemplate-->
@@ -32,7 +32,7 @@
                             <!--/DataTemplate-->
                         <!--/DataGridTemplateColumn.CellTemplate-->
                     <!--/DataGridTemplateColumn-->
-                </DataGrid.Columns>
+                <!--/DataGrid.Columns-->
             </DataGrid>
 
         </Grid>
