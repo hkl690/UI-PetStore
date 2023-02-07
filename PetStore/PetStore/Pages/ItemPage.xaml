@@ -19,7 +19,7 @@
         <Separator Height="5"/>
         <Grid Height="500">
             <!-- this grid displays the item selected and includes a Buy Now button-->
-            <DataGrid x:Name="ItemGrid" ItemsSource="{Binding Path=items}" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True" VerticalAlignment="Top">
+            <DataGrid x:Name="ItemGrid" ItemsSource="{Binding Path=items}" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True" VerticalAlignment="Top" Margin="10,21,10,0">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
