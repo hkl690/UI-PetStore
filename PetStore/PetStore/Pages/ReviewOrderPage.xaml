@@ -1,0 +1,31 @@
+﻿<Window x:Class="PetStore.Pages.ReviewOrderPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PetStore.Pages"
+        mc:Ignorable="d"
+        Title="Review Order Page" Height="600" Width="800">
+
+    <StackPanel Margin="3">
+        <!-- this HeaderGrid displays the header-->
+        <Grid x:Name="HeaderGrid">
+            <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="364,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="22" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler" AutomationProperties.HelpText="Type your search here:" TextChanged="SearchBox_TextChanged"/>
+            <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="26,0,0,0" VerticalAlignment="Center" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" MouseLeftButtonDown="PetStoreLogo_MouseLeftButtonDown"/>
+            <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White" Height="22" Width="68"/>
+        </Grid>
+
+        <Separator Height="5"/>
+
+        <!-- this grid displays the item they will order -->
+        <Grid Height="500">
+            <DataGrid x:Name="ReviewOrderGrid" ItemsSource="{Binding Path=items}" 
+                      AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" 
+                      IsReadOnly="True" ScrollViewer.CanContentScroll="True" 
+                      VerticalAlignment="Top" Margin="10,21,10,0" HorizontalAlignment="Left" MinColumnWidth="80">
+                <!--DataGrid.Columns/-->
+            </DataGrid>
+            <Button x:Name="PlaceOrderButton" Content="Place Order" HorizontalAlignment="Left" Margin="286,188,0,0" VerticalAlignment="Top" Height="22" Width="222" Background="#FF1F95EF" Foreground="White" Grid.ColumnSpan="2" Click="PlaceOrderButton_Click"/>
+        </Grid>
+    </StackPanel>
+</Window>
