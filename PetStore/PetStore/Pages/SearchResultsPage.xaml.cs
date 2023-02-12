@@ -1,5 +1,9 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Input;
+using PetStore.Objects;
 
 namespace PetStore.Pages
 {
@@ -133,7 +137,7 @@ namespace PetStore.Pages
                 homePage.ItemResults.Clear();
                 Visibility = Visibility.Visible;
                 homePage.Visibility = Visibility.Hidden;
-
+                List<PictureObject> list = new List<PictureObject>();
                 foreach (Item item in homePage.Items)
                 {
                     if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) 
@@ -148,8 +152,11 @@ namespace PetStore.Pages
                     // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                     homePage.ItemResults.Add(item);
+
+                    list.Add(new PictureObject() { PictureFilePath = new System.Uri("file:///" + Directory.GetCurrentDirectory() + item.Picture), PictureName = item.ItemName });
                 }
-                ResultGrid.ItemsSource = homePage.ItemResults;                
+                ResultGrid.ItemsSource = list;  
+                
             
             }
         }

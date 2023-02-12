@@ -1,4 +1,7 @@
-﻿namespace PetStore
+﻿using System;
+using System.IO;
+
+namespace PetStore.Objects
 {
 
 
@@ -9,11 +12,13 @@
         public string ItemName { get; set; }
         public string Category { get; set; }
 
-        public System.Drawing.Image Picture { get; set; }
+        public string Picture { get; set; }
 
         public string Description { get; set; }
 
-        public Item(string species, double price, string itemName, string category, System.Drawing.Image picture, string description)
+        public Uri PictureFilePath { get; set; }
+
+        public Item(string species, double price, string itemName, string category, string picture, string description)
         {
             Species = species;
             Price = price;
@@ -21,6 +26,7 @@
             Category = category;
             Picture = picture;
             Description = description;
+            PictureFilePath = new Uri("file:///" + Directory.GetCurrentDirectory() + picture);
         }
 
     }

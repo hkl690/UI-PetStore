@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
+using PetStore.Objects;
 
 namespace PetStore.Pages
 {
