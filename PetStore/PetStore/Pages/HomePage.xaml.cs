@@ -56,7 +56,7 @@ namespace PetStore
             Items.Add(new Item("Cat", 29.99, "Cat Carrier", "Supplies", "\\Images\\Cat\\Supplies\\Cat Carrier.png", ""));
             Items.Add(new Item("Cat", 4.99, "Cat Collar", "Supplies", "\\Images\\Cat\\Supplies\\Cat Collar.png", ""));
             Items.Add(new Item("Cat", 8.99, "Cat Flea Medication", "Supplies", "\\Images\\Cat\\Supplies\\Cat Flea Med.png", ""));
-            Items.Add(new Item("Cat", 9.99, "Cat Flea Harness", "Supplies", "\\Images\\Cat\\Supplies\\Cat Harness.png", ""));
+            Items.Add(new Item("Cat", 9.99, "Cat Harness", "Supplies", "\\Images\\Cat\\Supplies\\Cat Harness.png", ""));
             Items.Add(new Item("Cat", 14.99, "Cat Litter Box", "Supplies", "\\Images\\Cat\\Supplies\\Cat Litter Box.png", ""));
             Items.Add(new Item("Cat", 8.99, "Cat Litter", "Supplies", "\\Images\\Cat\\Supplies\\Cat Litter.png", ""));
             Items.Add(new Item("Cat", 24.99, "Cat Scratcher", "Supplies", "\\Images\\Cat\\Supplies\\Cat Scratcher.png", ""));

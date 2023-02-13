@@ -25,14 +25,16 @@
                       CanUserDeleteRows="False" IsReadOnly="True" 
                       ScrollViewer.CanContentScroll="True" VerticalAlignment="Top" 
                       MouseDoubleClick="SelectItem" Margin="10,21,10,0" HorizontalAlignment="Left" MinColumnWidth="80" RowBackground="White">
+
+                <!-- This column displays the item's image -->
                 <DataGrid.Columns>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding PictureFilePath}" Width="100" Height="100"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding PictureFilePath}" Width="100" Height="100"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
                 <!--DataGrid.Columns-->
                     <!--DataGridTemplateColumn-->

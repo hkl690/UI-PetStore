@@ -149,14 +149,14 @@ namespace PetStore.Pages
                     {
                         continue;
                     }
-                    // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
-                    //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
+                    
                     homePage.ItemResults.Add(item);
-
+                    // Add the item's image to the resultgrid
                     list.Add(new PictureObject() { PictureFilePath = new System.Uri("file:///" + Directory.GetCurrentDirectory() + item.Picture), PictureName = item.ItemName });
                 }
-                ResultGrid.ItemsSource = list;  
-                
+
+                // Display the resultgrid list with images
+                ResultGrid.ItemsSource = list;                  
             
             }
         }
