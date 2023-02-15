@@ -25,7 +25,7 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="BuyNow" Content="Buy Now" Click="Button_Click"></Button>
+                                <Button x:Name="BuyNow" Content="Buy Now" Click="Button_Click" Foreground="White" Background="#FF1F95EF"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
