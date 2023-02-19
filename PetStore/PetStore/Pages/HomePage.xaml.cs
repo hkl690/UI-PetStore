@@ -1,5 +1,6 @@
 ﻿using PetStore.Objects;
 using PetStore.Pages;
+using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
@@ -30,7 +31,7 @@ namespace PetStore
             // Dog items
             // Images aren't working
             // Descriptions are empty strings for now, still need to write those
-            Items.Add(new Item("Dog", 6.99, "Dog Treat", "Food", "", "\\Images\\Dog\\Food\\Dog Treat.png"));
+            Items.Add(new Item("Dog", 6.99, "Dog Treat", "Food", "Satisy your dog's need to chew with\nthis great-tasting treat that also helps\nsupport his teeth.", "\\Images\\Dog\\Food\\Dog Treat.png"));
             Items.Add(new Item("Dog", 14.99, "Dry Dog Food", "Food", "", "\\Images\\Dog\\Food\\Dry Dog Food.png"));
             Items.Add(new Item("Dog", 2.99, "Wet Dog Food", "Food", "", "\\Images\\Dog\\Food\\Wet Dog Food.png"));
             Items.Add(new Item("Dog", 8.99, "Dog Brush", "Supplies", "", "\\Images\\Dog\\Supplies\\Dog Brush.png"));
