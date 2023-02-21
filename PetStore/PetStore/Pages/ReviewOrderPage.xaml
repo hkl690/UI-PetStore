@@ -23,9 +23,23 @@
                       AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" 
                       IsReadOnly="True" ScrollViewer.CanContentScroll="True" 
                       VerticalAlignment="Top" Margin="10,21,10,0" HorizontalAlignment="Left" MinColumnWidth="80">
-                <!--DataGrid.Columns/-->
+                
+                <!-- This column displays the item's image -->
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding PictureFilePath}" Width="100" Height="100"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+                
             </DataGrid>
+            
+            <!-- The Place Order button -->
             <Button x:Name="PlaceOrderButton" Content="Place Order" HorizontalAlignment="Left" Margin="286,188,0,0" VerticalAlignment="Top" Height="22" Width="222" Background="#FF1F95EF" Foreground="White" Grid.ColumnSpan="2" Click="PlaceOrderButton_Click"/>
+        
         </Grid>
     </StackPanel>
 </Window>
