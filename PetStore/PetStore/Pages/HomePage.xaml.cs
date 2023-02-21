@@ -28,8 +28,7 @@ namespace PetStore
         /// </summary>
         public HomePage()
         {
-            // Dog items
-            // Images aren't working
+            // Dog items            
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Dog", 6.99, "Dog Treat", "Food", "Satisy your dog's need to chew with\nthis great-tasting treat that also helps\nsupport his teeth.", "\\Images\\Dog\\Food\\Dog Treat.png"));
             Items.Add(new Item("Dog", 14.99, "Dry Dog Food", "Food", "", "\\Images\\Dog\\Food\\Dry Dog Food.png"));
@@ -48,7 +47,6 @@ namespace PetStore
             Items.Add(new Item("Dog", 14.99, "Pet Stain Remover", "Supplies", "", "\\Images\\Dog\\Supplies\\Pet Stain Remover.png"));
 
             // Cat items
-            // Images aren't working
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Cat", 3.99, "Cat Treat", "Food", "", "\\Images\\Cat\\Food\\Cat Treat.png"));
             Items.Add(new Item("Cat", 9.99, "Cat Dry Food", "Food", "", "\\Images\\Cat\\Food\\Dry Cat Food.png"));
@@ -65,7 +63,6 @@ namespace PetStore
             Items.Add(new Item("Cat", 14.99, "Cat Water Fountain", "Supplies", "", "\\Images\\Cat\\Supplies\\Cat Water Fountain.png"));
 
             // Small Animal items
-            // Images aren't working
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Small Animal", 5.99, "Bird Food Crickets", "Food", "", "\\Images\\Small Animal\\Food\\Bird Food Crickets.png"));
             Items.Add(new Item("Small Animal", 4.99, "Bird Food", "Food", "", "\\Images\\Small Animal\\Food\\Bird Food.png"));
@@ -81,7 +78,6 @@ namespace PetStore
             Items.Add(new Item("Small Animal", 6.99, "Water Bottle", "Supplies", "", "\\Images\\Small Animal\\Supplies\\Water Bottle.png"));
 
             // Fish items
-            // Images aren't working
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Fish", 7.99, "Fish Food", "Food", "", "\\Images\\Fish\\Food\\Fish Food.png"));
             Items.Add(new Item("Fish", 9.99, "Pond Fish Food", "Food", "", "\\Images\\Fish\\Food\\Pond Fish Food.png"));
@@ -89,7 +85,6 @@ namespace PetStore
             Items.Add(new Item("Fish", 9.99, "Fish Aquarium Starter Kit", "Supplies", "", "\\Images\\Fish\\Supplies\\Fish Aquarium Starter Kit.png"));
 
             // Reptile items
-            // Images aren't working
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Reptile", 9.99, "Reptile Food Crickets", "Food", "", "\\Images\\Reptile\\Food\\Reptile Food Crickets.png"));
             Items.Add(new Item("Reptile", 8.99, "Reptile Food Dried Insects", "Food", "", "\\Images\\Reptile\\Food\\Reptile Food Dried Insects.png"));
