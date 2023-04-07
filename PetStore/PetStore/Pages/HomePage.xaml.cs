@@ -23,11 +23,14 @@ namespace PetStore
         private readonly ReviewOrderPage reviewOrderPage;
         private readonly ReceiptPage receiptPage;
 
-        /// <summary>
-        /// Adding all items to the Item Collection and then initializing
-        /// </summary>
+        
         public HomePage()
         {
+            #region Adding all items to the collection
+            /// <summary>
+            /// Adding all items to the Item Collection and then initializing
+            /// </summary>
+
             // Dog items            
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Dog", 6.99, "Dog Treat", "Food", "Satisy your dog's need to chew with\nthis great-tasting treat that also helps\nsupport his teeth.", "\\Images\\Dog\\Food\\Dog Treat.png"));
@@ -97,8 +100,9 @@ namespace PetStore
             Items.Add(new Item("Reptile", 9.99, "Reptile Habitat Soil", "Supplies", "", "\\Images\\Reptile\\Supplies\\Reptile Habitat Soil.png"));
             Items.Add(new Item("Reptile", 99.99, "Reptile Habitat", "Supplies", "", "\\Images\\Reptile\\Supplies\\Reptile Habitat.png"));
             Items.Add(new Item("Reptile", 8.99, "Reptile Heat Light", "Supplies", "", "\\Images\\Reptile\\Supplies\\Reptile Heat Light.png"));
+            #endregion
 
-
+            #region Initializing pages
             InitializeComponent();
             signInPage = new SignInPage(this);
             searchResultsPage = new SearchResultsPage(this);
@@ -136,16 +140,21 @@ namespace PetStore
             receiptPage.InitializeBuyNowPage(buyNowPage);
             receiptPage.InitializeSignInPage(signInPage);
             receiptPage.InitializeReviewOrderPage(reviewOrderPage);
+            #endregion
 
+            #region Visibility of pages
             itemPage.Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Hidden;
             buyNowPage.Visibility = Visibility.Hidden;
             reviewOrderPage.Visibility = Visibility.Hidden;
             receiptPage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
+            #endregion
+
             SearchBox.Text = "Search";
         }
 
+        #region HomePage Animal Button clicks
         /// <summary>
         /// Clicking on the Dog image will bring up all of the Dog items
         /// and clear any earlier results
@@ -266,7 +275,9 @@ namespace PetStore
             }
             searchResultsPage.ResultGrid.ItemsSource = ItemResults;
         }
+        #endregion
 
+        #region Search box logic
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
         /// </summary>
@@ -330,6 +341,7 @@ namespace PetStore
                 
             }
         }
+        #endregion
 
         private void SearchBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
@@ -369,6 +381,7 @@ namespace PetStore
             searchResultsPage.ResultGrid.ItemsSource = ItemResults;
         }
 
+        #region PetStore logo
         /// <summary>
         /// When the Pet Store logo is clicked on by the mouse, it goes to the Home page.
         /// </summary>
@@ -381,12 +394,15 @@ namespace PetStore
             searchResultsPage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
         }
+        #endregion
 
+        
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {            
             signInPage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
+        
 
         public void HideHomePageWindow()
         {
@@ -395,6 +411,6 @@ namespace PetStore
     }
 }
 
-/* Using this reference website:
+/* Model View reference:
  https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern
 */
