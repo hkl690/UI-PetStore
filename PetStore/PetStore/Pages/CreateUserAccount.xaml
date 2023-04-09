@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetStore.Pages"
-        xmlns:PetStore="clr-namespace:PetStore" x:Class="PetStore.Pages.SignInPage"
+        xmlns:PetStore="clr-namespace:PetStore" x:Class="PetStore.Pages.CreateUserAccountPage"
         mc:Ignorable="d"
-        Title="Sign In Page" Height="600" Width="800">
+        Title="Create User Account Page" Height="600" Width="800">
 
     <StackPanel Margin="3">
         <!-- this HeaderGrid displays the header-->
@@ -19,7 +19,7 @@
         <Separator Height="5"/>
 
         <!-- this grid displays the Sign In form -->
-        <Grid x:Name="SignInGrid" Height="500">
+        <Grid x:Name="CreateUserAccountGrid" Height="500">
             <TextBox x:Name="firstName" HorizontalAlignment="Left" Margin="66,57,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="200" IsManipulationEnabled="True" GotFocus="firstName_GotFocus" LostFocus="firstName_LostFocus" TextChanged="firstName_TextChanged" Height="18"/>
             <TextBox x:Name="lastName" HorizontalAlignment="Left" Margin="304,57,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="200" IsManipulationEnabled="True" GotFocus="lastName_GotFocus" LostFocus="lastName_LostFocus" TextChanged="lastName_TextChanged" Height="18"/>
             <TextBox x:Name="email" HorizontalAlignment="Left" Margin="66,99,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="438" IsManipulationEnabled="True" GotFocus="email_GotFocus" LostFocus="email_LostFocus" TextChanged="email_TextChanged" Height="18"/>
