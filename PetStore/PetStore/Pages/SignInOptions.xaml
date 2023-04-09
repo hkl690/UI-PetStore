@@ -26,7 +26,7 @@
             <Label x:Name="ReturningCustomersLabel" Content="Returning Customers" HorizontalAlignment="Left" Height="25" Margin="66,66,0,0" VerticalAlignment="Top" Width="268" Padding="0,0,0,0"/>
             <Label x:Name="CreateUserAccountLabel" Content="New Customer" HorizontalAlignment="Left" Height="25" Margin="440,66,0,0" VerticalAlignment="Top" Width="268" Padding="0,0,0,0"/>
             <Rectangle x:Name="SignInRectangle" Stroke="Black" Margin="44,37,376,278" UseLayoutRounding="True" Opacity="0.995"/>
-            <Rectangle Stroke="Black" Margin="423,37,42,278"/>
+            <Rectangle x:Name="CreateAnAccountRectangle" Stroke="Black" Margin="423,37,42,278"/>
             <Button x:Name="CreateUserAccountButton" Content="Create An Account" Background="#FF1F95EF" Foreground="White" HorizontalAlignment="Left" Margin="466,98,0,0" VerticalAlignment="Top" Click="CreateUserAccount_Click" IsCancel="True" Width="180"/>
         </Grid>
 
