@@ -7,16 +7,16 @@ using PetStore.Objects;
 namespace PetStore.Pages
 {
     /// <summary>
-    /// Interaction logic for SignInPage.xaml
+    /// Interaction logic for CreateUserAccount.xaml
     /// </summary>
-    public partial class SignInPage : Window
+    public partial class CreateUserAccountPage : Window
     {
         public string customerFirstName = String.Empty;
         public string customerLastName = String.Empty;
         public string customerEmail = String.Empty;
         public string customerPassword = String.Empty;
 
-        public SignInPage(HomePage home)
+        public CreateUserAccountPage(HomePage home)
         {
             InitializeComponent();
             homePage = home;
