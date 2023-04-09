@@ -18,6 +18,7 @@ namespace PetStore
         public ObservableCollection<Item> ItemResults = new();
         private readonly ItemPage itemPage;
         private readonly SearchResultsPage searchResultsPage;
+        private readonly SignInOptionsPage signInOptionsPage;
         private readonly CreateUserAccountPage createUserAccountPage;
         private readonly BuyNowPage buyNowPage;
         private readonly ReviewOrderPage reviewOrderPage;
@@ -102,6 +103,7 @@ namespace PetStore
 
             #region Initializing pages
             InitializeComponent();
+            signInOptionsPage = new SignInOptionsPage(this);
             createUserAccountPage = new CreateUserAccountPage(this);
             searchResultsPage = new SearchResultsPage(this);
             itemPage = new ItemPage(this);
@@ -109,26 +111,31 @@ namespace PetStore
             reviewOrderPage = new ReviewOrderPage(this);
             receiptPage = new ReceiptPage(this);
             searchResultsPage.InitializeItemPage(itemPage);
-            searchResultsPage.InitializeSignInPage(createUserAccountPage);
+            searchResultsPage.InitializeCreateUserAccountPage(createUserAccountPage);
             searchResultsPage.InitializeBuyNowPage(buyNowPage);
             searchResultsPage.InitializeReviewOrderPage(reviewOrderPage);
             searchResultsPage.InitializeReceiptPage(receiptPage);
-            itemPage.InitializeSignInPage(createUserAccountPage);
+            itemPage.InitializeCreateUserAccountPage(createUserAccountPage);
             itemPage.InitializeSearchResultsPage(searchResultsPage);
             itemPage.InitializeBuyNowPage(buyNowPage);
             itemPage.InitializeReviewOrderPage(reviewOrderPage);
             itemPage.InitializeReceiptPage(receiptPage);
-            buyNowPage.InitializeSignInPage(createUserAccountPage);
+            buyNowPage.InitializeCreateUserAccountPage(createUserAccountPage);
             buyNowPage.InitializeSearchResultsPage(searchResultsPage);
             buyNowPage.InitializeItemPage(itemPage);
             buyNowPage.InitializeReviewOrderPage(reviewOrderPage);
             buyNowPage.InitializeReceiptPage(receiptPage);
+            signInOptionsPage.InitializeCreateUserAccountPage(createUserAccountPage);
+            signInOptionsPage.InitializeSearchResultsPage(searchResultsPage);
+            signInOptionsPage.InitializeItemPage(itemPage);
+            signInOptionsPage.InitializeReviewOrderPage(reviewOrderPage);
+            signInOptionsPage.InitializeReceiptPage(receiptPage);
             createUserAccountPage.InitializeSearchResultsPage(searchResultsPage);
             createUserAccountPage.InitializeItemPage(itemPage);
             createUserAccountPage.InitializeBuyNowPage(buyNowPage);
             createUserAccountPage.InitializeReviewOrderPage(reviewOrderPage);
             createUserAccountPage.InitializeReceiptPage(receiptPage);
-            reviewOrderPage.InitializeSignInPage(createUserAccountPage);
+            reviewOrderPage.InitializeCreateUserAccountPage(createUserAccountPage);
             reviewOrderPage.InitializeItemPage(itemPage);
             reviewOrderPage.InitializeSearchResultsPage(searchResultsPage);
             reviewOrderPage.InitializeReceiptPage(receiptPage);
@@ -136,7 +143,7 @@ namespace PetStore
             receiptPage.InitializeSearchResultsPage(searchResultsPage);
             receiptPage.InitializeItemPage(itemPage);
             receiptPage.InitializeBuyNowPage(buyNowPage);
-            receiptPage.InitializeSignInPage(createUserAccountPage);
+            receiptPage.InitializeCreateUserAccountPage(createUserAccountPage);
             receiptPage.InitializeReviewOrderPage(reviewOrderPage);
             #endregion
 
@@ -397,7 +404,7 @@ namespace PetStore
         
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {            
-            createUserAccountPage.Visibility = Visibility.Visible;
+            signInOptionsPage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
         

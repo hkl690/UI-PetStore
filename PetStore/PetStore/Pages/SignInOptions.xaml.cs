@@ -7,20 +7,16 @@ using PetStore.Objects;
 namespace PetStore.Pages
 {
     /// <summary>
-    /// Interaction logic for CreateUserAccount.xaml
+    /// Interaction logic for SignInOptions.xaml
     /// </summary>
-    public partial class CreateUserAccountPage : Window
+    public partial class SignInOptionsPage : Window
     {
         public string customerFirstName = String.Empty;
         public string customerLastName = String.Empty;
         public string customerEmail = String.Empty;
         public string customerPassword = String.Empty;
 
-        public void InitializeSignInOptionsPage(SignInOptionsPage signInOptions)
-        {
-            signInOptionsPage = signInOptions;
-        }
-        public CreateUserAccountPage(HomePage home)
+        public SignInOptionsPage(HomePage home)
         {
             InitializeComponent();
             homePage = home;
@@ -28,6 +24,10 @@ namespace PetStore.Pages
         public void InitializeSearchResultsPage(SearchResultsPage search)
         {
             searchPage = search;
+        }
+        public void InitializeCreateUserAccountPage(CreateUserAccountPage createUserAccount)
+        {
+            createUserAccountPage = createUserAccount;
         }
         public void InitializeItemPage(ItemPage item)
         {
@@ -49,7 +49,7 @@ namespace PetStore.Pages
 
         private HomePage homePage;
         private SearchResultsPage searchPage;
-        private SignInOptionsPage signInOptionsPage;
+        private CreateUserAccountPage createUserAccountPage;
         private ItemPage itemProduct;
         private BuyNowPage buyNowPage;
         private ReviewOrderPage reviewOrderPage;
@@ -152,6 +152,7 @@ namespace PetStore.Pages
         #endregion
 
         #region Textbox Displays
+        /*
         /// <summary>
         /// If the firstName textbox has no content, display "First Name"
         /// </summary>
@@ -164,7 +165,8 @@ namespace PetStore.Pages
                 firstName.Text = "First Name";
             }
         }
-
+*/
+/*
         /// <summary>
         /// This method takes out the words "First Name" from the textbox
         /// </summary>
@@ -177,7 +179,8 @@ namespace PetStore.Pages
                 firstName.Text = "";
             }
         }
-
+*/
+/*
         /// <summary>
         /// This method displays "Last Name" in the textbox
         /// </summary>
@@ -190,7 +193,8 @@ namespace PetStore.Pages
                 lastName.Text = "Last Name";
             }
         }
-
+*/
+/*
         /// <summary>
         /// This method takes out the words "Last Name" from the textbox
         /// </summary>
@@ -203,7 +207,7 @@ namespace PetStore.Pages
                 lastName.Text = "";
             }
         }
-
+*/
         /// <summary>
         /// This method displays "Email" in the textbox
         /// </summary>
@@ -265,27 +269,28 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            customerFirstName = firstName.Text;
-            customerLastName = lastName.Text;
+         //   customerFirstName = firstName.Text;
+         //   customerLastName = lastName.Text;
             customerEmail = email.Text;
             customerPassword = password.Text;
-            firstName.Text = "";
-            lastName.Text = "";
+         //   firstName.Text = "";
+         //   lastName.Text = "";
             email.Text = "";
             password.Text = "";
-            firstName.Text = "First Name";
-            lastName.Text = "Last Name";
+         //   firstName.Text = "First Name";
+         //   lastName.Text = "Last Name";
             email.Text = "Email";
             password.Text = "Password";
             homePage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
 
+        // this might be useless now
         private void firstName_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-
+        // this might be useless now
         private void lastName_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -300,8 +305,12 @@ namespace PetStore.Pages
         {
 
         }
-
-
+        
+        private void CreateUserAccount_Click(object sender, RoutedEventArgs e)
+        {
+            createUserAccountPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
+        }
     }
 }
 

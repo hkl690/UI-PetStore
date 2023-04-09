@@ -1,0 +1,34 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PetStore.Pages"
+        xmlns:PetStore="clr-namespace:PetStore" x:Class="PetStore.Pages.SignInOptionsPage"
+        mc:Ignorable="d"
+        Title="Sign In Options Page" Height="600" Width="800">
+
+    <StackPanel Margin="3">
+        <!-- this HeaderGrid displays the header-->
+        <Grid x:Name="HeaderGrid">
+            <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="364,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Height="22" Text="Search" IsManipulationEnabled="True" GotFocus="RemoveSearchFromBox" LostFocus="AddSearchToBox" KeyDown="OnKeyDownHandler" AutomationProperties.HelpText="Type your search here:" TextChanged="SearchBox_TextChanged"/>
+            <Image x:Name="PetStoreLogo" HorizontalAlignment="Left" Height="71" Margin="26,0,0,0" VerticalAlignment="Center" Width="309" Source="/Images/PetStore Logo.png" AutomationProperties.Name="Pet Store" MouseLeftButtonDown="PetStoreLogo_MouseLeftButtonDown"/>
+            <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Left" Margin="686,30,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="SignIn_Click" Foreground="White" Height="22" Width="68"/>
+        </Grid>
+
+        <Separator Height="5"/>
+
+        <!-- this grid displays the Sign In form -->
+        <Grid x:Name="SignInOptionsGrid" Height="500">
+            <TextBox x:Name="email" HorizontalAlignment="Left" Margin="66,99,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="330" IsManipulationEnabled="True" GotFocus="email_GotFocus" LostFocus="email_LostFocus" TextChanged="email_TextChanged" Height="18"/>
+            <TextBox x:Name="password" HorizontalAlignment="Left" Margin="66,130,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="330" IsManipulationEnabled="True" GotFocus="password_GotFocus" LostFocus="password_LostFocus" TextChanged="password_TextChanged" Height="18"/>
+            <Button x:Name="SubmitButton" Content="Submit" HorizontalAlignment="Left" Margin="158,171,0,0" VerticalAlignment="Top" Background="#FF1F95EF" Click="Submit_Click" Foreground="White" Width="110" Height="22"/>
+            <Label x:Name="ReturningCustomersLabel" Content="Returning Customers" HorizontalAlignment="Left" Height="25" Margin="66,66,0,0" VerticalAlignment="Top" Width="268" Padding="0,0,0,0"/>
+            <Label x:Name="CreateUserAccountLabel" Content="New Customer" HorizontalAlignment="Left" Height="25" Margin="440,66,0,0" VerticalAlignment="Top" Width="268" Padding="0,0,0,0"/>
+            <Rectangle x:Name="SignInRectangle" Stroke="Black" Margin="44,37,376,278" UseLayoutRounding="True" Opacity="0.995"/>
+            <Rectangle Stroke="Black" Margin="423,37,42,278"/>
+            <Button x:Name="CreateUserAccountButton" Content="Create An Account" Background="#FF1F95EF" Foreground="White" HorizontalAlignment="Left" Margin="466,98,0,0" VerticalAlignment="Top" Click="CreateUserAccount_Click" IsCancel="True" Width="180"/>
+        </Grid>
+
+    </StackPanel>
+</Window>

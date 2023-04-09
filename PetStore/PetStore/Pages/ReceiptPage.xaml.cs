@@ -31,8 +31,11 @@ namespace PetStore.Pages
         {
             searchPage = search;
         }
-
-        public void InitializeSignInPage(CreateUserAccountPage createUserAccount)
+        public void InitializeSignInOptionsPage(SignInOptionsPage signInOptions)
+        {
+            signInOptionsPage = signInOptions;
+        }
+        public void InitializeCreateUserAccountPage(CreateUserAccountPage createUserAccount)
         {
             createUserAccountPage = createUserAccount;
         }
@@ -54,6 +57,7 @@ namespace PetStore.Pages
 
         private HomePage homePage;
         private SearchResultsPage searchPage;
+        private SignInOptionsPage signInOptionsPage;
         private CreateUserAccountPage createUserAccountPage;
         private ItemPage itemPage;
         private BuyNowPage buyNowPage;
@@ -154,7 +158,7 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            createUserAccountPage.Visibility = Visibility.Visible;
+            signInOptionsPage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
         #endregion
