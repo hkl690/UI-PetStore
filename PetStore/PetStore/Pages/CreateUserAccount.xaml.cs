@@ -25,6 +25,10 @@ namespace PetStore.Pages
             InitializeComponent();
             homePage = home;
         }
+        public void InitializeUserAccountMadePage(UserAccountMadePage userAccountMade)
+        {
+            userAccountMadePage = userAccountMade;
+        }
         public void InitializeSearchResultsPage(SearchResultsPage search)
         {
             searchPage = search;
@@ -50,6 +54,7 @@ namespace PetStore.Pages
         private HomePage homePage;
         private SearchResultsPage searchPage;
         private SignInOptionsPage signInOptionsPage;
+        private UserAccountMadePage userAccountMadePage;
         private ItemPage itemProduct;
         private BuyNowPage buyNowPage;
         private ReviewOrderPage reviewOrderPage;
@@ -277,7 +282,8 @@ namespace PetStore.Pages
             lastName.Text = "Last Name";
             email.Text = "Email";
             password.Text = "Password";
-            homePage.Visibility = Visibility.Visible;
+            // Pressing submit will take them to the UserAccountMadePage
+            userAccountMadePage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
 
