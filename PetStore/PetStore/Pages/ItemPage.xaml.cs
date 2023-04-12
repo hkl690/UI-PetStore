@@ -38,7 +38,10 @@ namespace PetStore.Pages
         {
             createUserAccountPage = createUserAccount;
         }
-
+        public void InitializeUserAccountMadePage(UserAccountMadePage userAccountMade)
+        {
+            userAccountMadePage = userAccountMade;
+        }
         public void InitializeBuyNowPage(BuyNowPage buyNow)
         {
             buyNowPage = buyNow;
@@ -57,6 +60,7 @@ namespace PetStore.Pages
         private SearchResultsPage searchPage;
         private SignInOptionsPage signInOptionsPage;
         private CreateUserAccountPage createUserAccountPage;
+        private UserAccountMadePage userAccountMadePage;
         private BuyNowPage buyNowPage;
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;

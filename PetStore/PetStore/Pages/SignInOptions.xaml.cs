@@ -20,14 +20,18 @@ namespace PetStore.Pages
         {
             InitializeComponent();
             homePage = home;
+        }        
+        public void InitializeCreateUserAccountPage(CreateUserAccountPage createUserAccount)
+        {
+            createUserAccountPage = createUserAccount;
+        }
+        public void InitializeUserAccountMadePage(UserAccountMadePage userAccountMade)
+        {
+            userAccountMadePage = userAccountMade;
         }
         public void InitializeSearchResultsPage(SearchResultsPage search)
         {
             searchPage = search;
-        }
-        public void InitializeCreateUserAccountPage(CreateUserAccountPage createUserAccount)
-        {
-            createUserAccountPage = createUserAccount;
         }
         public void InitializeItemPage(ItemPage item)
         {
@@ -50,6 +54,7 @@ namespace PetStore.Pages
         private HomePage homePage;
         private SearchResultsPage searchPage;
         private CreateUserAccountPage createUserAccountPage;
+        private UserAccountMadePage userAccountMadePage;
         private ItemPage itemProduct;
         private BuyNowPage buyNowPage;
         private ReviewOrderPage reviewOrderPage;

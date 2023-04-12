@@ -1,56 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using PetStore.Objects;
 
 namespace PetStore.Pages
 {
     /// <summary>
-    /// Interaction logic for BuyNowPage.xaml
+    /// Interaction logic for UserAccountMade.xaml
     /// </summary>
-    public partial class BuyNowPage : Window
+    public partial class UserAccountMadePage : Window
     {
-        /// <summary>
-        /// Let the HomePage know BuyNowPage is initialized
-        /// </summary>
-        /// <param name="homePage"></param>
-        public BuyNowPage(HomePage homePage)
-        {
-            InitializeComponent();
-            this.homePage = homePage;
-        }
-
-        public void InitializeSearchResultsPage(SearchResultsPage search)
-        {
-            searchPage = search;
-        }
-
+        
         public void InitializeSignInOptionsPage(SignInOptionsPage signInOptions)
         {
             signInOptionsPage = signInOptions;
         }
-
+        public UserAccountMadePage(HomePage home)
+        {
+            InitializeComponent();
+            homePage = home;
+        }
         public void InitializeCreateUserAccountPage(CreateUserAccountPage createUserAccount)
         {
             createUserAccountPage = createUserAccount;
         }
-        public void InitializeUserAccountMadePage(UserAccountMadePage userAccountMade)
+        public void InitializeSearchResultsPage(SearchResultsPage search)
         {
-            userAccountMadePage = userAccountMade;
+            searchPage = search;
         }
         public void InitializeItemPage(ItemPage item)
         {
-            itemPage = item;
+            itemProduct = item;
+        }
+        public void InitializeBuyNowPage(BuyNowPage buyNow)
+        {
+            buyNowPage = buyNow;
         }
 
         public void InitializeReviewOrderPage(ReviewOrderPage reviewOrder)
@@ -66,13 +51,12 @@ namespace PetStore.Pages
         private SearchResultsPage searchPage;
         private SignInOptionsPage signInOptionsPage;
         private CreateUserAccountPage createUserAccountPage;
-        private UserAccountMadePage userAccountMadePage;
-        private ItemPage itemPage;
+        private ItemPage itemProduct;
+        private BuyNowPage buyNowPage;
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
-        private Item currentItem;
 
-        #region SearchBox
+        #region Header
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
         /// </summary>
@@ -111,17 +95,19 @@ namespace PetStore.Pages
         {
             if (e.Key == Key.Return)
             {
+                // Page_Control.SelectedIndex = 1;
+                //SearchResults.Text = string.Empty;
                 homePage.ItemResults.Clear();
                 searchPage.Visibility = Visibility.Visible;
                 Visibility = Visibility.Hidden;
 
                 foreach (Item item in homePage.Items)
                 {
-                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) 
-                        || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
-                        || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) 
-                        || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
-                        || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) 
+                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower())
+                        || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower())
+                        || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower())
+                        || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower())
+                        || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower())
                         || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
                     {
                         continue;
@@ -130,7 +116,9 @@ namespace PetStore.Pages
                     //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                     homePage.ItemResults.Add(item);
                 }
-                searchPage.ResultGrid.ItemsSource = homePage.ItemResults;                
+
+                searchPage.ResultGrid.ItemsSource = homePage.ItemResults;
+
             }
         }
 
@@ -138,9 +126,7 @@ namespace PetStore.Pages
         {
 
         }
-        #endregion SearchBox
 
-        #region PetStoreLogo
         /// <summary>
         /// Click on the PetStore logo to go back to the homePage
         /// </summary>
@@ -148,12 +134,12 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void PetStoreLogo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            // Page_Control.SelectedIndex = 0;
+
             homePage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
-        #endregion
 
-        #region SignIn button
         /// <summary>
         /// Press the Sign in button
         /// </summary>
@@ -161,28 +147,25 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            signInOptionsPage.Visibility = Visibility.Visible;
-            Visibility = Visibility.Hidden;
+            homePage.Visibility = Visibility.Hidden;
+            Visibility = Visibility.Visible;
         }
+
+
+
+
+
         #endregion
-
         /// <summary>
-        /// This method puts the current item to be purchased into a list
-        /// to display on the Review Order Page.
+        /// Press the Back to the Pet Store button to go to the home page
         /// </summary>
-        /// <param name="itemPurchased"></param>
-        public void setCurrentItem(Item itemPurchased)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackToPetStore_Button_Click(object sender, RoutedEventArgs e)
         {
-            currentItem = itemPurchased;
-            List<Item> itemList = new List<Item>();
-            itemList.Add(currentItem);
-            reviewOrderPage.ReviewOrderGrid.ItemsSource = itemList.AsEnumerable();
-        }
-
-        private void ReviewOrderButton_Click(object sender, RoutedEventArgs e)
-        {           
-            reviewOrderPage.Visibility = Visibility.Visible;
-            Visibility=Visibility.Hidden;
+            homePage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
         }
     }
 }
+
