@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Input;
 using PetStore.Objects;
 
@@ -274,12 +277,37 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-         //   customerFirstName = firstName.Text;
-         //   customerLastName = lastName.Text;
+            //   customerFirstName = firstName.Text;
+            //   customerLastName = lastName.Text;
             customerEmail = email.Text;
             customerPassword = password.Text;
-         //   firstName.Text = "";
-         //   lastName.Text = "";
+            // check the csv file with userLine
+            string[] userLine = new string[] { };
+            
+            if (File.Exists("userAccounts.csv"))
+            {
+                foreach (string line in File.ReadAllLines("userAccounts.csv"))
+                {
+                    userLine = line.Split(',');
+
+                    if (userLine.GetValue(2).ToString().Equals(customerEmail) &&
+                        userLine.GetValue(3).ToString().Equals(customerPassword))
+                    {
+                        break;
+                    }
+                }
+                if (!(userLine.GetValue(2).ToString().Equals(customerEmail) && userLine.GetValue(3).ToString().Equals(customerPassword)))
+                {
+                    MessageBox.Show("The provided email and password do not exist.", "Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+            }
+
+
+
+            //   firstName.Text = "";
+            //   lastName.Text = "";
             email.Text = "";
             password.Text = "";
          //   firstName.Text = "First Name";

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -60,7 +62,7 @@ namespace PetStore.Pages
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
 
-        #region Header
+        #region Searchbox
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
         /// </summary>
@@ -130,7 +132,9 @@ namespace PetStore.Pages
         {
 
         }
+        #endregion
 
+        #region PetStoreLogo
         /// <summary>
         /// Click on the PetStore logo to go back to the homePage
         /// </summary>
@@ -143,7 +147,9 @@ namespace PetStore.Pages
             homePage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
         }
+        #endregion
 
+        #region SignIn button
         /// <summary>
         /// Press the Sign in button
         /// </summary>
@@ -151,11 +157,11 @@ namespace PetStore.Pages
         /// <param name="e"></param>
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            homePage.Visibility = Visibility.Hidden;
-            Visibility = Visibility.Visible;
+            signInOptionsPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
         }
         #endregion
-
+        
         #region Textbox Displays
         /// <summary>
         /// If the firstName textbox has no content, display "First Name"
@@ -274,6 +280,45 @@ namespace PetStore.Pages
             customerLastName = lastName.Text;
             customerEmail = email.Text;
             customerPassword = password.Text;
+            if ("First Name".Equals(customerFirstName))
+            {
+                MessageBox.Show("Error: Please fill in your first name.", "Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+
+            } else if ("Last Name".Equals(customerLastName))
+            {
+                MessageBox.Show("Error: Please fill in your last name.", "Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else if ("Email".Equals(customerEmail))
+            {
+                MessageBox.Show("Error: Please fill in your email.", "Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else if( "Password".Equals(customerPassword))
+            {
+                MessageBox.Show("Error: Please fill in your password.", "Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            List<string> existingEmails = new List<string>();
+
+            if(File.Exists("userAccounts.csv"))
+            {
+                foreach (string line in File.ReadAllLines("userAccounts.csv"))
+                {
+                    string[] userLine = line.Split(',');
+                    existingEmails.Add((string)userLine.GetValue(2));
+                }
+
+                if (existingEmails.Contains(customerEmail))
+                {
+                    MessageBox.Show("Error: The provided email already exists.", "Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
+
+            File.AppendAllText("userAccounts.csv", $"{customerFirstName},{customerLastName},{customerEmail},{customerPassword}\n");
             firstName.Text = "";
             lastName.Text = "";
             email.Text = "";
