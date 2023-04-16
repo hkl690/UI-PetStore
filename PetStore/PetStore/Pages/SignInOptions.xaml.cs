@@ -283,7 +283,12 @@ namespace PetStore.Pages
             customerPassword = password.Text;
             // check the csv file with userLine
             string[] userLine = new string[] { };
-            
+            if (!(File.Exists("userAccounts.csv")))
+            {
+                MessageBox.Show("Error: Please create an account.", "Invalid", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                return;
+            }
             if (File.Exists("userAccounts.csv"))
             {
                 foreach (string line in File.ReadAllLines("userAccounts.csv"))
@@ -295,7 +300,16 @@ namespace PetStore.Pages
                     {
                         break;
                     }
+                    
                 }
+                if (userLine.GetValue(2).ToString().Equals("Email") &&
+                    userLine.GetValue(3).ToString().Equals("Password"))
+                {
+                    MessageBox.Show("Sign in with your registered email and password.", "Invalid", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    return;
+                }
+
                 if (!(userLine.GetValue(2).ToString().Equals(customerEmail) && userLine.GetValue(3).ToString().Equals(customerPassword)))
                 {
                     MessageBox.Show("The provided email and password do not exist.", "Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -303,7 +317,7 @@ namespace PetStore.Pages
                 }
 
             }
-
+            
 
 
             //   firstName.Text = "";
