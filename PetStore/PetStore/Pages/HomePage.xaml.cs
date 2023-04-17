@@ -31,7 +31,7 @@ namespace PetStore
             #region Adding all items to the collection
             // Adding all items to the Item Collection and then initializing
 
-            // Dog items            
+            // Dog 15 items            
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Dog", 6.99, "Dog Treat", "Food", "Satisy your dog's need to chew with\nthis great-tasting treat that also helps\nsupport his teeth.", "\\Images\\Dog\\Food\\Dog Treat.png"));
             Items.Add(new Item("Dog", 14.99, "Dry Dog Food", "Food", "", "\\Images\\Dog\\Food\\Dry Dog Food.png"));
@@ -49,7 +49,7 @@ namespace PetStore
             Items.Add(new Item("Dog", 14.99, "Dog Water Fountain", "Supplies", "", "\\Images\\Dog\\Supplies\\Dog Water Fountain.png"));
             Items.Add(new Item("Dog", 14.99, "Pet Stain Remover", "Supplies", "", "\\Images\\Dog\\Supplies\\Pet Stain Remover.png"));
 
-            // Cat items
+            // Cat 13 items
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Cat", 3.99, "Cat Treat", "Food", "", "\\Images\\Cat\\Food\\Cat Treat.png"));
             Items.Add(new Item("Cat", 9.99, "Cat Dry Food", "Food", "", "\\Images\\Cat\\Food\\Dry Cat Food.png"));
@@ -65,7 +65,7 @@ namespace PetStore
             Items.Add(new Item("Cat", 49.99, "Cat Tree", "Supplies", "", "\\Images\\Cat\\Supplies\\Cat Tree.png"));
             Items.Add(new Item("Cat", 14.99, "Cat Water Fountain", "Supplies", "", "\\Images\\Cat\\Supplies\\Cat Water Fountain.png"));
 
-            // Small Animal items
+            // Small Animal 12 items
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Small Animal", 5.99, "Bird Food Crickets", "Food", "", "\\Images\\Small Animal\\Food\\Bird Food Crickets.png"));
             Items.Add(new Item("Small Animal", 4.99, "Bird Food", "Food", "", "\\Images\\Small Animal\\Food\\Bird Food.png"));
@@ -80,14 +80,14 @@ namespace PetStore
             Items.Add(new Item("Small Animal", 19.99, "Heating Pad", "Supplies", "", "\\Images\\Small Animal\\Supplies\\Heating Pad.png"));
             Items.Add(new Item("Small Animal", 6.99, "Water Bottle", "Supplies", "", "\\Images\\Small Animal\\Supplies\\Water Bottle.png"));
 
-            // Fish items
+            // Fish 4 items
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Fish", 7.99, "Fish Food", "Food", "", "\\Images\\Fish\\Food\\Fish Food.png"));
             Items.Add(new Item("Fish", 9.99, "Pond Fish Food", "Food", "", "\\Images\\Fish\\Food\\Pond Fish Food.png"));
             Items.Add(new Item("Fish", 9.99, "Fish Aquarium Filter", "Supplies", "", "\\Images\\Fish\\Supplies\\Fish Aquarium Filter.png"));
             Items.Add(new Item("Fish", 9.99, "Fish Aquarium Starter Kit", "Supplies", "", "\\Images\\Fish\\Supplies\\Fish Aquarium Starter Kit.png"));
 
-            // Reptile items
+            // Reptile 11 items
             // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Reptile", 9.99, "Reptile Food Crickets", "Food", "", "\\Images\\Reptile\\Food\\Reptile Food Crickets.png"));
             Items.Add(new Item("Reptile", 8.99, "Reptile Food Dried Insects", "Food", "", "\\Images\\Reptile\\Food\\Reptile Food Dried Insects.png"));
