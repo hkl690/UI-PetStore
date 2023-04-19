@@ -297,4 +297,10 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Pages\ShoppingCartPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
