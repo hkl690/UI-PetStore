@@ -52,7 +52,10 @@ namespace PetStore.Pages
         {
             itemPage = item;
         }
-
+        public void InitializeShoppingCartPage(ShoppingCartPage shoppingCart)
+        {
+            shoppingCartPage = shoppingCart;
+        }
         public void InitializeReviewOrderPage(ReviewOrderPage reviewOrder)
         {
             reviewOrderPage = reviewOrder;
@@ -68,6 +71,7 @@ namespace PetStore.Pages
         private CreateUserAccountPage createUserAccountPage;
         private UserAccountMadePage userAccountMadePage;
         private ItemPage itemPage;
+        private ShoppingCartPage shoppingCartPage;
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
         private Item currentItem;

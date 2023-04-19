@@ -19,7 +19,7 @@ namespace PetStore.Pages
         public SearchResultsPage(HomePage home)
         {
             InitializeComponent();
-            homePage = home;
+            homePage = home;            
         }
 
         public void InitializeItemPage(ItemPage item)
@@ -42,7 +42,10 @@ namespace PetStore.Pages
         {
             buyNowPage = buyNow;
         }
-
+        public void InitializeShoppingCartPage(ShoppingCartPage shoppingCart)
+        {
+            shoppingCartPage = shoppingCart;
+        }
         public void InitializeReviewOrderPage(ReviewOrderPage reviewOrder)
         {
             reviewOrderPage = reviewOrder;
@@ -59,6 +62,7 @@ namespace PetStore.Pages
         private CreateUserAccountPage createUserAccountPage;
         private UserAccountMadePage userAccountMadePage;
         private BuyNowPage buyNowPage;
+        private ShoppingCartPage shoppingCartPage;
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
 

@@ -37,7 +37,10 @@ namespace PetStore.Pages
         {
             buyNowPage = buyNow;
         }
-
+        public void InitializeShoppingCartPage(ShoppingCartPage shoppingCart)
+        {
+            shoppingCartPage = shoppingCart;
+        }
         public void InitializeReviewOrderPage(ReviewOrderPage reviewOrder)
         {
             reviewOrderPage = reviewOrder;
@@ -53,6 +56,7 @@ namespace PetStore.Pages
         private CreateUserAccountPage createUserAccountPage;
         private ItemPage itemProduct;
         private BuyNowPage buyNowPage;
+        private ShoppingCartPage shoppingCartPage;
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
 
@@ -156,6 +160,7 @@ namespace PetStore.Pages
 
 
         #endregion
+
         /// <summary>
         /// Press the Back to the Pet Store button to go to the home page
         /// </summary>

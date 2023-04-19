@@ -22,6 +22,7 @@ namespace PetStore
         private readonly CreateUserAccountPage createUserAccountPage;
         private readonly UserAccountMadePage userAccountMadePage;
         private readonly BuyNowPage buyNowPage;
+        private readonly ShoppingCartPage shoppingCartPage;
         private readonly ReviewOrderPage reviewOrderPage;
         private readonly ReceiptPage receiptPage;
 
@@ -110,6 +111,7 @@ namespace PetStore
             searchResultsPage = new SearchResultsPage(this);
             itemPage = new ItemPage(this);
             buyNowPage = new BuyNowPage(this);
+            shoppingCartPage = new ShoppingCartPage(this);
             reviewOrderPage = new ReviewOrderPage(this);
             receiptPage = new ReceiptPage(this);
             searchResultsPage.InitializeItemPage(itemPage);
@@ -117,6 +119,7 @@ namespace PetStore
             searchResultsPage.InitializeCreateUserAccountPage(createUserAccountPage);
             searchResultsPage.InitializeUserAccountMadePage(userAccountMadePage);
             searchResultsPage.InitializeBuyNowPage(buyNowPage);
+            searchResultsPage.InitializeShoppingCartPage(shoppingCartPage);
             searchResultsPage.InitializeReviewOrderPage(reviewOrderPage);
             searchResultsPage.InitializeReceiptPage(receiptPage);
             itemPage.InitializeSignInOptionsPage(signInOptionsPage);
@@ -124,6 +127,7 @@ namespace PetStore
             itemPage.InitializeUserAccountMadePage(userAccountMadePage);
             itemPage.InitializeSearchResultsPage(searchResultsPage);
             itemPage.InitializeBuyNowPage(buyNowPage);
+            itemPage.InitializeShoppingCartPage(shoppingCartPage);
             itemPage.InitializeReviewOrderPage(reviewOrderPage);
             itemPage.InitializeReceiptPage(receiptPage);
             buyNowPage.InitializeSignInOptionsPage(signInOptionsPage);
@@ -131,12 +135,15 @@ namespace PetStore
             buyNowPage.InitializeUserAccountMadePage(userAccountMadePage);
             buyNowPage.InitializeSearchResultsPage(searchResultsPage);
             buyNowPage.InitializeItemPage(itemPage);
+            buyNowPage.InitializeShoppingCartPage(shoppingCartPage);
             buyNowPage.InitializeReviewOrderPage(reviewOrderPage);
             buyNowPage.InitializeReceiptPage(receiptPage);
             signInOptionsPage.InitializeCreateUserAccountPage(createUserAccountPage);
             signInOptionsPage.InitializeUserAccountMadePage(userAccountMadePage);
             signInOptionsPage.InitializeSearchResultsPage(searchResultsPage);
             signInOptionsPage.InitializeItemPage(itemPage);
+            signInOptionsPage.InitializeBuyNowPage(buyNowPage);
+            signInOptionsPage.InitializeShoppingCartPage(shoppingCartPage);
             signInOptionsPage.InitializeReviewOrderPage(reviewOrderPage);
             signInOptionsPage.InitializeReceiptPage(receiptPage);
             createUserAccountPage.InitializeSignInOptionsPage(signInOptionsPage);
@@ -144,6 +151,7 @@ namespace PetStore
             createUserAccountPage.InitializeSearchResultsPage(searchResultsPage);
             createUserAccountPage.InitializeItemPage(itemPage);
             createUserAccountPage.InitializeBuyNowPage(buyNowPage);
+            createUserAccountPage.InitializeShoppingCartPage(shoppingCartPage);
             createUserAccountPage.InitializeReviewOrderPage(reviewOrderPage);
             createUserAccountPage.InitializeReceiptPage(receiptPage);
             userAccountMadePage.InitializeSignInOptionsPage(signInOptionsPage);
@@ -151,19 +159,22 @@ namespace PetStore
             userAccountMadePage.InitializeItemPage(itemPage);
             userAccountMadePage.InitializeCreateUserAccountPage(createUserAccountPage);
             userAccountMadePage.InitializeBuyNowPage(buyNowPage);
+            userAccountMadePage.InitializeShoppingCartPage(shoppingCartPage);
             userAccountMadePage.InitializeReviewOrderPage(reviewOrderPage);
             userAccountMadePage.InitializeReceiptPage(receiptPage);
             reviewOrderPage.InitializeSignInOptionsPage(signInOptionsPage);
             reviewOrderPage.InitializeCreateUserAccountPage(createUserAccountPage);
             reviewOrderPage.InitializeUserAccountMadePage(userAccountMadePage);
-            reviewOrderPage.InitializeItemPage(itemPage);
             reviewOrderPage.InitializeSearchResultsPage(searchResultsPage);
-            reviewOrderPage.InitializeReceiptPage(receiptPage);
+            reviewOrderPage.InitializeItemPage(itemPage);
             reviewOrderPage.InitializeBuyNowPage(buyNowPage);
+            reviewOrderPage.InitializeShoppingCartPage(shoppingCartPage);            
+            reviewOrderPage.InitializeReceiptPage(receiptPage);            
             receiptPage.InitializeSearchResultsPage(searchResultsPage);
             receiptPage.InitializeSignInOptionsPage(signInOptionsPage);
             receiptPage.InitializeItemPage(itemPage);
             receiptPage.InitializeBuyNowPage(buyNowPage);
+            receiptPage.InitializeShoppingCartPage(shoppingCartPage);
             receiptPage.InitializeCreateUserAccountPage(createUserAccountPage);
             receiptPage.InitializeUserAccountMadePage(userAccountMadePage);
             receiptPage.InitializeReviewOrderPage(reviewOrderPage);
@@ -307,7 +318,7 @@ namespace PetStore
         }
         #endregion
 
-        #region Search box logic
+        #region Searchbox logic
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
         /// </summary>
