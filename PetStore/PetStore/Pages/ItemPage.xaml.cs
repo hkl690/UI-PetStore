@@ -168,7 +168,6 @@ namespace PetStore.Pages
         #endregion
 
         #region Add to Cart button
-
         /// <summary>
         /// Press the Add to Cart button from the ItemPage to switch to the ShoppingCartPage
         /// and then the ItemPage will be hidden.
@@ -186,12 +185,15 @@ namespace PetStore.Pages
 //            }
 //           else
 //            {
-            shoppingCartPage.Visibility = Visibility.Visible;
+            //shoppingCartPage.Visibility = Visibility.Visible;
+            paymentPage.Visibility = Visibility.Visible;
             Visibility = Visibility.Hidden;
 //            }
-shoppingCartPage.SetHomepageItems.Add(itemList.First());
+// MAYBE NEED THIS shoppingCartPage.SetHomepageItems.Add(itemList.First());
         }
+        #endregion
 
+        #region OpenItemPage method
         /// <summary>
         /// This method opens the Item Page
         /// (mainly when selected from the SearchResultsPage)

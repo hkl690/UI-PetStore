@@ -164,7 +164,9 @@ namespace PetStore.Pages
         }
         #endregion SearchBox
 
-
+        // see the ItemPage code for setting the ShoppingCart list
+        // Note that the Payment page has another list to Review the order,
+        // which might be affected
         private ObservableCollection<Item> setHomepageItems;
 
         public ObservableCollection<Item> SetHomepageItems

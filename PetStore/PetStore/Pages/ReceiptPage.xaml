@@ -17,9 +17,10 @@
 
         <Separator Height="5"/>
 
-        <!-- This grid displays the thank you reciept -->
+        <!-- This grid displays the thank you receipt -->
         <Grid Height="500">
             <Label x:Name="ThankYou" Content="Thank you for your order." HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top" FontSize="14"/>
+            <Label x:Name="ReturnHome" Content="Click on Pet Store to return to the home page." HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" FontSize="14"/>
         </Grid>
     </StackPanel>
 </Window>

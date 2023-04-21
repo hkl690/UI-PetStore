@@ -30,7 +30,7 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="AddToCart" Content="Add To Cart" Click="Button_Click" Foreground="White" Background="#FF1F95EF"/>
+                                <Button x:Name="BuyNow" Content="Buy Now" Click="Button_Click" Foreground="White" Background="#FF1F95EF" Height="22" Width="68"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -38,7 +38,7 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding PictureFilePath}" Width="100" Height="100"/>
+                                <Image Source="{Binding PictureFilePath}" Width="250" Height="250"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
