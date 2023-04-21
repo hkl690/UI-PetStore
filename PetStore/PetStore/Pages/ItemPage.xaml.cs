@@ -46,7 +46,10 @@ namespace PetStore.Pages
         {
             buyNowPage = buyNow;
         }
-
+        public void InitializeShoppingCartPage(ShoppingCartPage shoppingCart)
+        {
+            shoppingCartPage = shoppingCart;
+        }
         public void InitializeReviewOrderPage(ReviewOrderPage reviewOrder)
         {
             reviewOrderPage = reviewOrder;
@@ -62,6 +65,7 @@ namespace PetStore.Pages
         private CreateUserAccountPage createUserAccountPage;
         private UserAccountMadePage userAccountMadePage;
         private BuyNowPage buyNowPage;
+        private ShoppingCartPage shoppingCartPage;
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
 
@@ -161,9 +165,9 @@ namespace PetStore.Pages
         }
         #endregion
 
-        #region Buy Now button
+        #region Add to Cart button
         /// <summary>
-        /// Press the Buy Now button from the ItemPage to switch to the BuyNowPage
+        /// Press the Buy Now button from the ItemPage to switch to the ShoppingCartPage
         /// and then the ItemPage will be hidden.
         /// </summary>
         /// <param name="sender"></param>
@@ -179,7 +183,7 @@ namespace PetStore.Pages
 //            }
 //           else
 //            {
-                buyNowPage.Visibility = Visibility.Visible;
+                shoppingCartPage.Visibility = Visibility.Visible;
                 Visibility = Visibility.Hidden;
 //            }
             foreach (Item item in homePage.Items)

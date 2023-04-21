@@ -1,11 +1,11 @@
-﻿<Window x:Name="window" x:Class="PetStore.Pages.SearchResultsPage"
+﻿<Window x:Name="window" x:Class="PetStore.Pages.ShoppingCartPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetStore.Pages"
         mc:Ignorable="d"
-        Title="Search Results Page" Height="600" Width="800">
+        Title="Shopping Cart Page" Height="600" Width="800">
     
     <StackPanel Margin="3">
         <!-- this HeaderGrid displays the header-->
@@ -19,15 +19,16 @@
 
         
         <!-- this ResultGrid displays all the SearchResult items and includes a Select button -->
-        <Grid Height="500"> 
+        <!-- This grid all needs editing!!! Do not use ResultGrid here (from Search)-->
+        <!--Grid Height="500"> 
             <DataGrid x:Name="ResultGrid" ItemsSource="{Binding Path=items}" 
                       AreRowDetailsFrozen="True" CanUserAddRows="False" 
                       CanUserDeleteRows="False" IsReadOnly="True" 
                       ScrollViewer.CanContentScroll="True" VerticalAlignment="Top" 
-                      MouseDoubleClick="SelectItem" Margin="10,21,10,0" HorizontalAlignment="Left" MinColumnWidth="80" RowBackground="White">
+                      MouseDoubleClick="SelectItem" Margin="10,21,10,0" HorizontalAlignment="Left" MinColumnWidth="80" RowBackground="White"-->
 
                 <!-- This column displays the item's image -->
-                <DataGrid.Columns>
+                <!--DataGrid.Columns>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -36,17 +37,9 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
-                <!--DataGrid.Columns-->
-                    <!--DataGridTemplateColumn-->
-                        <!--DataGridTemplateColumn.CellTemplate-->
-                            <!--DataTemplate-->
-                                <!--Button x:Name="SelectButton" Content="Select" Click="SelectButtonClicked" CommandParameter="{Binding DataContext, ElementName=ResultGrid}"></Button-->
-                            <!--/DataTemplate-->
-                        <!--/DataGridTemplateColumn.CellTemplate-->
-                    <!--/DataGridTemplateColumn-->
-                <!--/DataGrid.Columns-->
+                
             </DataGrid>
 
-        </Grid>
+        </Grid-->
     </StackPanel>
 </Window>

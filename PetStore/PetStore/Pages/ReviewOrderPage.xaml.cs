@@ -45,16 +45,18 @@ namespace PetStore.Pages
         public void InitializeItemPage(ItemPage item)
         {
             itemPage = item;
-        }
-
-        public void InitializeReceiptPage(ReceiptPage receipt)
-        {
-            receiptPage = receipt;
-        }
-
+        }        
         public void InitializeBuyNowPage(BuyNowPage buyNow)
         {
             buyNowPage = buyNow;
+        }
+        public void InitializeShoppingCartPage(ShoppingCartPage shoppingCart)
+        {
+            shoppingCartPage = shoppingCart;
+        }
+        public void InitializeReceiptPage(ReceiptPage receipt)
+        {
+            receiptPage = receipt;
         }
 
         private HomePage homePage;
@@ -62,9 +64,10 @@ namespace PetStore.Pages
         private SignInOptionsPage signInOptionsPage;
         private CreateUserAccountPage createUserAccountPage;
         private UserAccountMadePage userAccountMadePage;
-        private ItemPage itemPage;
-        private ReceiptPage receiptPage;
+        private ItemPage itemPage;        
         private BuyNowPage buyNowPage;
+        private ShoppingCartPage shoppingCartPage;
+        private ReceiptPage receiptPage;
 
         #region SearchBox
         /// <summary>

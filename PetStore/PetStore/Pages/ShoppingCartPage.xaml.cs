@@ -19,7 +19,7 @@ namespace PetStore.Pages
         public ShoppingCartPage(HomePage home)
         {
             InitializeComponent();
-            homePage = home;
+            this.homePage = home;
         }
         public void InitializeSearchResultsPage(SearchResultsPage search)
         {
@@ -62,6 +62,7 @@ namespace PetStore.Pages
         private CreateUserAccountPage createUserAccountPage;
         private UserAccountMadePage userAccountMadePage;
         private BuyNowPage buyNowPage;
+        private ShoppingCartPage shoppingCartPage;
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
 
@@ -94,7 +95,7 @@ namespace PetStore.Pages
         }
         #endregion
 
-        #region Search box logic
+        #region SearchBox
         /// <summary>
         /// This method takes out the word "Search" from the Search box as needed.
         /// </summary>
@@ -134,29 +135,25 @@ namespace PetStore.Pages
             if (e.Key == Key.Return)
             {
                 homePage.ItemResults.Clear();
-                Visibility = Visibility.Visible;
-                homePage.Visibility = Visibility.Hidden;
-                List<PictureObject> list = new List<PictureObject>();
+                searchPage.Visibility = Visibility.Visible;
+                Visibility = Visibility.Hidden;
+
                 foreach (Item item in homePage.Items)
                 {
-                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) 
-                        || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
-                        || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) 
-                        || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
-                        || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) 
+                    if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower())
+                        || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower())
+                        || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower())
+                        || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower())
+                        || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower())
                         || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
                     {
                         continue;
                     }
-                    
+                    // System.Diagnostics.Debug.WriteLine(item.Species + item.Price + item.ItemName + item.Category + item.Picture.ToString());
+                    //SearchResults.Text += item.Species + "\t" + item.Price + "\t" + item.ItemName + "\t" + item.Category + "\t" + item.Picture.ToString + Environment.NewLine + Environment.NewLine;
                     homePage.ItemResults.Add(item);
-                    // Add the item's image to the resultgrid
-                    list.Add(new PictureObject() { PictureFilePath = new System.Uri("file:///" + Directory.GetCurrentDirectory() + item.Picture), PictureName = item.ItemName });
                 }
-
-                // Display the resultgrid list with images
-                ResultGrid.ItemsSource = list;                  
-            
+                searchPage.ResultGrid.ItemsSource = homePage.ItemResults;
             }
         }
 
@@ -164,18 +161,25 @@ namespace PetStore.Pages
         {
 
         }
-        #endregion
+        #endregion SearchBox
 
+
+        /// THIS NEEDS TO BE CHANGED. DO NOT USE THIS!!!
         /// <summary>
         /// When the item is double-clicked by the mouse, it will
         /// go to the item page.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SelectItem(object sender, MouseButtonEventArgs e)
-        {
-            Item item = ResultGrid.SelectedItem as Item;
-            itemProduct.OpenItemPage(item);
-        }
+        ///        private void SelectItem(object sender, MouseButtonEventArgs e)
+        ///       {
+        ///            Item item = ResultGrid.SelectedItem as Item;
+        ///            itemProduct.OpenItemPage(item);
+        ///        }
+        ///        
+        /// 
+        ///  ALSO TO DO: A Buy Now button is needed to switch the visibility from this
+        ///  page to the Buy Now page.
+
     }
 }
