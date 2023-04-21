@@ -16,15 +16,15 @@ using PetStore.Objects;
 namespace PetStore.Pages
 {
     /// <summary>
-    /// Interaction logic for BuyNowPage.xaml
+    /// Interaction logic for PaymentPage.xaml
     /// </summary>
-    public partial class BuyNowPage : Window
+    public partial class PaymentPage : Window
     {
         /// <summary>
-        /// Let the HomePage know BuyNowPage is initialized
+        /// Let the HomePage know PaymentPage is initialized
         /// </summary>
         /// <param name="homePage"></param>
-        public BuyNowPage(HomePage homePage)
+        public PaymentPage(HomePage homePage)
         {
             InitializeComponent();
             this.homePage = homePage;

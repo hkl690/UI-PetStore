@@ -16,19 +16,26 @@
         </Grid>
         
         <Separator Height="5"/>
-
+       
         
-        <!-- this ResultGrid displays all the SearchResult items and includes a Select button -->
-        <!-- This grid all needs editing!!! Do not use ResultGrid here (from Search)-->
-        <!--Grid Height="500"> 
-            <DataGrid x:Name="ResultGrid" ItemsSource="{Binding Path=items}" 
+        <!--Grid Height="500">
+            <DataGrid x:Name="ShoppingCartGrid" ItemsSource="{Binding Path=ShoppingCartItems}" 
                       AreRowDetailsFrozen="True" CanUserAddRows="False" 
                       CanUserDeleteRows="False" IsReadOnly="True" 
-                      ScrollViewer.CanContentScroll="True" VerticalAlignment="Top" 
-                      MouseDoubleClick="SelectItem" Margin="10,21,10,0" HorizontalAlignment="Left" MinColumnWidth="80" RowBackground="White"-->
+                      ScrollViewer.CanContentScroll="True" 
+                      VerticalAlignment="Top" Margin="10,21,10,0" 
+                      HorizontalAlignment="Left" MinColumnWidth="80">
+                <DataGrid.Columns-->
 
-                <!-- This column displays the item's image -->
-                <!--DataGrid.Columns>
+                    <!-- Need Button functionality, this was Add to Cart Button-->
+                    <!--DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="RemoveFromCart" Content="Remove From Cart" Click="Button_Click" Foreground="White" Background="#FF1F95EF"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -36,10 +43,10 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                </DataGrid.Columns>
-                
-            </DataGrid>
 
+                </DataGrid.Columns>
+
+            </DataGrid>
         </Grid-->
     </StackPanel>
 </Window>

@@ -58,7 +58,7 @@
                     </Button.Background>
                     <Label x:Name="ReptilesLabel" Content="Reptiles" Padding="5,0,5,5" Margin="0,160,0,0" />
                 </Button>
-                <Button x:Name="ViewAll" Grid.Column="1"  Content="View All Items" Margin="10,250,0,0" Height="22" Width="687" Click="ViewAll_Click" Background="#FF1F95EF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <Button x:Name="ViewAll" Grid.Column="1"  Content="View All Items" Margin="6,250,0,0" Height="22" Width="687" Click="ViewAll_Click" Background="#FF1F95EF" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
             </Grid>
 
         </StackPanel>

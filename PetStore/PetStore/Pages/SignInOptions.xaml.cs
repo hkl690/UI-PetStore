@@ -40,9 +40,9 @@ namespace PetStore.Pages
         {
             itemProduct = item;
         }
-        public void InitializeBuyNowPage(BuyNowPage buyNow)
+        public void InitializePaymentPage(PaymentPage payment)
         {
-            buyNowPage = buyNow;
+            paymentPage = payment;
         }
         public void InitializeShoppingCartPage(ShoppingCartPage shoppingCart)
         {
@@ -62,7 +62,7 @@ namespace PetStore.Pages
         private CreateUserAccountPage createUserAccountPage;
         private UserAccountMadePage userAccountMadePage;
         private ItemPage itemProduct;
-        private BuyNowPage buyNowPage;
+        private PaymentPage paymentPage;
         private ShoppingCartPage shoppingCartPage;
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;

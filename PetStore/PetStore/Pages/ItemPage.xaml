@@ -19,13 +19,18 @@
         <Separator Height="5"/>
         <Grid Height="500">
             <!-- this grid displays the item selected and includes a Buy Now button-->
-            <DataGrid x:Name="ItemGrid" ItemsSource="{Binding Path=items}" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True" VerticalAlignment="Top" Margin="10,21,10,0" HorizontalAlignment="Left" MinColumnWidth="80">
+            <DataGrid x:Name="ItemGrid" ItemsSource="{Binding Path=items}" 
+                      AreRowDetailsFrozen="True" CanUserAddRows="False" 
+                      CanUserDeleteRows="False" IsReadOnly="True" 
+                      ScrollViewer.CanContentScroll="True" 
+                      VerticalAlignment="Top" Margin="10,21,10,0" 
+                      HorizontalAlignment="Left" MinColumnWidth="80">
                 <DataGrid.Columns>
                     
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="AddToCart" Content="Add To Cart" Click="Button_Click" Foreground="White" Background="#FF1F95EF"/>
+                                <Button x:Name="BuyNow" Content="Buy Now" Click="Button_Click" Foreground="White" Background="#FF1F95EF" Height="22" Width="68"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -33,7 +38,7 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding PictureFilePath}" Width="100" Height="100"/>
+                                <Image Source="{Binding PictureFilePath}" Width="250" Height="250"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

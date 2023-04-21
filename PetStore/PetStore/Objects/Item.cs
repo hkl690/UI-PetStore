@@ -10,8 +10,8 @@ namespace PetStore.Objects
         public string Species { get; set; }
         public double Price { get; set; }
         public string ItemName { get; set; }
-        public string Category { get; set; }
         public string Description { get; set; }
+        public string Category { get; set; }
         public string Picture { get; set; }
         public Uri PictureFilePath { get; set; }
 
