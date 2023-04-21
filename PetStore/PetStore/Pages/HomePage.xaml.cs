@@ -16,13 +16,13 @@ namespace PetStore
         public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
 
         public ObservableCollection<Item> ItemResults = new();
-        public ObservableCollection<Item> ShoppingCartItems { get; set; }
+        
         private readonly ItemPage itemPage;
         private readonly SearchResultsPage searchResultsPage;
         private readonly SignInOptionsPage signInOptionsPage;
         private readonly CreateUserAccountPage createUserAccountPage;
         private readonly UserAccountMadePage userAccountMadePage;
-        private readonly BuyNowPage buyNowPage;
+        private readonly PaymentPage paymentPage;
         private readonly ShoppingCartPage shoppingCartPage;
         private readonly ReviewOrderPage reviewOrderPage;
         private readonly ReceiptPage receiptPage;
@@ -111,7 +111,7 @@ namespace PetStore
             userAccountMadePage = new UserAccountMadePage(this);
             searchResultsPage = new SearchResultsPage(this);
             itemPage = new ItemPage(this);
-            buyNowPage = new BuyNowPage(this);
+            paymentPage = new PaymentPage(this);
             shoppingCartPage = new ShoppingCartPage(this);
             reviewOrderPage = new ReviewOrderPage(this);
             receiptPage = new ReceiptPage(this);
@@ -119,7 +119,7 @@ namespace PetStore
             searchResultsPage.InitializeSignInOptionsPage(signInOptionsPage);
             searchResultsPage.InitializeCreateUserAccountPage(createUserAccountPage);
             searchResultsPage.InitializeUserAccountMadePage(userAccountMadePage);
-            searchResultsPage.InitializeBuyNowPage(buyNowPage);
+            searchResultsPage.InitializePaymentPage(paymentPage);
             searchResultsPage.InitializeShoppingCartPage(shoppingCartPage);
             searchResultsPage.InitializeReviewOrderPage(reviewOrderPage);
             searchResultsPage.InitializeReceiptPage(receiptPage);
@@ -127,23 +127,23 @@ namespace PetStore
             itemPage.InitializeCreateUserAccountPage(createUserAccountPage);
             itemPage.InitializeUserAccountMadePage(userAccountMadePage);
             itemPage.InitializeSearchResultsPage(searchResultsPage);
-            itemPage.InitializeBuyNowPage(buyNowPage);
+            itemPage.InitializePaymentPage(paymentPage);
             itemPage.InitializeShoppingCartPage(shoppingCartPage);
             itemPage.InitializeReviewOrderPage(reviewOrderPage);
             itemPage.InitializeReceiptPage(receiptPage);
-            buyNowPage.InitializeSignInOptionsPage(signInOptionsPage);
-            buyNowPage.InitializeCreateUserAccountPage(createUserAccountPage);
-            buyNowPage.InitializeUserAccountMadePage(userAccountMadePage);
-            buyNowPage.InitializeSearchResultsPage(searchResultsPage);
-            buyNowPage.InitializeItemPage(itemPage);
-            buyNowPage.InitializeShoppingCartPage(shoppingCartPage);
-            buyNowPage.InitializeReviewOrderPage(reviewOrderPage);
-            buyNowPage.InitializeReceiptPage(receiptPage);
+            paymentPage.InitializeSignInOptionsPage(signInOptionsPage);
+            paymentPage.InitializeCreateUserAccountPage(createUserAccountPage);
+            paymentPage.InitializeUserAccountMadePage(userAccountMadePage);
+            paymentPage.InitializeSearchResultsPage(searchResultsPage);
+            paymentPage.InitializeItemPage(itemPage);
+            paymentPage.InitializeShoppingCartPage(shoppingCartPage);
+            paymentPage.InitializeReviewOrderPage(reviewOrderPage);
+            paymentPage.InitializeReceiptPage(receiptPage);
             signInOptionsPage.InitializeCreateUserAccountPage(createUserAccountPage);
             signInOptionsPage.InitializeUserAccountMadePage(userAccountMadePage);
             signInOptionsPage.InitializeSearchResultsPage(searchResultsPage);
             signInOptionsPage.InitializeItemPage(itemPage);
-            signInOptionsPage.InitializeBuyNowPage(buyNowPage);
+            signInOptionsPage.InitializePaymentPage(paymentPage);
             signInOptionsPage.InitializeShoppingCartPage(shoppingCartPage);
             signInOptionsPage.InitializeReviewOrderPage(reviewOrderPage);
             signInOptionsPage.InitializeReceiptPage(receiptPage);
@@ -151,7 +151,7 @@ namespace PetStore
             createUserAccountPage.InitializeUserAccountMadePage(userAccountMadePage);
             createUserAccountPage.InitializeSearchResultsPage(searchResultsPage);
             createUserAccountPage.InitializeItemPage(itemPage);
-            createUserAccountPage.InitializeBuyNowPage(buyNowPage);
+            createUserAccountPage.InitializePaymentPage(paymentPage);
             createUserAccountPage.InitializeShoppingCartPage(shoppingCartPage);
             createUserAccountPage.InitializeReviewOrderPage(reviewOrderPage);
             createUserAccountPage.InitializeReceiptPage(receiptPage);
@@ -159,7 +159,7 @@ namespace PetStore
             userAccountMadePage.InitializeSearchResultsPage(searchResultsPage);
             userAccountMadePage.InitializeItemPage(itemPage);
             userAccountMadePage.InitializeCreateUserAccountPage(createUserAccountPage);
-            userAccountMadePage.InitializeBuyNowPage(buyNowPage);
+            userAccountMadePage.InitializePaymentPage(paymentPage);
             userAccountMadePage.InitializeShoppingCartPage(shoppingCartPage);
             userAccountMadePage.InitializeReviewOrderPage(reviewOrderPage);
             userAccountMadePage.InitializeReceiptPage(receiptPage);
@@ -168,13 +168,13 @@ namespace PetStore
             reviewOrderPage.InitializeUserAccountMadePage(userAccountMadePage);
             reviewOrderPage.InitializeSearchResultsPage(searchResultsPage);
             reviewOrderPage.InitializeItemPage(itemPage);
-            reviewOrderPage.InitializeBuyNowPage(buyNowPage);
+            reviewOrderPage.InitializePaymentPage(paymentPage);
             reviewOrderPage.InitializeShoppingCartPage(shoppingCartPage);            
             reviewOrderPage.InitializeReceiptPage(receiptPage);            
             receiptPage.InitializeSearchResultsPage(searchResultsPage);
             receiptPage.InitializeSignInOptionsPage(signInOptionsPage);
             receiptPage.InitializeItemPage(itemPage);
-            receiptPage.InitializeBuyNowPage(buyNowPage);
+            receiptPage.InitializePaymentPage(paymentPage);
             receiptPage.InitializeShoppingCartPage(shoppingCartPage);
             receiptPage.InitializeCreateUserAccountPage(createUserAccountPage);
             receiptPage.InitializeUserAccountMadePage(userAccountMadePage);
@@ -183,18 +183,19 @@ namespace PetStore
 
             #region Visibility of pages
             itemPage.Visibility = Visibility.Hidden;
+            shoppingCartPage.Visibility = Visibility.Hidden;
             searchResultsPage.Visibility = Visibility.Hidden;
             signInOptionsPage.Visibility = Visibility.Hidden;
             createUserAccountPage.Visibility = Visibility.Hidden;
             userAccountMadePage.Visibility = Visibility.Hidden;
-            buyNowPage.Visibility = Visibility.Hidden;
+            paymentPage.Visibility = Visibility.Hidden;
             reviewOrderPage.Visibility = Visibility.Hidden;
             receiptPage.Visibility = Visibility.Hidden;
             Visibility = Visibility.Visible;
             #endregion
 
             SearchBox.Text = "Search";
-            ShoppingCartItems = new ObservableCollection<Item>();
+            
         }
 
         #region HomePage Animal Button clicks

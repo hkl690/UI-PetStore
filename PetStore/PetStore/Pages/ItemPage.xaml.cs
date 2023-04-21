@@ -42,9 +42,9 @@ namespace PetStore.Pages
         {
             userAccountMadePage = userAccountMade;
         }
-        public void InitializeBuyNowPage(BuyNowPage buyNow)
+        public void InitializePaymentPage(PaymentPage payment)
         {
-            buyNowPage = buyNow;
+            paymentPage = payment;
         }
         public void InitializeShoppingCartPage(ShoppingCartPage shoppingCart)
         {
@@ -64,10 +64,12 @@ namespace PetStore.Pages
         private SignInOptionsPage signInOptionsPage;
         private CreateUserAccountPage createUserAccountPage;
         private UserAccountMadePage userAccountMadePage;
-        private BuyNowPage buyNowPage;
+        private PaymentPage paymentPage;
         private ShoppingCartPage shoppingCartPage;
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
+
+        List<Item> itemList = new List<Item>();
 
         #region SearchBox
         /// <summary>
@@ -166,6 +168,7 @@ namespace PetStore.Pages
         #endregion
 
         #region Add to Cart button
+
         /// <summary>
         /// Press the Add to Cart button from the ItemPage to switch to the ShoppingCartPage
         /// and then the ItemPage will be hidden.
@@ -183,23 +186,10 @@ namespace PetStore.Pages
 //            }
 //           else
 //            {
-                shoppingCartPage.Visibility = Visibility.Visible;
-                Visibility = Visibility.Hidden;
+            shoppingCartPage.Visibility = Visibility.Visible;
+            Visibility = Visibility.Hidden;
 //            }
-            foreach (Item item in homePage.Items)
-            {
-                if (!(item.Species.ToLower().StartsWith(SearchBox.Text.ToLower()) 
-                    || item.Species.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
-                    || item.Price.ToString().ToLower().Contains(SearchBox.Text.ToLower()) 
-                    || item.ItemName.ToLower().Contains(" " + SearchBox.Text.ToLower()) 
-                    || item.ItemName.ToLower().Contains(SearchBox.Text.ToLower()) 
-                    || item.Category.ToLower().Contains(SearchBox.Text.ToLower())))
-                {
-                    continue;
-                }                    
-                homePage.ItemResults.Add(item);
-            }
-            ItemGrid.ItemsSource = homePage.ItemResults;            
+shoppingCartPage.SetHomepageItems.Add(itemList.First());
         }
 
         /// <summary>
@@ -209,10 +199,10 @@ namespace PetStore.Pages
         /// <param name="item"></param>
         internal void OpenItemPage(Item? item)
         {
-            buyNowPage.setCurrentItem(item);
+            paymentPage.setCurrentItem(item);
             Visibility = Visibility.Visible;
             searchPage.Visibility = Visibility.Hidden;
-            List<Item> itemList = new List<Item>();
+            itemList = new List<Item>();
             itemList.Add(item);
             ItemGrid.ItemsSource = itemList.AsEnumerable();
         }

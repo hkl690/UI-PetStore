@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Documents;
@@ -38,9 +39,9 @@ namespace PetStore.Pages
         {
             userAccountMadePage = userAccountMade;
         }
-        public void InitializeBuyNowPage(BuyNowPage buyNow)
+        public void InitializePaymentPage(PaymentPage payment)
         {
-            buyNowPage = buyNow;
+            paymentPage = payment;
         }
         public void InitializeShoppingCartPage(ShoppingCartPage shoppingCart)
         {
@@ -61,7 +62,7 @@ namespace PetStore.Pages
         private SignInOptionsPage signInOptionsPage;
         private CreateUserAccountPage createUserAccountPage;
         private UserAccountMadePage userAccountMadePage;
-        private BuyNowPage buyNowPage;
+        private PaymentPage paymentPage;
         private ShoppingCartPage shoppingCartPage;
         private ReviewOrderPage reviewOrderPage;
         private ReceiptPage receiptPage;
