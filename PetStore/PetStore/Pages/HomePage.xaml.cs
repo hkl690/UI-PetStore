@@ -16,6 +16,7 @@ namespace PetStore
         public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
 
         public ObservableCollection<Item> ItemResults = new();
+        public ObservableCollection<Item> ShoppingCartItems { get; set; }
         private readonly ItemPage itemPage;
         private readonly SearchResultsPage searchResultsPage;
         private readonly SignInOptionsPage signInOptionsPage;
@@ -193,6 +194,7 @@ namespace PetStore
             #endregion
 
             SearchBox.Text = "Search";
+            ShoppingCartItems = new ObservableCollection<Item>();
         }
 
         #region HomePage Animal Button clicks

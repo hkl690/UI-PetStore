@@ -167,7 +167,7 @@ namespace PetStore.Pages
 
         #region Add to Cart button
         /// <summary>
-        /// Press the Buy Now button from the ItemPage to switch to the ShoppingCartPage
+        /// Press the Add to Cart button from the ItemPage to switch to the ShoppingCartPage
         /// and then the ItemPage will be hidden.
         /// </summary>
         /// <param name="sender"></param>

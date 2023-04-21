@@ -164,22 +164,22 @@ namespace PetStore.Pages
         #endregion SearchBox
 
 
-        /// THIS NEEDS TO BE CHANGED. DO NOT USE THIS!!!
-        /// <summary>
-        /// When the item is double-clicked by the mouse, it will
-        /// go to the item page.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        ///        private void SelectItem(object sender, MouseButtonEventArgs e)
-        ///       {
-        ///            Item item = ResultGrid.SelectedItem as Item;
-        ///            itemProduct.OpenItemPage(item);
-        ///        }
-        ///        
-        /// 
-        ///  ALSO TO DO: A Buy Now button is needed to switch the visibility from this
-        ///  page to the Buy Now page.
+        // THIS NEEDS TO BE CHANGED. DO NOT USE THIS!!!
+        ///// <summary>
+        ///// When the item is double-clicked by the mouse, it will
+        ///// go to the item page.
+        ///// </summary>
+       ///// <param name="sender"></param>
+       ///// <param name="e"></param>
+        //        private void SelectItem(object sender, MouseButtonEventArgs e)
+        //       {
+        //            Item item = ResultGrid.SelectedItem as Item;
+        //            itemProduct.OpenItemPage(item);
+        //        }
+        //        
+        // 
+        //  ALSO TO DO: A Buy Now button is needed to switch the visibility from this
+        //  page to the Buy Now page.
 
     }
 }
