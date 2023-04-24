@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetStore.Pages"
         mc:Ignorable="d"
-        Title="Search Results Page" Height="600" Width="800">
+        Title="Search Results Page" Height="720" Width="800">
     
     <StackPanel Margin="3">
         <!-- this HeaderGrid displays the header-->
@@ -16,10 +16,9 @@
         </Grid>
         
         <Separator Height="5"/>
-
         
         <!-- this ResultGrid displays all the SearchResult items and includes a Select button -->
-        <Grid Height="500"> 
+        <Grid Height="580"> 
             <DataGrid x:Name="ResultGrid" ItemsSource="{Binding Path=items}" 
                       AreRowDetailsFrozen="True" CanUserAddRows="False" 
                       CanUserDeleteRows="False" IsReadOnly="True" 
