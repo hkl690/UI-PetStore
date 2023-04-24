@@ -24,28 +24,30 @@
                       CanUserDeleteRows="False" IsReadOnly="True" 
                       ScrollViewer.CanContentScroll="True" 
                       VerticalAlignment="Top" Margin="10,21,10,0" 
-                      HorizontalAlignment="Left" MinColumnWidth="80">
+                      HorizontalAlignment="Left" MinColumnWidth="80" HeadersVisibility="None" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False">
                 <DataGrid.Columns>
                     
-                    <DataGridTemplateColumn>
+                    <!--DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button x:Name="BuyNow" Content="Buy Now" Click="Button_Click" Foreground="White" Background="#FF1F95EF" Height="22" Width="68"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                    </DataGridTemplateColumn-->
                     
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding PictureFilePath}" Width="250" Height="250"/>
+                                <Image Source="{Binding PictureFilePath}" Width="295" Height="295"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     
-                </DataGrid.Columns>                    
-               
+                </DataGrid.Columns>
             </DataGrid>
+
+            <Button x:Name="BuyNow" Content="Buy Now" Click="Button_Click" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Height="22" Width="222" Background="#FF1F95EF" Margin="0,380,0,0"/>
+
         </Grid>
     </StackPanel>
 </Window>
