@@ -38,7 +38,7 @@
             </DataGrid>
 
             <!-- The Place Order button -->
-            <Button x:Name="PlaceOrderButton" Content="Place Order" HorizontalAlignment="Center" VerticalAlignment="Top" Height="22" Width="222" Background="#FF1F95EF" Foreground="White" Click="PlaceOrderButton_Click" Margin="0,380,0,0"/>
+            <Button x:Name="PlaceOrderButton" Content="Place Order" HorizontalAlignment="Center" VerticalAlignment="Top" Height="22" Width="222" Background="#FF1F95EF" Foreground="White" Click="PlaceOrderButton_Click" Margin="0,370,0,0"/>
 
         </Grid>
     </StackPanel>

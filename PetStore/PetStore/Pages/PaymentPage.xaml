@@ -43,7 +43,7 @@
             <TextBox x:Name="CityTextbox" HorizontalAlignment="Left" Margin="99,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="616" Height="18"/>
             <TextBox x:Name="StateTextbox" HorizontalAlignment="Left" Margin="105,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="18"/>
             <TextBox x:Name="ZipcodeTextbox" HorizontalAlignment="Left" Margin="446,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" Height="18"/>
-            <Button x:Name="ReviewOrderButton" Content="Review Order" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" Height="22" Width="322" Foreground="White" Background="#FF1F95EF" Click="ReviewOrderButton_Click"/>
+            <Button x:Name="ReviewOrderButton" Content="Review Order" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Height="22" Width="322" Foreground="White" Background="#FF1F95EF" Click="ReviewOrderButton_Click"/>
 
         </Grid>        
     </StackPanel>

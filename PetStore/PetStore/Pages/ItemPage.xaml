@@ -46,7 +46,7 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button x:Name="BuyNow" Content="Buy Now" Click="Button_Click" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Height="22" Width="222" Background="#FF1F95EF" Margin="0,380,0,0"/>
+            <Button x:Name="BuyNow" Content="Buy Now" Click="Button_Click" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Height="22" Width="222" Background="#FF1F95EF" Margin="0,370,0,0"/>
 
         </Grid>
     </StackPanel>
