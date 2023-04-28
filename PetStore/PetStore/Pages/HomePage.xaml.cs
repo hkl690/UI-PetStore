@@ -33,8 +33,7 @@ namespace PetStore
             #region Adding all items to the collection
             // Adding all items to the Item Collection and then initializing
 
-            // Dog 15 items            
-            // Descriptions are empty strings for now, still need to write those
+            // Dog 15 items    
             Items.Add(new Item("Dog", 6.99, "Dog Treat", "Food", "Satisfy your dog's need to chew with\nthis great-tasting treat that also helps\nsupport his teeth.", "\\Images\\Dog\\Food\\Dog Treat.png"));
             Items.Add(new Item("Dog", 14.99, "Dry Dog Food", "Food", "Every bite of this dog food is packed\nwith nutrients! Perfect for dogs of \nevery size.", "\\Images\\Dog\\Food\\Dry Dog Food.png"));
             Items.Add(new Item("Dog", 12.99, "Wet Dog Food", "Food", "Delicious wet food for your dog with \nall nutrients needed for your dog to \nbe at their best.", "\\Images\\Dog\\Food\\Wet Dog Food.png"));
@@ -52,7 +51,6 @@ namespace PetStore
             Items.Add(new Item("Dog", 14.99, "Pet Stain Remover", "Supplies", "Clean up hard to clean pet messes \nwith Oxi Clean pet stain remover.", "\\Images\\Dog\\Supplies\\Pet Stain Remover.png"));
 
             // Cat 13 items
-            // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Cat", 3.99, "Cat Treat", "Food", "Satisfy your kitty’s cravings with these \nhealthy snacks.", "\\Images\\Cat\\Food\\Cat Treat.png"));
             Items.Add(new Item("Cat", 9.99, "Cat Dry Food", "Food", "Fill your cat’s food bowl with this\nnutritious dry food.", "\\Images\\Cat\\Food\\Dry Cat Food.png"));
             Items.Add(new Item("Cat", 14.99, "Cat Wet Food", "Food", "This wet food is alluring for cats of all \nages and easy to mix into a healthy diet.", "\\Images\\Cat\\Food\\Wet Cat Food.png"));
@@ -68,7 +66,6 @@ namespace PetStore
             Items.Add(new Item("Cat", 14.99, "Cat Water Fountain", "Supplies", "Quench your cat’s thirst anytime \nwith this recycling cat water \nfountain.", "\\Images\\Cat\\Supplies\\Cat Water Fountain.png"));
 
             // Small Animal 12 items
-            // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Small Animal", 5.99, "Bird Food Crickets", "Food", "Satisfy your hungry bird with these \ndelicious crickets.", "\\Images\\Small Animal\\Food\\Bird Food Crickets.png"));
             Items.Add(new Item("Small Animal", 4.99, "Bird Food", "Food", "Bird food with a variety of nuts and \ndried fruits.", "\\Images\\Small Animal\\Food\\Bird Food.png"));
             Items.Add(new Item("Small Animal", 5.99, "Guinea Pig Food", "Food", "Keep your guinea pig satisfied with\nthis nutritious blend.", "\\Images\\Small Animal\\Food\\Guinea Pig Food.png"));
@@ -83,14 +80,12 @@ namespace PetStore
             Items.Add(new Item("Small Animal", 6.99, "Water Bottle", "Supplies", "Quench your small pet friend’s thirst\nwith this in-cage water bottle.", "\\Images\\Small Animal\\Supplies\\Water Bottle.png"));
 
             // Fish 4 items
-            // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Fish", 7.99, "Fish Food", "Food", "Fish food to keep your fish satisfied and \ngrowing healthily.", "\\Images\\Fish\\Food\\Fish Food.png"));
             Items.Add(new Item("Fish", 9.99, "Pond Fish Food", "Food", "Fish food for pond fish of all sizes,\nmulticolored for fish to easily see.", "\\Images\\Fish\\Food\\Pond Fish Food.png"));
             Items.Add(new Item("Fish", 9.99, "Fish Aquarium Filter", "Supplies", "Keep your tank clean with this \nquiet-flow aquarium filter.", "\\Images\\Fish\\Supplies\\Fish Aquarium Filter.png"));
             Items.Add(new Item("Fish", 9.99, "Fish Aquarium Starter Kit", "Supplies", "Get started on your fish \nkeeping journey with this \nstarter kit.", "\\Images\\Fish\\Supplies\\Fish Aquarium Starter Kit.png"));
 
             // Reptile 11 items
-            // Descriptions are empty strings for now, still need to write those
             Items.Add(new Item("Reptile", 9.99, "Reptile Food Crickets", "Food", "Reptile food composed of \ndried crickets.", "\\Images\\Reptile\\Food\\Reptile Food Crickets.png"));
             Items.Add(new Item("Reptile", 8.99, "Reptile Food Dried Insects", "Food", "Keep your reptile full with \nthis blend of dried insects.", "\\Images\\Reptile\\Food\\Reptile Food Dried Insects.png"));
             Items.Add(new Item("Reptile", 19.99, "Reptile Food Frozen Mice", "Food", "Frozen mice simulates \nnatural prey while \nretaining nutritious value.", "\\Images\\Reptile\\Food\\Reptile Food Frozen Mice.png"));
